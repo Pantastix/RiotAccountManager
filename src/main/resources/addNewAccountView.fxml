@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="332.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.addNewAccountViewController">
+   <children>
+      <Label layoutX="183.0" layoutY="14.0" text="Add new Account">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="72.0" text="Account Name:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="123.0" text="Account Password:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="170.0" text="Valorant Rank:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ButtonBar buttonOrder="U+" layoutX="162.0" layoutY="274.0" prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="38.0" prefWidth="118.0" text="save">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+        </buttons>
+      </ButtonBar>
+      <TextField fx:id="nameTextField" layoutX="211.0" layoutY="72.0" prefHeight="30.0" prefWidth="166.0" promptText="account name" />
+      <TextField fx:id="passwordTextField" layoutX="211.0" layoutY="126.0" prefHeight="30.0" prefWidth="292.0" promptText="********" />
+      <ChoiceBox fx:id="valoRankChoiceBox" layoutX="211.0" layoutY="170.0" prefHeight="30.0" prefWidth="200.0" />
+      <Label fx:id="errorLabel" layoutX="248.0" layoutY="44.0" textFill="RED" />
+      <TextField fx:id="tagTextField" layoutX="389.0" layoutY="72.0" prefHeight="30.0" prefWidth="112.0" promptText="#euw" />
+      <Label layoutX="30.0" layoutY="219.0" text="League Rank:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="leagueRankChoiceBox" layoutX="211.0" layoutY="219.0" prefHeight="30.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

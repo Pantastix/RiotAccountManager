@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="141.0" prefWidth="317.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.changePasswortViewController">
+   <children>
+      <Label layoutX="34.0" layoutY="14.0" text="new Password:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="newPasswordField" layoutX="34.0" layoutY="50.0" prefHeight="42.0" prefWidth="250.0" />
+      <ButtonBar buttonOrder="U+" layoutX="73.0" layoutY="92.0" prefHeight="40.0" prefWidth="172.0">
+        <buttons>
+          <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="31.0" prefWidth="99.0" text="Save">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+        </buttons>
+      </ButtonBar>
+      <Label fx:id="errorLabel" layoutY="126.0" prefHeight="17.0" prefWidth="317.0" textFill="RED" />
+   </children>
+</AnchorPane>
