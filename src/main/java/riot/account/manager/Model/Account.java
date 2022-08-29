@@ -1,8 +1,8 @@
 package riot.account.manager.Model;
 
-import riot.account.manager.Controller.AccountController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import riot.account.manager.Controller.AccountController;
 
 /**
  * Account object with all the informations about the account.

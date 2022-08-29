@@ -1,7 +1,6 @@
-package riot.account.manager.Savestate;
+package riot.account.manager.Model;
 
 
-import riot.account.manager.Model.Account;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

@@ -1,10 +1,9 @@
-package riot.account.manager.Savestate;
+package riot.account.manager.Model;
 
-import riot.account.manager.Controller.AccountController;
-import riot.account.manager.Model.Account;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import riot.account.manager.Controller.AccountController;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;

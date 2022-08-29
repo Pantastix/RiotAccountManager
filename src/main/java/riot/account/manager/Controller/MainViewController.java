@@ -1,7 +1,5 @@
 package riot.account.manager.Controller;
 
-import riot.account.manager.Model.Account;
-import riot.account.manager.Model.Ranks;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
@@ -18,6 +16,8 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import riot.account.manager.Model.Account;
+import riot.account.manager.Model.Ranks;
 
 import java.io.IOException;
 
