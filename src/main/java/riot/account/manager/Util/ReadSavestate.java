@@ -1,9 +1,10 @@
-package riot.account.manager.Model;
+package riot.account.manager.Util;
 
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import riot.account.manager.Model.Account;
 
 import java.io.FileReader;
 import java.util.ArrayList;

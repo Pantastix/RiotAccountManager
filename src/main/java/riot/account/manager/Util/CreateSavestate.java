@@ -1,9 +1,10 @@
-package riot.account.manager.Model;
+package riot.account.manager.Util;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import riot.account.manager.Controller.AccountController;
+import riot.account.manager.Model.Account;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;

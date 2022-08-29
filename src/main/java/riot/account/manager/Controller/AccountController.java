@@ -120,6 +120,11 @@ public class AccountController {
 
     }
 
+    /**
+     * returns the account list
+     *
+     * @return ArrayList of all accounts
+     */
     public static ArrayList<Account> getAccountList(){
         ArrayList <Account> accountArrayList = new ArrayList<>();
         for (Account account : accountList.values()) {

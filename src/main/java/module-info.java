@@ -10,5 +10,7 @@ module riot.account.manager {
     exports riot.account.manager.Model;
     opens riot.account.manager.Controller to javafx.fxml;
     opens riot.account.manager.Model to javafx.fxml;
+    exports riot.account.manager.Util;
+    opens riot.account.manager.Util to javafx.fxml;
 
 }

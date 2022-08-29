@@ -42,10 +42,6 @@ public class Account {
         return userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public String getUserValorantRank() {
         return valorantRank;
     }

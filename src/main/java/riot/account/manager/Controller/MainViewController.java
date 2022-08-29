@@ -89,21 +89,9 @@ public class MainViewController {
      */
     @FXML
     public void initialize() {
-        mainTable.setItems(AccountController.getAccountListObservable());
-        accountColumn.setCellValueFactory(cellData -> cellData.getValue().getUserNameProperty());
-        rankColumn.setCellValueFactory(cellData -> cellData.getValue().getUserValorantRankProperty());
 
-        gameChoiceBox.getItems().addAll("Valorant", "League");
-        rankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
-        rankChoiceBox.getItems().add("all Ranks");
-        changeRankChoiceBox.getItems().addAll("none");
-        changeRankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
-        rankChoiceBox.setValue("all Ranks");
-        gameChoiceBox.setValue("Valorant");
-        changeRankChoiceBox.setValue("Bronze");
-        accountInfoAnchorPane.setVisible(false);
-        accountInfoAnchorPane.setDisable(true);
-        mainTable.getSelectionModel().select(0);
+        fillMainTable();
+        fillWindow();
 
         mainTable.getFocusModel().focusedCellProperty().addListener(new ChangeListener() {
             @Override
@@ -224,6 +212,15 @@ public class MainViewController {
     }
 
     /**
+     * fills the main Table with the accounts in the account list
+     */
+    private void fillMainTable() {
+        mainTable.setItems(AccountController.getAccountListObservable());
+        accountColumn.setCellValueFactory(cellData -> cellData.getValue().getUserNameProperty());
+        rankColumn.setCellValueFactory(cellData -> cellData.getValue().getUserValorantRankProperty());
+    }
+
+    /**
      * opens the window to add a new account to the list
      * @param event
      * @throws IOException
@@ -340,6 +337,23 @@ public class MainViewController {
         mainTable.getItems().addAll(AccountController.getAccountListObservable());
         accountInfoAnchorPane.setDisable(false);
         accountInfoAnchorPane.setVisible(true);
+    }
+
+    /**
+     * fills the choice boxes with the current data
+     * account info AchorPane is set to invisible and disabled
+     */
+    public void fillWindow(){
+        gameChoiceBox.getItems().addAll("Valorant", "League");
+        rankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
+        rankChoiceBox.getItems().add("all Ranks");
+        changeRankChoiceBox.getItems().addAll("none");
+        changeRankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
+        rankChoiceBox.setValue("all Ranks");
+        gameChoiceBox.setValue("Valorant");
+        accountInfoAnchorPane.setVisible(false);
+        accountInfoAnchorPane.setDisable(true);
+        mainTable.getSelectionModel().select(0);
     }
 
     public static Account getSelectedAccount() {
