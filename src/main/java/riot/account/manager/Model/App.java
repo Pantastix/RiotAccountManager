@@ -17,8 +17,9 @@ import riot.account.manager.Util.ReadSavestate;
  */
 public class App extends Application {
 
-    //TODO: remove anchor pane from scrollpane
+
     //TODO: Open first account on startup
+
 
     public static void main(String[] args){
         ReadSavestate.readSavestate();

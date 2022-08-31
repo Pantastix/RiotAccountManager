@@ -9,13 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="UI improvements">
+    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="restyling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Json/SaveState.Json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Json/SaveState.Json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MainViewStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +130,9 @@
       <workItem from="1661811835615" duration="613000" />
       <workItem from="1661815238847" duration="879000" />
       <workItem from="1661888767258" duration="72000" />
-      <workItem from="1661959871048" duration="9707000" />
+      <workItem from="1661959871048" duration="9818000" />
+      <workItem from="1661973793083" duration="23000" />
+      <workItem from="1661981595106" duration="2065000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1661776537054</created>
@@ -167,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661815908863</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="restyling">
+      <created>1661972414221</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661972414221</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +198,7 @@
     <MESSAGE value="import,all files" />
     <MESSAGE value="refactor" />
     <MESSAGE value="UI improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI improvements" />
+    <MESSAGE value="restyling" />
+    <option name="LAST_COMMIT_MESSAGE" value="restyling" />
   </component>
 </project>

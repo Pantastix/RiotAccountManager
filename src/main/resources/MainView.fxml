@@ -16,6 +16,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="653.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.MainViewController">
@@ -59,16 +60,17 @@
                         </ButtonBar>
                     </children>
                 </HBox>
+            <Line endX="552.2929077148438" endY="-0.9203115701675415" startX="-100.0" style="-fx-stroke: #6a6a6e;" />
             <SplitPane dividerPositions="0.4745762711864407" maxHeight="434.0" maxWidth="653.0" minHeight="434.0" minWidth="635.0" prefHeight="434.0" prefWidth="653.0" VBox.vgrow="NEVER">
               <items>
                       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="305.0" minWidth="305.0" prefHeight="430.0" prefWidth="305.0">
                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="437.0" prefWidth="308.0" AnchorPane.rightAnchor="0.0">
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="437.0" prefWidth="287.0" style="-fx-background-color: #373e43;" AnchorPane.rightAnchor="0.0">
                                   <children>
-                                      <TableView fx:id="mainTable" prefHeight="439.0" prefWidth="307.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-16.0" AnchorPane.topAnchor="0.0">
+                                      <TableView fx:id="mainTable" layoutX="-2.0" layoutY="-3.0" prefHeight="440.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-18.0" AnchorPane.topAnchor="-3.0">
                                           <columns>
-                                              <TableColumn fx:id="accountColumn" prefWidth="204.0" text="Account" />
-                                              <TableColumn fx:id="rankColumn" minWidth="0.0" prefWidth="85.0" text="Rank" />
+                                              <TableColumn fx:id="accountColumn" maxWidth="197.0" minWidth="197.0" prefWidth="197.0" resizable="false" text="Account" />
+                                              <TableColumn fx:id="rankColumn" maxWidth="94.0" minWidth="94.0" prefWidth="94.0" resizable="false" text="Rank" />
                                           </columns>
                                       </TableView>
                                   </children>
@@ -119,6 +121,7 @@
                      </children></AnchorPane>
               </items>
             </SplitPane>
+            <Line endX="653.0" startX="1.0" style="-fx-stroke: #6a6a6e;" />
             <Pane prefHeight="20.0" prefWidth="653.0">
                <children>
                   <Label layoutX="9.0" layoutY="2.0" text="v. 1.0.0" />

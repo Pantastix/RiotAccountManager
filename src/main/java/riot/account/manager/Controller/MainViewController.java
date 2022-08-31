@@ -77,8 +77,6 @@ public class MainViewController {
     @FXML
     public Label accountNameLabel;
 
-    boolean closed = true;
-
     private Account selectedAccount;
     private static Account selectedStaticAccount;
 
@@ -96,11 +94,6 @@ public class MainViewController {
         mainTable.getFocusModel().focusedCellProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
-                if (closed) {
-                    closed = false;
-                    accountInfoAnchorPane.setVisible(true);
-                    accountInfoAnchorPane.setDisable(false);
-                }
 
                 try {
                     if(mainTable.getSelectionModel().getSelectedItems().get(0) != null) {
@@ -108,8 +101,6 @@ public class MainViewController {
                     }
                     openAccountWindow(selectedAccount);
                 }catch (Exception e){
-                    accountInfoAnchorPane.setVisible(false);
-                    accountInfoAnchorPane.setDisable(true);
                 }
             }
         });
@@ -150,8 +141,6 @@ public class MainViewController {
                 nameField.setText("");
                 mainTable.setItems(AccountController.getAccountListFilteredByRank(newValue, gameChoiceBox.getValue()));
                 mainTable.refresh();
-                accountInfoAnchorPane.setVisible(true);
-                accountInfoAnchorPane.setDisable(false);
             }
         });
 
@@ -179,8 +168,6 @@ public class MainViewController {
 
                 mainTable.getSelectionModel().select(selectedAccount);
                 mainTable.refresh();
-                accountInfoAnchorPane.setVisible(true);
-                accountInfoAnchorPane.setDisable(false);
             }
         });
 
@@ -192,8 +179,6 @@ public class MainViewController {
                 rankChoiceBox.setValue("all Ranks");
                 mainTable.setItems(AccountController.getAccountListFilteredByName(newValue));
                 mainTable.refresh();
-                accountInfoAnchorPane.setVisible(true);
-                accountInfoAnchorPane.setDisable(false);
             }
         });
 
@@ -335,8 +320,6 @@ public class MainViewController {
     public void reloadTable(){
         mainTable.getItems().clear();
         mainTable.getItems().addAll(AccountController.getAccountListObservable());
-        accountInfoAnchorPane.setDisable(false);
-        accountInfoAnchorPane.setVisible(true);
     }
 
     /**
@@ -351,10 +334,14 @@ public class MainViewController {
         changeRankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
         rankChoiceBox.setValue("all Ranks");
         gameChoiceBox.setValue("Valorant");
-        accountInfoAnchorPane.setVisible(false);
-        accountInfoAnchorPane.setDisable(true);
-        mainTable.getSelectionModel().select(0);
-    }
+        try {
+            mainTable.getSelectionModel().selectFirst();
+            openAccountWindow(mainTable.getSelectionModel().getSelectedItem());
+            selectedAccount = mainTable.getSelectionModel().getSelectedItem();
+        }catch(NullPointerException e){
+            accountNameLabel.setText("You have no accounts");
+        }
+        }
 
     public static Account getSelectedAccount() {
         return selectedStaticAccount;
