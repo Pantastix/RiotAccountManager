@@ -17,7 +17,8 @@ import riot.account.manager.Util.ReadSavestate;
  */
 public class App extends Application {
 
-
+    //TODO: remove anchor pane from scrollpane
+    //TODO: Open first account on startup
 
     public static void main(String[] args){
         ReadSavestate.readSavestate();
@@ -37,7 +38,7 @@ public class App extends Application {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/MainView.fxml"));
             Scene scene = new Scene (fxmlLoader.load());
-            scene.getStylesheets().add(getClass().getResource("/MainViewStyle.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/Style.css").toExternalForm());
             primaryStage.setTitle("Riot Account Manager");
             primaryStage.setScene(scene);
             primaryStage.show();

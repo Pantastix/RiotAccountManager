@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.MainViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="653.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.MainViewController">
     <children>
         <VBox prefHeight="492.0" prefWidth="653.0">
             <children>
@@ -54,31 +54,27 @@
                         </ChoiceBox>
                         <ButtonBar prefHeight="22.0" prefWidth="127.0">
                      <buttons>
-                            <Button fx:id="addNewButton" mnemonicParsing="false" onAction="#addNewButtonPressed" prefHeight="27.0" prefWidth="110.0" text="Add New" />
+                            <Button id="newButton" fx:id="addNewButton" mnemonicParsing="false" onAction="#addNewButtonPressed" prefHeight="27.0" prefWidth="110.0" stylesheets="@Style.css" text="Add New" />
                      </buttons>
                         </ButtonBar>
                     </children>
                 </HBox>
-            <SplitPane dividerPositions="0.442225392296719" maxHeight="440.0" maxWidth="710.0" minHeight="434.0" minWidth="635.0" prefHeight="434.0" prefWidth="653.0">
+            <SplitPane dividerPositions="0.4745762711864407" maxHeight="434.0" maxWidth="653.0" minHeight="434.0" minWidth="635.0" prefHeight="434.0" prefWidth="653.0" VBox.vgrow="NEVER">
               <items>
-                <AnchorPane maxWidth="307.0" minHeight="0.0" minWidth="307.0" prefHeight="438.0" prefWidth="307.0">
-                     <children>
-                            <ScrollPane prefHeight="428.0" prefWidth="280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="437.0" prefWidth="292.0" AnchorPane.rightAnchor="0.0">
-                                        <children>
-                                            <TableView fx:id="mainTable" prefHeight="432.0" prefWidth="290.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                <columns>
-                                                    <TableColumn fx:id="accountColumn" prefWidth="202.0" text="Account" />
-                                                    <TableColumn fx:id="rankColumn" minWidth="0.0" prefWidth="88.0" text="Rank" />
-                                                </columns>
-                                            </TableView>
-                                        </children>
-                                    </AnchorPane>
-                                </content>
-                            </ScrollPane>
-                     </children>
-                  </AnchorPane>
+                      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="305.0" minWidth="305.0" prefHeight="430.0" prefWidth="305.0">
+                          <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="437.0" prefWidth="308.0" AnchorPane.rightAnchor="0.0">
+                                  <children>
+                                      <TableView fx:id="mainTable" prefHeight="439.0" prefWidth="307.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-16.0" AnchorPane.topAnchor="0.0">
+                                          <columns>
+                                              <TableColumn fx:id="accountColumn" prefWidth="204.0" text="Account" />
+                                              <TableColumn fx:id="rankColumn" minWidth="0.0" prefWidth="85.0" text="Rank" />
+                                          </columns>
+                                      </TableView>
+                                  </children>
+                              </AnchorPane>
+                          </content>
+                      </ScrollPane>
                 <AnchorPane fx:id="accountInfoAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="432.0" prefWidth="327.0">
                      <children>
                         <Label layoutX="14.0" layoutY="33.0" text="Account Name:">
@@ -86,7 +82,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label fx:id="accountNameLabel" layoutX="11.0" layoutY="75.0" prefHeight="30.0" prefWidth="307.0" text="[Name]" textAlignment="CENTER">
+                        <Label fx:id="accountNameLabel" layoutX="11.0" layoutY="75.0" prefHeight="32.0" prefWidth="307.0" text="[Name]" textAlignment="CENTER">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -119,7 +115,7 @@
                               <Button fx:id="changePasswordButton" mnemonicParsing="false" onAction="#changePasswordButtonPressed" prefHeight="34.0" text="Change Password" />
                            </buttons>
                         </ButtonBar>
-                        <ChoiceBox fx:id="changeRankChoiceBox" layoutX="11.0" layoutY="216.0" prefHeight="25.0" prefWidth="83.0" />
+                        <ChoiceBox fx:id="changeRankChoiceBox" layoutX="11.0" layoutY="216.0" prefHeight="25.0" prefWidth="101.0" />
                      </children></AnchorPane>
               </items>
             </SplitPane>

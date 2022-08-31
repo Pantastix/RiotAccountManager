@@ -231,7 +231,7 @@ public class MainViewController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/addNewAccountView.fxml"));
         Stage stage = new Stage();
         Scene scene =  new Scene (fxmlLoader.load());
-        scene.getStylesheets().add(getClass().getResource("/mainViewStyle.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/Style.css").toExternalForm());
         stage.setScene(scene);
 //        stage.getScene().getWindow().addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, this::closeWindowEvent);
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
@@ -271,7 +271,7 @@ public class MainViewController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/changePasswortView.fxml"));
         Stage stage = new Stage();
         Scene scene =  new Scene (fxmlLoader.load());
-        scene.getStylesheets().add(getClass().getResource("/mainViewStyle.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/Style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);

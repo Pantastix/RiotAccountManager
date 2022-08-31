@@ -1,0 +1,140 @@
+.root {
+    -fx-accent: #6a6a6e;
+    -fx-focus-color: -fx-accent;
+    -fx-base: #373e43;
+    -fx-control-inner-background: derive(-fx-base, 35%);
+    -fx-control-inner-background-alt: -fx-control-inner-background ;
+}
+
+.label{
+    -fx-text-fill: lightgray;
+}
+
+#accountNameLabel{
+    -fx-alignment: center;
+    -fx-border-color: -fx-accent;
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+}
+
+.text-field {
+    -fx-prompt-text-fill: gray;
+    -fx-background-radius: 999999;
+}
+
+.button{
+    -fx-focus-traversable: false;
+    -fx-background-radius: 999999;
+    -fx-background-insets: 0;
+}
+
+.choice-box{
+    -fx-focus-traversable: false;
+    -fx-background-radius: 999999;
+    -fx-background-insets: 0;
+}
+
+.scroll-bar{
+    -fx-background-color: transparent;
+    -fx-background-radius: 2em;
+}
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color:transparent;
+    -fx-background-radius: 2em;
+}
+.scroll-bar:vertical .track-background {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 2em;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #a6a2a2;
+    -fx-background-insets: 0 4 0 4;
+    -fx-background-radius: 2em;
+}
+
+
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: rgb(231,231,231);
+}
+
+.scroll-bar:vertical .thumb:pressed {
+    -fx-background-color: rgb(255,255,255);
+}
+.scroll-bar:vertical .increment-button, .scroll-bar:vertical .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 2em;
+    -fx-padding: 5;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: rgb(211,211,211);
+    -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+    -fx-padding: 0.25em;
+    -fx-rotate: -180;
+}
+.scroll-bar:vertical:focused{
+    -fx-background-color: transparent,rgb(96,96,96),rgb(96,96,96);
+}
+
+
+.table-view{
+    -fx-selection-bar-non-focused: derive(-fx-base, 50%);
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom, rgba(56, 54, 54, 0.27), rgba(178, 182, 178, 0.27));
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0;
+}
+
+.table-view .column-header .label{
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: none;
+}
+
+.list-cell:even,
+.list-cell:odd,
+.table-row-cell:even,
+.table-row-cell:odd{
+    -fx-control-inner-background: derive(-fx-base, 15%);
+}
+
+
+
+.list-cell:empty,
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+}
+
+.list-cell,
+.table-row-cell{
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color:transparent;
+}
+
+.split-pane{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-divider-location: 434;
+}
+
+.scroll-pane{
+    -fx-border-color: transparent;
+    -fx-divider-color: transparent;
+}
+
+.split-pane .split-pane-divider{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
