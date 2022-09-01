@@ -13,7 +13,7 @@ Version 1.0.0
 
 If you have a new version or want to transfer your save files, just cops the file from the json folder into your new Application.
 
-<ins>troubleshooting:</ins><br>
+<ins>Troubleshooting:</ins><br>
 
 in casethe following error occures:<br>
 "Error: A JNI error has occures. please check your installation and try again"<br>
