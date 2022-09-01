@@ -7,3 +7,4 @@ A managing tool to keep tracks of all your Riot-Accounts.
 in casethe following error occures:<br>
 "Error: A JNI error has occures. please check your installation and try again"<br>
 [Follow this tutorial for a fix](https://www.youtube.com/watch?v=cRgLuNWCq6c)
+(3min)
