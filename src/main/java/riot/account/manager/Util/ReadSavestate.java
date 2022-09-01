@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author Chris Simbeck
  */
 public class ReadSavestate {
-    private static String path = "src/main/resources/Json/SaveState.Json";
+    private static String path = "Json/SaveState.Json";
 
     public static void readSavestate(){
         ArrayList<String> accountNames = new ArrayList<>();
@@ -44,5 +44,4 @@ public class ReadSavestate {
         }
 
     }
-
 }

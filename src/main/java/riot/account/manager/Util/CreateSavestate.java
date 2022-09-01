@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * @author Chris Simbeck
  */
 public class CreateSavestate {
-    private static String path = "src/main/resources/Json/SaveState.Json";
+    private static String path = "Json/SaveState.Json";
     public static void createSavestate(){
         JSONObject json = new JSONObject();
         ArrayList<Account> accountList = AccountController.getAccountList();
