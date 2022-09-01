@@ -8,7 +8,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import riot.account.manager.Model.Account;
-import riot.account.manager.Model.Ranks;
+import riot.account.manager.Util.Ranks;
 
 /**
  * Controller for the add new account view.

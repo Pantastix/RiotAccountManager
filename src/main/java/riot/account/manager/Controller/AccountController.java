@@ -5,7 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
 import riot.account.manager.Model.Account;
-import riot.account.manager.Model.Ranks;
+import riot.account.manager.Util.Ranks;
 
 import java.util.ArrayList;
 import java.util.HashMap;
