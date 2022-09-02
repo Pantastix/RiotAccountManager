@@ -1,6 +1,6 @@
 # RiotAccountManager
 
-<ins><b>Description:</b></ins><br>
+#### Description:
 
 A managing tool to keep track of all your Riot-Accounts.
 

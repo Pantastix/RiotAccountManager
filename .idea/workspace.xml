@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="ui improvements">
+    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="Update README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -71,7 +71,7 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.riot.account.manager.Model.Main">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="riot.account.manager.Model.App" />
       <module name="RiotAccountManager" />
@@ -111,12 +111,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.riot.account.manager.Model.Main" />
-        <item itemvalue="Application.riot.account.manager.Model.App" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -138,7 +132,8 @@
       <workItem from="1662026523170" duration="652000" />
       <workItem from="1662062899993" duration="2349000" />
       <workItem from="1662068155896" duration="762000" />
-      <workItem from="1662119755102" duration="7066000" />
+      <workItem from="1662119755102" duration="7203000" />
+      <workItem from="1662130244608" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1661776537054</created>
@@ -224,7 +219,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662126529857</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Update README.md for new Release">
+      <created>1662126890393</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1662126890393</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Update README.md">
+      <created>1662126953292</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1662126953292</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +260,8 @@
     <MESSAGE value="public name support addet" />
     <MESSAGE value="edit account window addet" />
     <MESSAGE value="ui improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui improvements" />
+    <MESSAGE value="Update README.md for new Release" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
 </project>
