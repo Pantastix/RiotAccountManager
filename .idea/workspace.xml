@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="edit account window addet">
+    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="ui improvements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Json/SaveState.Json" beforeDir="false" afterPath="$PROJECT_DIR$/Json/SaveState.Json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,6 +60,7 @@
       <recent name="D:\Workspace\RiotAccountManager\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workspace\RiotAccountManager\Json" />
       <recent name="D:\Workspace\RiotAccountManager" />
       <recent name="D:\Workspace\RiotAccountManager\src\main\resources" />
     </key>
@@ -139,7 +138,7 @@
       <workItem from="1662026523170" duration="652000" />
       <workItem from="1662062899993" duration="2349000" />
       <workItem from="1662068155896" duration="762000" />
-      <workItem from="1662119755102" duration="6446000" />
+      <workItem from="1662119755102" duration="7066000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1661776537054</created>
@@ -211,7 +210,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662125685393</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ui improvements">
+      <created>1662126266704</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1662126266704</updated>
+    </task>
+    <task id="LOCAL-00012" summary="ui improvements">
+      <created>1662126529857</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1662126529857</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +250,7 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="public name support addet" />
     <MESSAGE value="edit account window addet" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit account window addet" />
+    <MESSAGE value="ui improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui improvements" />
   </component>
 </project>
