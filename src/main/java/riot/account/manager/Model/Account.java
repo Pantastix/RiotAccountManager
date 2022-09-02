@@ -84,7 +84,9 @@ public class Account {
     }
 
     public StringProperty getUserNameProperty() {
-        return new SimpleStringProperty(this.userName);
+        String out;
+        out = this.publicName+" "+this.tag;
+        return new SimpleStringProperty(out);
     }
 
     public StringProperty getUserValorantRankProperty() {
