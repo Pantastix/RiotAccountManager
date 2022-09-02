@@ -114,7 +114,7 @@
                         <ButtonBar buttonOrder="U+" layoutX="19.0" layoutY="378.0" prefHeight="40.0" prefWidth="292.0">
                            <buttons>
                                   <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonPressed" prefHeight="35.0" prefWidth="137.0" text="Delete" />
-                              <Button fx:id="changePasswordButton" mnemonicParsing="false" onAction="#changePasswordButtonPressed" prefHeight="34.0" text="Change Password" />
+                              <Button fx:id="editAccountButton" mnemonicParsing="false" onAction="#changePasswordButtonPressed" prefHeight="34.0" text="Edit Account" />
                            </buttons>
                         </ButtonBar>
                         <ChoiceBox fx:id="changeRankChoiceBox" layoutX="11.0" layoutY="216.0" prefHeight="25.0" prefWidth="101.0" />

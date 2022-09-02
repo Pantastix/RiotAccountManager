@@ -167,3 +167,7 @@
 #accountSavedLabel{
     -fx-text-fill: #18ff00;
 }
+#headder{
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+}

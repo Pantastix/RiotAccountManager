@@ -43,7 +43,7 @@ public class MainViewController {
     public Button copyPasswordButton;
 
     @FXML
-    public Button changePasswordButton;
+    public Button editAccountButton;
 
     @FXML
     public ImageView rankImage;
