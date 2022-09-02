@@ -72,7 +72,7 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.riot.account.manager.Model.App">
+  <component name="RunManager" selected="Application.riot.account.manager.Model.Main">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="riot.account.manager.Model.App" />
       <module name="RiotAccountManager" />
@@ -114,8 +114,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.riot.account.manager.Model.App" />
         <item itemvalue="Application.riot.account.manager.Model.Main" />
+        <item itemvalue="Application.riot.account.manager.Model.App" />
       </list>
     </recent_temporary>
   </component>
