@@ -18,7 +18,10 @@ import riot.account.manager.Util.ReadSavestate;
 public class App extends Application {
 
 
-    //TODO: Open first account on startup
+    //TODO: add ingame names
+    //TODO: add * for needet fields
+    //TODO: list accounts witrh public names+tag
+    //TODO: add change tag and ingame name window (edit account window)
 
 
     public static void main(String[] args){

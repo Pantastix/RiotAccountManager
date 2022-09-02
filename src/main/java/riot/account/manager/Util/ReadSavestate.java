@@ -35,12 +35,13 @@ public class ReadSavestate {
         for (String name : accountNames){
             grabber = (JSONArray) json.get(name);
             String userName = (String) grabber.get(0);
-            String userTag = (String) grabber.get(1);
-            String userValorantRank = (String) grabber.get(2);
-            String userLeagueRank = (String) grabber.get(3);
-            String userPasswort = (String) grabber.get(4);
-            boolean userIsAvailable = (boolean) grabber.get(5);
-            Account account = new Account(userName,userTag,userValorantRank,userLeagueRank,userPasswort,userIsAvailable);
+            String publicName = (String) grabber.get(1);
+            String userTag = (String) grabber.get(2);
+            String userValorantRank = (String) grabber.get(3);
+            String userLeagueRank = (String) grabber.get(4);
+            String userPasswort = (String) grabber.get(5);
+            boolean userIsAvailable = (boolean) grabber.get(6);
+            Account account = new Account(userName,publicName,userTag,userValorantRank,userLeagueRank,userPasswort,userIsAvailable);
         }
 
     }

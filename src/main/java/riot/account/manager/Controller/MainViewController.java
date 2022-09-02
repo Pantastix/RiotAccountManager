@@ -77,6 +77,8 @@ public class MainViewController {
     @FXML
     public Label accountNameLabel;
 
+    @FXML
+    public Label loginNameLabel;
     private Account selectedAccount;
     private static Account selectedStaticAccount;
 
@@ -253,7 +255,7 @@ public class MainViewController {
      */
     @FXML
     void changePasswordButtonPressed(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/changePasswortView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/EditAccountView.fxml"));
         Stage stage = new Stage();
         Scene scene =  new Scene (fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("/Style.css").toExternalForm());
@@ -292,7 +294,14 @@ public class MainViewController {
      * @param account
      */
     private void openAccountWindow(Account account) {
-        accountNameLabel.setText(account.getUserName()+" "+account.getTag());
+        if(account.getPublicName().equals(account.getUserName())){
+            loginNameLabel.setVisible(false);
+            accountNameLabel.setText(account.getUserName());
+        }else {
+            loginNameLabel.setVisible(true);
+            loginNameLabel.setText(account.getUserName());
+            accountNameLabel.setText(account.getPublicName() + " " + account.getTag());
+        }
         accountUsableCheckBox.setSelected(account.isAvailable());
         if(gameChoiceBox.getSelectionModel().getSelectedItem().equals("Valorant")) {
             changeRankChoiceBox.setValue(account.getUserValorantRank());

@@ -34,6 +34,7 @@ public class CreateSavestate {
             JSONArray accountArray = new JSONArray();
             try {
                 accountArray.put(account.getUserName());
+                accountArray.put(account.getPublicName());
                 accountArray.put(account.getTag());
                 accountArray.put(account.getUserValorantRank());
                 accountArray.put(account.getUserLeagueRank());

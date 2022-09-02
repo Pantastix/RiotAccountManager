@@ -17,6 +17,12 @@
     -fx-font-size: 25px;
 }
 
+#loginNameLabel{
+    -fx-alignment: center;
+    -fx-border-color: -fx-accent;
+    -fx-font-weight: bold;
+}
+
 .text-field {
     -fx-prompt-text-fill: gray;
     -fx-background-radius: 999999;
@@ -153,4 +159,11 @@
 .split-pane .split-pane-divider{
     -fx-background-color: transparent;
     -fx-border-color: transparent;
+}
+
+#errorLabel{
+    -fx-text-fill: red;
+}
+#accountSavedLabel{
+    -fx-text-fill: #18ff00;
 }

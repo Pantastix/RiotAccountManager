@@ -13,7 +13,7 @@ import javafx.stage.Stage;
  * @author Chris Simbeck
  */
 
-public class changePasswortViewController {
+public class EditAccountViewController {
 
 
     @FXML

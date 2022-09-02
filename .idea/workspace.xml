@@ -9,31 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="restyling, Ui-Improvement">
+    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json/SaveState.Json" beforeDir="false" afterPath="$PROJECT_DIR$/Json/SaveState.Json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/addNewAccountViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/addNewAccountViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Ranks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/Ranks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/League_rank_pictures/Bronze.png" beforeDir="false" afterPath="$PROJECT_DIR$/League_rank_pictures/Bronze.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/League_rank_pictures/Challenger.png" beforeDir="false" afterPath="$PROJECT_DIR$/League_rank_pictures/Challenger.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/League_rank_pictures/Diamond.png" beforeDir="false" afterPath="$PROJECT_DIR$/League_rank_pictures/Diamond.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/League_rank_pictures/Gold.png" beforeDir="false" afterPath="$PROJECT_DIR$/League_rank_pictures/Gold.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/League_rank_pictures/Grandmaster.png" beforeDir="false" afterPath="$PROJECT_DIR$/League_rank_pictures/Grandmaster.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/League_rank_pictures/Iron.png" beforeDir="false" afterPath="$PROJECT_DIR$/League_rank_pictures/Iron.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/League_rank_pictures/Master.png" beforeDir="false" afterPath="$PROJECT_DIR$/League_rank_pictures/Master.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/League_rank_pictures/Platinum.png" beforeDir="false" afterPath="$PROJECT_DIR$/League_rank_pictures/Platinum.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/League_rank_pictures/Silver.png" beforeDir="false" afterPath="$PROJECT_DIR$/League_rank_pictures/Silver.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/CreateSavestate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/CreateSavestate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/Ranks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/Ranks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/ReadSavestate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/ReadSavestate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Valorant_rank_pictures/Ascendant.png" beforeDir="false" afterPath="$PROJECT_DIR$/Valorant_rank_pictures/Ascendant.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Valorant_rank_pictures/Bronze.png" beforeDir="false" afterPath="$PROJECT_DIR$/Valorant_rank_pictures/Bronze.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Valorant_rank_pictures/Diamond.png" beforeDir="false" afterPath="$PROJECT_DIR$/Valorant_rank_pictures/Diamond.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Valorant_rank_pictures/Gold.png" beforeDir="false" afterPath="$PROJECT_DIR$/Valorant_rank_pictures/Gold.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Valorant_rank_pictures/Immortal.png" beforeDir="false" afterPath="$PROJECT_DIR$/Valorant_rank_pictures/Immortal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Valorant_rank_pictures/Iron.png" beforeDir="false" afterPath="$PROJECT_DIR$/Valorant_rank_pictures/Iron.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Valorant_rank_pictures/Platinum.png" beforeDir="false" afterPath="$PROJECT_DIR$/Valorant_rank_pictures/Platinum.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Valorant_rank_pictures/Radiant.png" beforeDir="false" afterPath="$PROJECT_DIR$/Valorant_rank_pictures/Radiant.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Valorant_rank_pictures/Silver.png" beforeDir="false" afterPath="$PROJECT_DIR$/Valorant_rank_pictures/Silver.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/addNewAccountView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/addNewAccountView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +73,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Workspace\RiotAccountManager" />
+      <recent name="D:\Workspace\RiotAccountManager\src\main\resources" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -91,21 +82,8 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.riot.account.manager.Model.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="riot.account.manager.Main" />
-      <module name="RiotAccountManager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="riot.account.manager.Controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="riot.account.manager.Model.App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.riot.account.manager.Model.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="riot.account.manager.Model.App" />
       <module name="RiotAccountManager" />
       <extension name="coverage">
@@ -118,8 +96,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="riot.account.manager.Model.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="riot.account.manager.Model.Main" />
+      <module name="RiotAccountManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="riot.account.manager.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="riot.account.manager.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="riot.account.manager.Main" />
       <module name="RiotAccountManager" />
       <extension name="coverage">
         <pattern>
@@ -133,6 +124,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.riot.account.manager.Model.App" />
         <item itemvalue="Application.riot.account.manager.Model.Main" />
       </list>
     </recent_temporary>
@@ -155,7 +147,9 @@
       <workItem from="1661973793083" duration="23000" />
       <workItem from="1661981595106" duration="2231000" />
       <workItem from="1662026523170" duration="652000" />
-      <workItem from="1662062899993" duration="1730000" />
+      <workItem from="1662062899993" duration="2349000" />
+      <workItem from="1662068155896" duration="762000" />
+      <workItem from="1662119755102" duration="4801000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1661776537054</created>
@@ -206,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661983824237</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactor">
+      <created>1662064656233</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1662064656233</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,10 +227,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="import,all files" />
-    <MESSAGE value="refactor" />
     <MESSAGE value="UI improvements" />
     <MESSAGE value="restyling" />
     <MESSAGE value="restyling, Ui-Improvement" />
-    <option name="LAST_COMMIT_MESSAGE" value="restyling, Ui-Improvement" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
 </project>

@@ -1,12 +1,14 @@
 package riot.account.manager.Controller;
 
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.util.Duration;
 import riot.account.manager.Model.Account;
 import riot.account.manager.Util.Ranks;
 
@@ -19,8 +21,15 @@ public class addNewAccountViewController {
 
     @FXML
     public Label errorLabel;
+
     @FXML
-    private TextField nameTextField;
+    public Label accountSavedLabel;
+
+    @FXML
+    private TextField loginNameTextField;
+
+    @FXML
+    private TextField publicNameTextField;
 
     @FXML
     private TextField passwordTextField;
@@ -34,7 +43,8 @@ public class addNewAccountViewController {
     @FXML
     private Button saveButton;
 
-    @FXML TextField tagTextField;
+    @FXML
+    TextField tagTextField;
 
     /**
      * Initializes the controller class. This method is automatically called after the fxml file has been loaded.
@@ -53,14 +63,38 @@ public class addNewAccountViewController {
     /**
      * This method is called when the save button is clicked.
      * saves the new account to the account list
+     *
      * @param event
      */
     @FXML
     void saveButtonPressed(ActionEvent event) {
-        if (nameTextField.getText().isEmpty() || passwordTextField.getText().isEmpty()) {
-            errorLabel.setText("Please fill in all fields");
+        if (loginNameTextField.getText().isEmpty() || passwordTextField.getText().isEmpty()) {
+            errorLabel.setText("Please fill in all fields with a *");
+            FadeTransition ft = new FadeTransition(Duration.millis(3000), errorLabel);
+            ft.setFromValue(1.0);
+            ft.setToValue(0);
+
+            ft.play();
         } else {
-            new Account(nameTextField.getText(), tagTextField.getText(), valoRankChoiceBox.getValue(),leagueRankChoiceBox.getValue(), passwordTextField.getText());
+            if(publicNameTextField.getText().isEmpty()){
+                new Account(loginNameTextField.getText(), loginNameTextField.getText(),tagTextField.getText(), valoRankChoiceBox.getValue(), leagueRankChoiceBox.getValue(), passwordTextField.getText());
+            } else{
+                new Account(loginNameTextField.getText(), publicNameTextField.getText(),tagTextField.getText(), valoRankChoiceBox.getValue(), leagueRankChoiceBox.getValue(), passwordTextField.getText());
+            }
+
+            accountSavedLabel.setText("Account saved");
+            FadeTransition ft = new FadeTransition(Duration.millis(3000), accountSavedLabel);
+            ft.setFromValue(1.0);
+            ft.setToValue(0);
+
+            ft.play();
+
+            loginNameTextField.setText("");
+            publicNameTextField.setText("");
+            passwordTextField.setText("");
+            tagTextField.setText("");
+            valoRankChoiceBox.setValue("none");
+            leagueRankChoiceBox.setValue("none");
         }
     }
 

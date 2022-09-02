@@ -13,14 +13,16 @@ import riot.account.manager.Controller.AccountController;
 public class Account {
 
     private String userName;
+    private String publicName;
     private String valorantRank;
     private String leagueRank;
     private boolean available;
     private String password;
     private String tag;
 
-    public Account(String userName, String tag, String valorantRank,String leagueRank, String password) {
+    public Account(String userName,String publicName, String tag, String valorantRank,String leagueRank, String password) {
         this.userName = userName;
+        this.publicName = publicName;
         this.tag = tag;
         this.valorantRank = valorantRank;
         this.leagueRank = leagueRank;
@@ -28,8 +30,9 @@ public class Account {
         this.available = true;
         AccountController.addAccount(userName, this);
     }
-    public Account(String userName, String tag,  String valorantRank,String leagueRank, String password, Boolean isAvailable) {
+    public Account(String userName,String publicName ,String tag,  String valorantRank,String leagueRank, String password, Boolean isAvailable) {
         this.userName = userName;
+        this.publicName = publicName;
         this.tag = tag;
         this.valorantRank = valorantRank;
         this.leagueRank = leagueRank;
@@ -76,6 +79,10 @@ public class Account {
         return tag;
     }
 
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
     public StringProperty getUserNameProperty() {
         return new SimpleStringProperty(this.userName);
     }
@@ -85,5 +92,13 @@ public class Account {
     }
     public StringProperty getUserLeagueRankProperty() {
         return new SimpleStringProperty(this.leagueRank);
+    }
+
+    public String getPublicName() {
+        return this.publicName;
+    }
+
+    public void setPublicName(String publicName) {
+        this.publicName = publicName;
     }
 }
