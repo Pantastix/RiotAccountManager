@@ -24,7 +24,7 @@ public class ReadSavestate {
         JSONParser parser = new JSONParser();
         JSONObject json = new JSONObject();
 
-        json = (JSONObject) parser.parse(new FileReader(STATICS.jsonPath));
+        json = (JSONObject) parser.parse(new FileReader(STATICS.JSONPATH));
         JSONArray grabber = (JSONArray) json.get("accountnames");
         for(int i = 0; i < grabber.size(); i++){
             accountNames.add(grabber.get(i).toString());

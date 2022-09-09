@@ -43,7 +43,7 @@ public class CreateSavestate {
             json.put(account.getUserName(), accountArray);
         }
 
-        try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.jsonPath))) {
+        try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.JSONPATH))) {
             out.write(json.toString());
         } catch (Exception e) {
             e.printStackTrace();
@@ -77,7 +77,7 @@ public class CreateSavestate {
         json.put("ExampleAccount", accountArray);
 
 
-        try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.jsonPath))) {
+        try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.JSONPATH))) {
             out.write(json.toString());
         } catch (Exception e) {
             e.printStackTrace();

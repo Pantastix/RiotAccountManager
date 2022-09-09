@@ -25,7 +25,9 @@ public class App extends Application {
     //TODO: json verschlüsseln
     //TODO: missing json bug umgehen (neue erstellen und meldung anzeigen mit option ja oder schließen)
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
+
+
         try {
             ReadSavestate.readSavestate();
         }catch(FileNotFoundException e1) {
@@ -53,6 +55,8 @@ public class App extends Application {
      */
     @Override
     public void start(Stage primaryStage){
+        Updater.updaterThread.start();
+
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/MainView.fxml"));
             Scene scene = new Scene (fxmlLoader.load());
@@ -65,6 +69,12 @@ public class App extends Application {
                 @Override
                 public void handle(WindowEvent e) {
                     CreateSavestate.createSavestate();
+                    primaryStage.setIconified(true);
+                    try {
+                        Updater.updaterThread.join();
+                    } catch (InterruptedException ex) {
+                        throw new RuntimeException(ex);
+                    }
                 }
             });
 
