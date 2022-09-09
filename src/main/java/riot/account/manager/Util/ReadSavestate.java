@@ -4,9 +4,12 @@ package riot.account.manager.Util;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import riot.account.manager.Model.Account;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -17,17 +20,13 @@ import java.util.ArrayList;
 public class ReadSavestate {
     private static String path = "Json/SaveState.Json";
 
-    public static void readSavestate(){
+    public static void readSavestate() throws IOException, ParseException {
         ArrayList<String> accountNames = new ArrayList<>();
 
         JSONParser parser = new JSONParser();
         JSONObject json = new JSONObject();
 
-        try {
-            json = (JSONObject) parser.parse(new FileReader(path));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        json = (JSONObject) parser.parse(new FileReader(path));
         JSONArray grabber = (JSONArray) json.get("accountnames");
         for(int i = 0; i < grabber.size(); i++){
             accountNames.add(grabber.get(i).toString());
@@ -41,7 +40,7 @@ public class ReadSavestate {
             String userLeagueRank = (String) grabber.get(4);
             String userPasswort = (String) grabber.get(5);
             boolean userIsAvailable = (boolean) grabber.get(6);
-            Account account = new Account(userName,publicName,userTag,userValorantRank,userLeagueRank,userPasswort,userIsAvailable);
+            new Account(userName,publicName,userTag,userValorantRank,userLeagueRank,userPasswort,userIsAvailable);
         }
 
     }

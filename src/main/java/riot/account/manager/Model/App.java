@@ -7,8 +7,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import org.json.simple.parser.ParseException;
 import riot.account.manager.Util.CreateSavestate;
 import riot.account.manager.Util.ReadSavestate;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * Main class of the project
@@ -17,8 +21,25 @@ import riot.account.manager.Util.ReadSavestate;
  */
 public class App extends Application {
 
-    public static void main(String[] args){
-        ReadSavestate.readSavestate();
+    //TODO: readme.md verbessern (image)
+    //TODO: json verschlüsseln
+    //TODO: missing json bug umgehen (neue erstellen und meldung anzeigen mit option ja oder schließen)
+
+    public static void main(String[] args) {
+        try {
+            ReadSavestate.readSavestate();
+        }catch(FileNotFoundException e1) {
+            CreateSavestate.createNewSavestate();
+            try {
+                ReadSavestate.readSavestate();
+            }catch(IOException | ParseException e2){
+                System.out.println("fail");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
         launch(args);
     }
 

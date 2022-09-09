@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import riot.account.manager.Controller.AccountController;
 import riot.account.manager.Model.Account;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -17,20 +18,17 @@ import java.util.ArrayList;
  */
 public class CreateSavestate {
     private static String path = "Json/SaveState.Json";
-    public static void createSavestate(){
+
+    public static void createSavestate() {
         JSONObject json = new JSONObject();
         ArrayList<Account> accountList = AccountController.getAccountList();
         JSONArray accountNames = new JSONArray();
-        for(Account account : accountList){
+        for (Account account : accountList) {
             accountNames.put(account.getUserName());
         }
-        json.put("accountnames",accountNames);
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        for(Account account : accountList){
+        json.put("accountnames", accountNames);
+
+        for (Account account : accountList) {
             JSONArray accountArray = new JSONArray();
             try {
                 accountArray.put(account.getUserName());
@@ -43,8 +41,42 @@ public class CreateSavestate {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            json.put(account.getUserName(),accountArray);
+            json.put(account.getUserName(), accountArray);
         }
+
+        try (PrintWriter out = new PrintWriter(new FileWriter(path))) {
+            out.write(json.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createNewSavestate() {
+
+        File dir = new File("Json");
+        if (!dir.exists()){
+            dir.mkdirs();
+        }
+
+        JSONObject json = new JSONObject();
+        ArrayList<Account> accountList = AccountController.getAccountList();
+        JSONArray accountNames = new JSONArray();
+        accountNames.put("ExampleAccount");
+        json.put("accountnames", accountNames);
+        JSONArray accountArray = new JSONArray();
+        try {
+            accountArray.put("ExampleAccount");
+            accountArray.put("Example");
+            accountArray.put("#1234");
+            accountArray.put("Immortal");
+            accountArray.put("Challenger");
+            accountArray.put("Password1234");
+            accountArray.put(false);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        json.put("ExampleAccount", accountArray);
+
 
         try (PrintWriter out = new PrintWriter(new FileWriter(path))) {
             out.write(json.toString());
