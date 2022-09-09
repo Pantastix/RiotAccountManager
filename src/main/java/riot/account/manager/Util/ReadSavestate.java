@@ -7,7 +7,6 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import riot.account.manager.Model.Account;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,7 +17,6 @@ import java.util.ArrayList;
  * @author Chris Simbeck
  */
 public class ReadSavestate {
-    private static String path = "Json/SaveState.Json";
 
     public static void readSavestate() throws IOException, ParseException {
         ArrayList<String> accountNames = new ArrayList<>();
@@ -26,7 +24,7 @@ public class ReadSavestate {
         JSONParser parser = new JSONParser();
         JSONObject json = new JSONObject();
 
-        json = (JSONObject) parser.parse(new FileReader(path));
+        json = (JSONObject) parser.parse(new FileReader(STATICS.jsonPath));
         JSONArray grabber = (JSONArray) json.get("accountnames");
         for(int i = 0; i < grabber.size(); i++){
             accountNames.add(grabber.get(i).toString());

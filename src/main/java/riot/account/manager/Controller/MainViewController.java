@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import riot.account.manager.Model.Account;
 import riot.account.manager.Util.Ranks;
+import riot.account.manager.Util.STATICS;
 
 import java.io.IOException;
 
@@ -79,6 +80,9 @@ public class MainViewController {
 
     @FXML
     public Label loginNameLabel;
+
+    @FXML
+    public Label versionLabel;
     private Account selectedAccount;
     private static Account selectedStaticAccount;
 
@@ -343,6 +347,7 @@ public class MainViewController {
         changeRankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
         rankChoiceBox.setValue("all Ranks");
         gameChoiceBox.setValue("Valorant");
+        versionLabel.setText("v. " + STATICS.VERSION);
         try {
             mainTable.getSelectionModel().selectFirst();
             openAccountWindow(mainTable.getSelectionModel().getSelectedItem());

@@ -17,7 +17,6 @@ import java.util.ArrayList;
  * @author Chris Simbeck
  */
 public class CreateSavestate {
-    private static String path = "Json/SaveState.Json";
 
     public static void createSavestate() {
         JSONObject json = new JSONObject();
@@ -44,7 +43,7 @@ public class CreateSavestate {
             json.put(account.getUserName(), accountArray);
         }
 
-        try (PrintWriter out = new PrintWriter(new FileWriter(path))) {
+        try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.jsonPath))) {
             out.write(json.toString());
         } catch (Exception e) {
             e.printStackTrace();
@@ -78,7 +77,7 @@ public class CreateSavestate {
         json.put("ExampleAccount", accountArray);
 
 
-        try (PrintWriter out = new PrintWriter(new FileWriter(path))) {
+        try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.jsonPath))) {
             out.write(json.toString());
         } catch (Exception e) {
             e.printStackTrace();

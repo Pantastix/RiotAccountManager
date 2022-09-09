@@ -8,10 +8,10 @@ A managing tool to keep track of all your Riot-Accounts.
 
 ## Installation
 
-Version 1.0.0
-[Download](https://github.com/Pantastix/RiotAccountManager/releases/download/v1.0.0/RiotAccountManager.rar)<br>
 Version 1.1.0
-[Downlaod](https://github.com/Pantastix/RiotAccountManager/releases/download/v.1.1.0/RiotAccountManager.rar)
+[Downlaod](https://github.com/Pantastix/RiotAccountManager/releases/download/v.1.1.0/RiotAccountManager.rar) (newest)<br>
+Version 1.0.0
+[Download](https://github.com/Pantastix/RiotAccountManager/releases/download/v1.0.0/RiotAccountManager.rar)
 
 ## Updates
 
