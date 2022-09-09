@@ -3,7 +3,7 @@ module riot.account.manager {
     requires javafx.fxml;
     requires org.json;
     requires json.simple;
-
+    requires java.desktop;
 
 
     exports riot.account.manager.Controller;

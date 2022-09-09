@@ -37,4 +37,13 @@ public class Ranks {
         return leagueRanks;
     }
 
+    public static boolean isAvailable() {
+        File league = new File(leaguePath);
+        File valo = new File(valorantPath);
+        if(valo.exists() && league.exists()){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

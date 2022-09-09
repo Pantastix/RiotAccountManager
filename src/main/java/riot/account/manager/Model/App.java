@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import org.json.simple.parser.ParseException;
 import riot.account.manager.Util.CreateSavestate;
+import riot.account.manager.Util.Ranks;
 import riot.account.manager.Util.ReadSavestate;
 
 import java.io.FileNotFoundException;
@@ -25,22 +26,26 @@ public class App extends Application {
     //TODO: json verschlüsseln
     //TODO: missing json bug umgehen (neue erstellen und meldung anzeigen mit option ja oder schließen)
 
-    public static void main(String[] args){
+    static boolean ranks = false;
+
+    public static void main(String[] args) {
 
 
         try {
             ReadSavestate.readSavestate();
-        }catch(FileNotFoundException e1) {
+        } catch (FileNotFoundException e1) {
             CreateSavestate.createNewSavestate();
             try {
                 ReadSavestate.readSavestate();
-            }catch(IOException | ParseException e2){
-                System.out.println("fail");
+            } catch (IOException | ParseException e2) {
+                e2.printStackTrace();
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+
+        if (Ranks.isAvailable()) {
+            ranks = true;
         }
         launch(args);
     }
@@ -49,17 +54,22 @@ public class App extends Application {
     /**
      * The start function is the main function of the program. It is responsible for
      * loading all of the other classes and setting up all of their connections.
-
      *
      * @param primaryStage Get the stage of the application
      */
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
         Updater.updaterThread.start();
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/MainView.fxml"));
-            Scene scene = new Scene (fxmlLoader.load());
+            Scene scene;
+            if (ranks) {
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/MainView.fxml"));
+                scene = new Scene(fxmlLoader.load());
+            }else{
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/MissingFilesView.fxml"));
+                scene = new Scene(fxmlLoader.load());
+            }
             scene.getStylesheets().add(getClass().getResource("/Style.css").toExternalForm());
             primaryStage.setTitle("Riot Account Manager");
             primaryStage.setScene(scene);
@@ -78,7 +88,7 @@ public class App extends Application {
                 }
             });
 
-        }catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

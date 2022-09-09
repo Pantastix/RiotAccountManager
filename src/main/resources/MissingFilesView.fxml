@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="287.0" prefWidth="311.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.MissingFilesView">
+   <children>
+      <Label fx:id="errorLabel" layoutX="129.0" layoutY="14.0" text="Error" textFill="RED">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="50.0" text="There are some files missing, to run the Programm." />
+      <Label layoutX="18.0" layoutY="91.0" prefHeight="52.0" prefWidth="284.0" text="Please put the Valorant_rank_pictures folder and the League_rank_pictures Folder next to the RiotAccountManager.jar" wrapText="true" />
+      <Label layoutX="14.0" layoutY="166.0" prefHeight="36.0" prefWidth="284.0" text="if you dont have them anymore please downlaod them here:" wrapText="true" />
+      <Hyperlink fx:id="link" layoutX="14.0" layoutY="212.0" onAction="#openLink" prefHeight="61.0" prefWidth="284.0" text="https://github.com/Pantastix/RiotAccountManager" wrapText="true" />
+   </children>
+</AnchorPane>

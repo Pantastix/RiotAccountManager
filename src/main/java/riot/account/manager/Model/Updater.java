@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -22,7 +21,7 @@ public class Updater {
         InputStream in = null;
         try {
             try {
-                in = new URL(STATICS.CHECKURL).openStream();
+                new URL(STATICS.CHECKURL).openStream();
             }catch(FileNotFoundException e){
                 in = new URL(STATICS.DOWNLOADURL).openStream();
                 Files.copy(in, Paths.get("RiotAccountManager.jar"), StandardCopyOption.REPLACE_EXISTING);

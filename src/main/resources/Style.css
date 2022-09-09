@@ -171,3 +171,7 @@
     -fx-alignment: center;
     -fx-font-weight: bold;
 }
+
+.hyperlink{
+    -fx-text-fill: #5f63ff;
+}
