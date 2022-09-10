@@ -16,7 +16,7 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import riot.account.manager.Model.Account;
+import riot.account.manager.Core.Account;
 import riot.account.manager.Util.Ranks;
 import riot.account.manager.Util.STATICS;
 

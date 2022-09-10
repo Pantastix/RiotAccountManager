@@ -23,9 +23,14 @@ public class Ranks {
         FileInputStream inputStream;
         File file;
         if(game.equals("Valorant")){
-            inputStream = new FileInputStream(valorantPath + rank + "_3.png");
+            if(rank.equals("Radiant")) {
+                inputStream = new FileInputStream(valorantPath + rank + ".png");
+            }else{
+                inputStream = new FileInputStream(valorantPath + rank + "_3.png");
+            }
+
         } else {
-            inputStream = new FileInputStream(leaguePath + rank + ".png");
+            inputStream = new FileInputStream(leaguePath + rank + "_3.png");
         }
         return new Image(inputStream);
     }

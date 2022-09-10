@@ -1,4 +1,4 @@
-package riot.account.manager.Model;
+package riot.account.manager.Core;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

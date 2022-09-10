@@ -4,13 +4,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import riot.account.manager.Controller.AccountController;
-import riot.account.manager.Model.Account;
+import riot.account.manager.Core.Account;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * Creates the save-state of the current loaded accounts
@@ -24,24 +23,24 @@ public class CreateSavestate {
         ArrayList<Account> accountList = AccountController.getAccountList();
         JSONArray accountNames = new JSONArray();
         for (Account account : accountList) {
-            accountNames.put(account.getUserName());
+            accountNames.put(AES.encrypt(account.getUserName(), SECRETS.getKey()));
         }
-        json.put("accountnames", accountNames);
+        json.put(AES.encrypt("accountnames", SECRETS.getKey()), accountNames);
 
         for (Account account : accountList) {
             JSONArray accountArray = new JSONArray();
             try {
-                accountArray.put(account.getUserName());
-                accountArray.put(account.getPublicName());
-                accountArray.put(account.getTag());
-                accountArray.put(account.getUserValorantRank());
-                accountArray.put(account.getUserLeagueRank());
-                accountArray.put(account.getPassword());
-                accountArray.put(account.isAvailable());
+                accountArray.put(AES.encrypt(account.getUserName(), SECRETS.getKey()));
+                accountArray.put(AES.encrypt(account.getPublicName(), SECRETS.getKey()));
+                accountArray.put(AES.encrypt(account.getTag(), SECRETS.getKey()));
+                accountArray.put(AES.encrypt(account.getUserValorantRank(), SECRETS.getKey()));
+                accountArray.put(AES.encrypt(account.getUserLeagueRank(), SECRETS.getKey()));
+                accountArray.put(AES.encrypt(account.getPassword(), SECRETS.getKey()));
+                accountArray.put(AES.encrypt(String.valueOf(account.isAvailable()), SECRETS.getKey()));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            json.put(account.getUserName(), accountArray);
+            json.put(AES.encrypt(account.getUserName(), SECRETS.getKey()), accountArray);
         }
 
         try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.JSONPATH))) {
@@ -61,28 +60,28 @@ public class CreateSavestate {
         JSONObject json = new JSONObject();
         ArrayList<Account> accountList = AccountController.getAccountList();
         JSONArray accountNames = new JSONArray();
-        accountNames.put("ExampleAccount");
-        json.put("accountnames", accountNames);
+        accountNames.put(AES.encrypt("ExampleAccount", SECRETS.getKey()));
+        json.put(AES.encrypt("accountnames", SECRETS.getKey()), accountNames);
         JSONArray accountArray = new JSONArray();
         try {
-            accountArray.put("ExampleAccount");
-            accountArray.put("Example");
-            accountArray.put("#1234");
-            accountArray.put("Immortal");
-            accountArray.put("Challenger");
-            accountArray.put("Password1234");
-            accountArray.put(false);
+            accountArray.put(AES.encrypt("ExampleAccount", SECRETS.getKey()));
+            accountArray.put(AES.encrypt("Example", SECRETS.getKey()));
+            accountArray.put(AES.encrypt("#1234", SECRETS.getKey()));
+            accountArray.put(AES.encrypt("Immortal", SECRETS.getKey()));
+            accountArray.put(AES.encrypt("Challenger", SECRETS.getKey()));
+            accountArray.put(AES.encrypt("Password1234", SECRETS.getKey()));
+            accountArray.put(AES.encrypt("false", SECRETS.getKey()));
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        json.put("ExampleAccount", accountArray);
+        json.put(AES.encrypt("ExampleAccount", SECRETS.getKey()), accountArray);
 
 
         try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.JSONPATH))) {
             String text = json.toString();
-            System.out.println(AES.encrypt(json.toString(), SECRETS.getToken()));
+            System.out.println(AES.encrypt(json.toString(), SECRETS.getKey()));
             System.out.println(text);
-            out.write(Objects.requireNonNull(AES.encrypt(json.toString(), SECRETS.getToken())));
+            out.write(json.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

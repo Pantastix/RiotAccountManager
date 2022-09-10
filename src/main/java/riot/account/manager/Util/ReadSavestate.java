@@ -5,7 +5,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import riot.account.manager.Model.Account;
+import riot.account.manager.Core.Account;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -24,29 +24,32 @@ public class ReadSavestate {
         JSONParser parser = new JSONParser();
         JSONObject json;
 
-        FileReader reader = new FileReader(STATICS.JSONPATH);
-        decryptSavestate(reader);
-
-        json = (JSONObject) parser.parse(reader);
-        JSONArray grabber = (JSONArray) json.get("accountnames");
+        json = (JSONObject) parser.parse(new FileReader(STATICS.JSONPATH));
+        JSONArray grabber = (JSONArray) json.get(AES.encrypt("accountnames", SECRETS.getKey()));
         for(int i = 0; i < grabber.size(); i++){
-            accountNames.add(grabber.get(i).toString());
+            accountNames.add(AES.decrypt(grabber.get(i).toString(), SECRETS.getKey()));
         }
+        System.out.println(accountNames);
+
         for (String name : accountNames){
-            grabber = (JSONArray) json.get(name);
-            String userName = (String) grabber.get(0);
-            String publicName = (String) grabber.get(1);
-            String userTag = (String) grabber.get(2);
-            String userValorantRank = (String) grabber.get(3);
-            String userLeagueRank = (String) grabber.get(4);
-            String userPasswort = (String) grabber.get(5);
-            boolean userIsAvailable = (boolean) grabber.get(6);
-            new Account(userName,publicName,userTag,userValorantRank,userLeagueRank,userPasswort,userIsAvailable);
+            grabber = (JSONArray) json.get(AES.encrypt(name, SECRETS.getKey()));
+            String userName = AES.decrypt((String) grabber.get(0), SECRETS.getKey());
+            String publicName = AES.decrypt((String) grabber.get(1), SECRETS.getKey());
+            String userTag = AES.decrypt((String) grabber.get(2), SECRETS.getKey());
+            String userValorantRank = AES.decrypt((String) grabber.get(3), SECRETS.getKey());
+            String userLeagueRank = AES.decrypt((String) grabber.get(4), SECRETS.getKey());
+            String userPasswort = AES.decrypt((String) grabber.get(5), SECRETS.getKey());
+            boolean userIsAvailable;
+            if(AES.decrypt((String) grabber.get(6), SECRETS.getKey()).equals("true")){
+                userIsAvailable = true;
+            } else {
+                userIsAvailable = false;
+            }
+
+            new Account(userName, publicName, userTag, userValorantRank, userLeagueRank, userPasswort, userIsAvailable);
+            }
+
         }
 
     }
 
-    private static void decryptSavestate(FileReader reader) {
-        String text = reader.toString();
-    }
-}

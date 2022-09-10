@@ -1,8 +1,7 @@
-package riot.account.manager.Model;
+package riot.account.manager.Core;
 
 import riot.account.manager.Util.STATICS;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;

@@ -9,24 +9,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="missing pictures error warning">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="new valorant rank pictures addet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Json/SaveState.Json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valorant_rank_pictures/Ascendant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valorant_rank_pictures/Bronze.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valorant_rank_pictures/Diamond.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valorant_rank_pictures/Gold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valorant_rank_pictures/Immortal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valorant_rank_pictures/Iron.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valorant_rank_pictures/Platinum.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valorant_rank_pictures/Radiant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valorant_rank_pictures/Silver.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Updater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/League_rank_pictures/Bronze.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/League_rank_pictures/Challenger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/League_rank_pictures/Diamond.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/League_rank_pictures/Gold.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/League_rank_pictures/Grandmaster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/League_rank_pictures/Iron.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/League_rank_pictures/Master.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/League_rank_pictures/Platinum.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/League_rank_pictures/Silver.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/addNewAccountViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/addNewAccountViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Core/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Core/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Core/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Core/Updater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/CreateSavestate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/CreateSavestate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/Ranks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/Ranks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/ReadSavestate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/ReadSavestate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +98,7 @@
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="liberica-18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="riot.account.manager.Model.App" />
+      <option name="MAIN_CLASS_NAME" value="riot.account.manager.Core.App" />
       <module name="RiotAccountManager" />
       <extension name="coverage">
         <pattern>
@@ -189,7 +196,8 @@
       <workItem from="1662753498849" duration="4810000" />
       <workItem from="1662795435540" duration="4925000" />
       <workItem from="1662807888283" duration="52000" />
-      <workItem from="1662810154530" duration="277000" />
+      <workItem from="1662810154530" duration="2755000" />
+      <workItem from="1662846965812" duration="1370000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1661776537054</created>
@@ -331,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662745201908</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="new valorant rank pictures addet">
+      <created>1662810528686</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1662810528686</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,6 +380,7 @@
     <MESSAGE value="update Version Tag" />
     <MESSAGE value="autoupdate" />
     <MESSAGE value="missing pictures error warning" />
-    <option name="LAST_COMMIT_MESSAGE" value="missing pictures error warning" />
+    <MESSAGE value="new valorant rank pictures addet" />
+    <option name="LAST_COMMIT_MESSAGE" value="new valorant rank pictures addet" />
   </component>
 </project>

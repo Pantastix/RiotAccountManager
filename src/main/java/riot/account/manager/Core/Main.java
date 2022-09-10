@@ -1,4 +1,4 @@
-package riot.account.manager.Model;
+package riot.account.manager.Core;
 
 public class Main {
     public static void main(String[] args) {

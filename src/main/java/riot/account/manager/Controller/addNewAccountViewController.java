@@ -9,7 +9,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.util.Duration;
-import riot.account.manager.Model.Account;
+import riot.account.manager.Core.Account;
 import riot.account.manager.Util.Ranks;
 
 /**
