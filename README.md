@@ -21,6 +21,9 @@ If you have a new version or want to transfer your save files, just copy the fil
 
 in case the following error occures:<br>
 <em>"Error: A JNI error has occured. please check your installation and try again"</em><br>
+
+
+
 [Follow this tutorial for a fix](https://www.youtube.com/watch?v=cRgLuNWCq6c)
 (3min)
 

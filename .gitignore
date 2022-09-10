@@ -1,6 +1,9 @@
 target/
-Json/
+Json/SaveState.Json
 .gitignore
+*/Encrypting.java
+*/SECRETS.java
+*/Test/*
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

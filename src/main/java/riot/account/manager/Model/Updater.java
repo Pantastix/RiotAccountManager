@@ -24,6 +24,7 @@ public class Updater {
                 new URL(STATICS.CHECKURL).openStream();
             }catch(FileNotFoundException e){
                 in = new URL(STATICS.DOWNLOADURL).openStream();
+                System.out.println("Downloading Update");
                 Files.copy(in, Paths.get("RiotAccountManager.jar"), StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (IOException e) {

@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Creates the save-state of the current loaded accounts
@@ -78,7 +79,10 @@ public class CreateSavestate {
 
 
         try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.JSONPATH))) {
-            out.write(json.toString());
+            String text = json.toString();
+            System.out.println(AES.encrypt(json.toString(), SECRETS.getToken()));
+            System.out.println(text);
+            out.write(Objects.requireNonNull(AES.encrypt(json.toString(), SECRETS.getToken())));
         } catch (Exception e) {
             e.printStackTrace();
         }

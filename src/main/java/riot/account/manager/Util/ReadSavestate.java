@@ -22,9 +22,12 @@ public class ReadSavestate {
         ArrayList<String> accountNames = new ArrayList<>();
 
         JSONParser parser = new JSONParser();
-        JSONObject json = new JSONObject();
+        JSONObject json;
 
-        json = (JSONObject) parser.parse(new FileReader(STATICS.JSONPATH));
+        FileReader reader = new FileReader(STATICS.JSONPATH);
+        decryptSavestate(reader);
+
+        json = (JSONObject) parser.parse(reader);
         JSONArray grabber = (JSONArray) json.get("accountnames");
         for(int i = 0; i < grabber.size(); i++){
             accountNames.add(grabber.get(i).toString());
@@ -41,5 +44,9 @@ public class ReadSavestate {
             new Account(userName,publicName,userTag,userValorantRank,userLeagueRank,userPasswort,userIsAvailable);
         }
 
+    }
+
+    private static void decryptSavestate(FileReader reader) {
+        String text = reader.toString();
     }
 }
