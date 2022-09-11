@@ -29,7 +29,6 @@ public class ReadSavestate {
         for(int i = 0; i < grabber.size(); i++){
             accountNames.add(AES.decrypt(grabber.get(i).toString(), SECRETS.getKey()));
         }
-        System.out.println(accountNames);
 
         for (String name : accountNames){
             grabber = (JSONArray) json.get(AES.encrypt(name, SECRETS.getKey()));
