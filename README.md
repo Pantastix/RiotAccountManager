@@ -22,7 +22,7 @@ upcomming features:
 
 ## Screenshots
 
-<img src="images/Programm-screenshot-Leagaue.PNG" width="500" > <img src="images/Programm-screenshot-Valorant.PNG" width="500" >
+<img src="images/Programm-screenshot-Leagaue.PNG" width="375" > <img src="images/Programm-screenshot-Valorant.PNG" width="375" >
 
 ## Installation
 
