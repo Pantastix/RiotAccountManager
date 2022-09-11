@@ -23,10 +23,8 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    //TODO: readme.md verbessern (image)
+
     //TODO: ADVINST tool nutzen
-    //TODO: League anpassen
-    //TODO versions anpassen
 
     static boolean ranks = false;
 

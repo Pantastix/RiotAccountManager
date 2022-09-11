@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="new valorant rank pictures addet">
+    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="images - for README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Json/SaveState.Json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/League_rank_pictures/Bronze.png" beforeDir="false" />
@@ -21,19 +21,16 @@
       <change beforePath="$PROJECT_DIR$/League_rank_pictures/Master.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/League_rank_pictures/Platinum.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/League_rank_pictures/Silver.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/EditAccountViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/EditAccountViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/addNewAccountViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Controller/addNewAccountViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Core/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Core/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Core/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Model/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Core/Updater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Core/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Core/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/CreateSavestate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/CreateSavestate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/Ranks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/Ranks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/ReadSavestate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/riot/account/manager/Util/ReadSavestate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/EditAccountView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/EditAccountView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/addNewAccountView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/addNewAccountView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +80,7 @@
       <recent name="D:\Workspace\RiotAccountManager\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workspace\RiotAccountManager\images" />
       <recent name="D:\Workspace\RiotAccountManager\Json" />
       <recent name="D:\Workspace\RiotAccountManager" />
       <recent name="D:\Workspace\RiotAccountManager\src\main\resources" />
@@ -197,7 +195,8 @@
       <workItem from="1662795435540" duration="4925000" />
       <workItem from="1662807888283" duration="52000" />
       <workItem from="1662810154530" duration="2755000" />
-      <workItem from="1662846965812" duration="1370000" />
+      <workItem from="1662846965812" duration="1720000" />
+      <workItem from="1662887202601" duration="21449000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1661776537054</created>
@@ -346,7 +345,28 @@
       <option name="project" value="LOCAL" />
       <updated>1662810528686</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="encrypted the save files">
+      <created>1662848676660</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1662848676660</updated>
+    </task>
+    <task id="LOCAL-00023" summary="rework Updater">
+      <created>1662894374933</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1662894374933</updated>
+    </task>
+    <task id="LOCAL-00024" summary="images - for README.md">
+      <created>1662900662419</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1662900662419</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,6 +401,9 @@
     <MESSAGE value="autoupdate" />
     <MESSAGE value="missing pictures error warning" />
     <MESSAGE value="new valorant rank pictures addet" />
-    <option name="LAST_COMMIT_MESSAGE" value="new valorant rank pictures addet" />
+    <MESSAGE value="encrypted the save files" />
+    <MESSAGE value="rework Updater" />
+    <MESSAGE value="images - for README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="images - for README.md" />
   </component>
 </project>
