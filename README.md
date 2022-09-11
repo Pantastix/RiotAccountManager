@@ -51,6 +51,7 @@ in case the following error occures:<br>
 ## Disclaimer
 
 This is a Fan made product and does not reflect the opinions of Riot games.
+The character's in the social preview fully belongs to riot games and their products, as well as some parts of the Logo.
 
 ## Author
 [@Chris Simbeck](https://github.com/Pantastix)
