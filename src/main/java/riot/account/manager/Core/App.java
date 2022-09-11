@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import org.json.simple.parser.ParseException;
+import riot.account.manager.Util.AES;
 import riot.account.manager.Util.CreateSavestate;
 import riot.account.manager.Util.Ranks;
 import riot.account.manager.Util.ReadSavestate;
@@ -23,13 +24,13 @@ import java.io.IOException;
 public class App extends Application {
 
     //TODO: readme.md verbessern (image)
-    //TODO: json verschlüsseln
-    //TODO: missing json bug umgehen (neue erstellen und meldung anzeigen mit option ja oder schließen)
+    //TODO: ADVINST tool nutzen
+    //TODO: League anpassen
+    //TODO versions anpassen
 
     static boolean ranks = false;
 
     public static void main(String[] args) {
-
 
         try {
             ReadSavestate.readSavestate();

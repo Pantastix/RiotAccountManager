@@ -30,7 +30,7 @@ public class Ranks {
             }
 
         } else {
-            inputStream = new FileInputStream(leaguePath + rank + "_3.png");
+            inputStream = new FileInputStream(leaguePath + rank + "_1.png");
         }
         return new Image(inputStream);
     }

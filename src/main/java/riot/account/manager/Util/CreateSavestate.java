@@ -79,8 +79,6 @@ public class CreateSavestate {
 
         try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.JSONPATH))) {
             String text = json.toString();
-            System.out.println(AES.encrypt(json.toString(), SECRETS.getKey()));
-            System.out.println(text);
             out.write(json.toString());
         } catch (Exception e) {
             e.printStackTrace();
