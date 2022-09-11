@@ -28,6 +28,9 @@ public class EditAccountViewController {
     public TextField newPasswordField;
     @FXML
     public TextField newNameField;
+
+    @FXML
+    public TextField newLeagueNameField;
     @FXML
     public TextField newTagField;
 
@@ -48,7 +51,7 @@ public class EditAccountViewController {
      */
     @FXML
     void saveButtonPressed(ActionEvent event) {
-        if(newPasswordField.getText().equals("")&&newNameField.getText().equals("")&&newTagField.getText().equals("")){
+        if(newPasswordField.getText().equals("")&&newNameField.getText().equals("")&&newTagField.getText().equals("")&&newLeagueNameField.getText().equals("")){
             errorLabel.setText("there is no field filled");
             FadeTransition ft = new FadeTransition(Duration.millis(3000), errorLabel);
             ft.setFromValue(1.0);
@@ -60,10 +63,13 @@ public class EditAccountViewController {
                 MainViewController.getSelectedAccount().setPassword(newPasswordField.getText());
             }
             if(!newNameField.getText().equals("")){
-                MainViewController.getSelectedAccount().setPublicName(newNameField.getText());
+                MainViewController.getSelectedAccount().setPublicNameValorant(newNameField.getText());
             }
             if(!newTagField.getText().equals("")){
                 MainViewController.getSelectedAccount().setTag(newTagField.getText());
+            }
+            if(!newLeagueNameField.getText().equals("")){
+                MainViewController.getSelectedAccount().setPublicNameLeague(newLeagueNameField.getText());
             }
             Stage stage = (Stage) saveButton.getScene().getWindow();
             stage.close();

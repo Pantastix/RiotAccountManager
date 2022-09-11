@@ -69,8 +69,8 @@
                                   <children>
                                       <TableView fx:id="mainTable" layoutX="-2.0" layoutY="-3.0" prefHeight="440.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-18.0" AnchorPane.topAnchor="-3.0">
                                           <columns>
-                                              <TableColumn fx:id="accountColumn" maxWidth="197.0" minWidth="197.0" prefWidth="197.0" resizable="false" text="Account" />
-                                              <TableColumn fx:id="rankColumn" maxWidth="94.0" minWidth="94.0" prefWidth="94.0" resizable="false" text="Rank" />
+                                              <TableColumn fx:id="accountColumn" maxWidth="218.0" minWidth="113.0" prefWidth="199.0" resizable="false" text="Account" />
+                                              <TableColumn fx:id="rankColumn" maxWidth="178.0" minWidth="24.0" prefWidth="92.0" resizable="false" text="Rank" />
                                           </columns>
                                       </TableView>
                                   </children>
@@ -110,19 +110,25 @@
                               <Font size="16.0" />
                            </font>
                         </CheckBox>
-                        <ImageView fx:id="rankImage" fitHeight="137.0" fitWidth="137.0" layoutX="137.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="valoRankImmage" fitHeight="137.0" fitWidth="137.0" layoutX="137.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true" />
                         <ButtonBar buttonOrder="U+" layoutX="19.0" layoutY="378.0" prefHeight="40.0" prefWidth="292.0">
                            <buttons>
                                   <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonPressed" prefHeight="35.0" prefWidth="137.0" text="Delete" />
                               <Button fx:id="editAccountButton" mnemonicParsing="false" onAction="#changePasswordButtonPressed" prefHeight="34.0" text="Edit Account" />
                            </buttons>
                         </ButtonBar>
-                        <ChoiceBox fx:id="changeRankChoiceBox" layoutX="11.0" layoutY="216.0" prefHeight="25.0" prefWidth="101.0" />
+                        <ChoiceBox fx:id="changeRankChoiceBoxV" layoutX="11.0" layoutY="216.0" prefHeight="25.0" prefWidth="101.0" />
                         <Label fx:id="loginNameLabel" layoutX="140.0" layoutY="32.0" prefHeight="32.0" prefWidth="178.0" text="[Name]" textAlignment="CENTER">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
+                        <ImageView fx:id="leagueRankImgSolo" fitHeight="137.0" fitWidth="137.0" layoutX="44.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true" />
+                        <ChoiceBox fx:id="changeLeagueSoloCB" layoutX="62.0" layoutY="184.0" prefHeight="25.0" prefWidth="101.0" />
+                        <ImageView fx:id="leagueRankImgFlex" fitHeight="137.0" fitWidth="137.0" layoutX="183.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true" />
+                        <ChoiceBox fx:id="changeLeagueFlexCB" layoutX="201.0" layoutY="184.0" prefHeight="25.0" prefWidth="101.0" />
+                        <Label fx:id="leagueLabel2" layoutX="87.0" layoutY="165.0" text="Solo/Duo" />
+                        <Label fx:id="leagueLabel" layoutX="242.0" layoutY="165.0" text="Flex" />
                      </children></AnchorPane>
               </items>
             </SplitPane>

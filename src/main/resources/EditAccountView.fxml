@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="237.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.EditAccountViewController">
+<AnchorPane prefHeight="255.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.EditAccountViewController">
    <children>
-      <Label layoutX="29.0" layoutY="120.0" text="new Password:">
+      <Label layoutX="29.0" layoutY="155.0" text="new Password:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="newPasswordField" layoutX="208.0" layoutY="120.0" prefHeight="30.0" prefWidth="250.0" />
-      <Label fx:id="errorLabel" layoutX="208.0" layoutY="165.0" prefHeight="17.0" prefWidth="250.0" textFill="RED" />
+      <TextField fx:id="newPasswordField" layoutX="208.0" layoutY="155.0" prefHeight="30.0" prefWidth="250.0" />
+      <Label fx:id="errorLabel" layoutX="208.0" layoutY="193.0" prefHeight="17.0" prefWidth="250.0" textFill="RED" />
       <Label fx:id="headder" layoutX="2.0" layoutY="7.0" prefHeight="30.0" prefWidth="509.0" text="Edit ...">
          <font>
             <Font size="20.0" />
@@ -30,13 +30,19 @@
             <Font size="20.0" />
          </font>
       </Label>
-    <Button fx:id="saveButton" layoutX="205.0" layoutY="190.0" mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="31.0" prefWidth="99.0" text="Save">
+    <Button fx:id="saveButton" layoutX="206.0" layoutY="210.0" mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="31.0" prefWidth="99.0" text="Save">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
       <TextField fx:id="newTagField" layoutX="208.0" layoutY="81.0" prefHeight="30.0" prefWidth="250.0" />
       <TextField fx:id="newNameField" layoutX="208.0" layoutY="44.0" prefHeight="30.0" prefWidth="250.0" />
-      <Label layoutX="29.0" layoutY="165.0" text="only filled fields will be changed" />
+      <Label layoutX="29.0" layoutY="193.0" text="only filled fields will be changed" />
+      <TextField fx:id="newLeagueNameField" layoutX="208.0" layoutY="117.0" prefHeight="30.0" prefWidth="250.0" />
+      <Label layoutX="29.0" layoutY="117.0" text="new League Name:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

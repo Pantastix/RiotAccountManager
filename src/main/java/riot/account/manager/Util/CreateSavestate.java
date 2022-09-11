@@ -31,10 +31,12 @@ public class CreateSavestate {
             JSONArray accountArray = new JSONArray();
             try {
                 accountArray.put(AES.encrypt(account.getUserName(), SECRETS.getKey()));
-                accountArray.put(AES.encrypt(account.getPublicName(), SECRETS.getKey()));
+                accountArray.put(AES.encrypt(account.getPublicNameValorant(), SECRETS.getKey()));
                 accountArray.put(AES.encrypt(account.getTag(), SECRETS.getKey()));
+                accountArray.put(AES.encrypt(account.getPublicNameLeague(), SECRETS.getKey()));
                 accountArray.put(AES.encrypt(account.getUserValorantRank(), SECRETS.getKey()));
-                accountArray.put(AES.encrypt(account.getUserLeagueRank(), SECRETS.getKey()));
+                accountArray.put(AES.encrypt(account.getLeagueRankSolo(), SECRETS.getKey()));
+                accountArray.put(AES.encrypt(account.getLeagueRankFlex(), SECRETS.getKey()));
                 accountArray.put(AES.encrypt(account.getPassword(), SECRETS.getKey()));
                 accountArray.put(AES.encrypt(String.valueOf(account.isAvailable()), SECRETS.getKey()));
             } catch (JSONException e) {
@@ -67,8 +69,10 @@ public class CreateSavestate {
             accountArray.put(AES.encrypt("ExampleAccount", SECRETS.getKey()));
             accountArray.put(AES.encrypt("Example", SECRETS.getKey()));
             accountArray.put(AES.encrypt("#1234", SECRETS.getKey()));
+            accountArray.put(AES.encrypt("Example", SECRETS.getKey()));
             accountArray.put(AES.encrypt("Immortal", SECRETS.getKey()));
             accountArray.put(AES.encrypt("Challenger", SECRETS.getKey()));
+            accountArray.put(AES.encrypt("Diamond", SECRETS.getKey()));
             accountArray.put(AES.encrypt("Password1234", SECRETS.getKey()));
             accountArray.put(AES.encrypt("false", SECRETS.getKey()));
         } catch (JSONException e) {

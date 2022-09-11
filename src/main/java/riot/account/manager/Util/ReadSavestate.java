@@ -33,11 +33,13 @@ public class ReadSavestate {
         for (String name : accountNames){
             grabber = (JSONArray) json.get(AES.encrypt(name, SECRETS.getKey()));
             String userName = AES.decrypt((String) grabber.get(0), SECRETS.getKey());
-            String publicName = AES.decrypt((String) grabber.get(1), SECRETS.getKey());
+            String publicNameValo = AES.decrypt((String) grabber.get(1), SECRETS.getKey());
             String userTag = AES.decrypt((String) grabber.get(2), SECRETS.getKey());
-            String userValorantRank = AES.decrypt((String) grabber.get(3), SECRETS.getKey());
-            String userLeagueRank = AES.decrypt((String) grabber.get(4), SECRETS.getKey());
-            String userPasswort = AES.decrypt((String) grabber.get(5), SECRETS.getKey());
+            String publicNameLeague = AES.decrypt((String) grabber.get(3), SECRETS.getKey());
+            String userValorantRank = AES.decrypt((String) grabber.get(4), SECRETS.getKey());
+            String userLeagueRankSolo = AES.decrypt((String) grabber.get(5), SECRETS.getKey());
+            String userLeagueRankFlex = AES.decrypt((String) grabber.get(6), SECRETS.getKey());
+            String userPasswort = AES.decrypt((String) grabber.get(7), SECRETS.getKey());
             boolean userIsAvailable;
             if(AES.decrypt((String) grabber.get(6), SECRETS.getKey()).equals("true")){
                 userIsAvailable = true;
@@ -45,7 +47,7 @@ public class ReadSavestate {
                 userIsAvailable = false;
             }
 
-            new Account(userName, publicName, userTag, userValorantRank, userLeagueRank, userPasswort, userIsAvailable);
+            new Account(userName, publicNameValo, userTag,publicNameLeague, userValorantRank, userLeagueRankSolo,userLeagueRankFlex, userPasswort, userIsAvailable);
             }
 
         }

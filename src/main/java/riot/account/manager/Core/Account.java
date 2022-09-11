@@ -12,30 +12,36 @@ import riot.account.manager.Controller.AccountController;
 
 public class Account {
 
+    private String leagueRankFlex;
+    private String publicNameLeague;
     private String userName;
-    private String publicName;
+    private String publicNameValorant;
     private String valorantRank;
-    private String leagueRank;
+    private String leagueRankSolo;
     private boolean available;
     private String password;
     private String tag;
 
-    public Account(String userName,String publicName, String tag, String valorantRank,String leagueRank, String password) {
+    public Account(String userName, String publicNameValorant, String tag,String publicNameLeague, String valorantRank, String leagueRankSolo,String leagueRankFlex, String password) {
         this.userName = userName;
-        this.publicName = publicName;
+        this.publicNameValorant = publicNameValorant;
+        this.publicNameLeague = publicNameLeague;
         this.tag = tag;
         this.valorantRank = valorantRank;
-        this.leagueRank = leagueRank;
+        this.leagueRankSolo = leagueRankSolo;
+        this.leagueRankFlex = leagueRankFlex;
         this.password = password;
         this.available = true;
         AccountController.addAccount(userName, this);
     }
-    public Account(String userName,String publicName ,String tag,  String valorantRank,String leagueRank, String password, Boolean isAvailable) {
+    public Account(String userName, String publicNameValorant, String tag,String publicNameLeague, String valorantRank, String leagueRankSolo,String leagueRankFlex, String password, Boolean isAvailable) {
         this.userName = userName;
-        this.publicName = publicName;
+        this.publicNameValorant = publicNameValorant;
+        this.publicNameLeague = publicNameLeague;
         this.tag = tag;
         this.valorantRank = valorantRank;
-        this.leagueRank = leagueRank;
+        this.leagueRankSolo = leagueRankSolo;
+        this.leagueRankFlex = leagueRankFlex;
         this.password = password;
         this.available = isAvailable;
         AccountController.addAccount(userName, this);
@@ -48,15 +54,21 @@ public class Account {
     public String getUserValorantRank() {
         return valorantRank;
     }
-    public String getUserLeagueRank() {
-        return leagueRank;
+    public String getLeagueRankSolo() {
+        return leagueRankSolo;
+    }
+    public String getLeagueRankFlex() {
+        return leagueRankFlex;
     }
 
     public void setValorantRank(String rank) {
         this.valorantRank = rank;
     }
-    public void setLeagueRank(String rank) {
-        this.leagueRank = rank;
+    public void setLeagueRankSolo(String rank) {
+        this.leagueRankSolo = rank;
+    }
+    public void setLeagueRankFlex(String rank) {
+        this.leagueRankFlex = rank;
     }
 
     public boolean isAvailable() {
@@ -85,7 +97,7 @@ public class Account {
 
     public StringProperty getUserNameProperty() {
         String out;
-        out = this.publicName+" "+this.tag;
+        out = this.publicNameValorant +" "+this.tag;
         return new SimpleStringProperty(out);
     }
 
@@ -93,14 +105,21 @@ public class Account {
         return new SimpleStringProperty(this.valorantRank);
     }
     public StringProperty getUserLeagueRankProperty() {
-        return new SimpleStringProperty(this.leagueRank);
+        return new SimpleStringProperty(this.leagueRankSolo);
     }
 
-    public String getPublicName() {
-        return this.publicName;
+    public String getPublicNameValorant() {
+        return this.publicNameValorant;
     }
 
-    public void setPublicName(String publicName) {
-        this.publicName = publicName;
+    public void setPublicNameValorant(String publicNameValorant) {
+        this.publicNameValorant = publicNameValorant;
+    }
+    public String getPublicNameLeague() {
+        return this.publicNameLeague;
+    }
+
+    public void setPublicNameLeague(String publicNameLeague) {
+        this.publicNameLeague = publicNameLeague;
     }
 }

@@ -32,16 +32,21 @@ public class addNewAccountViewController {
     private TextField publicNameTextField;
 
     @FXML
+    private TextField leagueNameTextField;
+
+    @FXML
     private TextField passwordTextField;
 
     @FXML
     private ChoiceBox<String> valoRankChoiceBox;
 
     @FXML
-    private ChoiceBox<String> leagueRankChoiceBox;
+    private ChoiceBox<String> leagueRankChoiceBoxS;
 
     @FXML
-    private Button saveButton;
+    private ChoiceBox<String> leagueRankChoiceBoxF;
+    @FXML
+    public Button saveButton;
 
     @FXML
     TextField tagTextField;
@@ -54,9 +59,12 @@ public class addNewAccountViewController {
         valoRankChoiceBox.getItems().add("none");
         valoRankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
         valoRankChoiceBox.setValue("none");
-        leagueRankChoiceBox.getItems().add("none");
-        leagueRankChoiceBox.getItems().addAll(Ranks.getLeagueRankArray());
-        leagueRankChoiceBox.setValue("none");
+        leagueRankChoiceBoxS.getItems().add("none");
+        leagueRankChoiceBoxS.getItems().addAll(Ranks.getLeagueRankArray());
+        leagueRankChoiceBoxS.setValue("none");
+        leagueRankChoiceBoxF.getItems().add("none");
+        leagueRankChoiceBoxF.getItems().addAll(Ranks.getLeagueRankArray());
+        leagueRankChoiceBoxF.setValue("none");
     }
 
 
@@ -76,10 +84,18 @@ public class addNewAccountViewController {
 
             ft.play();
         } else {
-            if(publicNameTextField.getText().isEmpty()){
-                new Account(loginNameTextField.getText(), loginNameTextField.getText(),tagTextField.getText(), valoRankChoiceBox.getValue(), leagueRankChoiceBox.getValue(), passwordTextField.getText());
-            } else{
-                new Account(loginNameTextField.getText(), publicNameTextField.getText(),tagTextField.getText(), valoRankChoiceBox.getValue(), leagueRankChoiceBox.getValue(), passwordTextField.getText());
+            if (publicNameTextField.getText().isEmpty()) {
+                if (leagueNameTextField.getText().isEmpty()) {
+                    new Account(loginNameTextField.getText(), loginNameTextField.getText(), tagTextField.getText(), loginNameTextField.getText(), valoRankChoiceBox.getValue(), leagueRankChoiceBoxS.getValue(), leagueRankChoiceBoxF.getValue(), passwordTextField.getText());
+                } else {
+                    new Account(loginNameTextField.getText(), loginNameTextField.getText(), tagTextField.getText(), leagueNameTextField.getText(), valoRankChoiceBox.getValue(), leagueRankChoiceBoxS.getValue(), leagueRankChoiceBoxF.getValue(), passwordTextField.getText());
+                }
+            } else {
+                if (leagueNameTextField.getText().isEmpty()) {
+                    new Account(loginNameTextField.getText(), publicNameTextField.getText(), tagTextField.getText(), loginNameTextField.getText(), valoRankChoiceBox.getValue(), leagueRankChoiceBoxS.getValue(), leagueRankChoiceBoxF.getValue(), passwordTextField.getText());
+                } else {
+                    new Account(loginNameTextField.getText(), publicNameTextField.getText(), tagTextField.getText(), leagueNameTextField.getText(), valoRankChoiceBox.getValue(), leagueRankChoiceBoxS.getValue(), leagueRankChoiceBoxF.getValue(), passwordTextField.getText());
+                }
             }
 
             accountSavedLabel.setText("Account saved");
@@ -91,10 +107,12 @@ public class addNewAccountViewController {
 
             loginNameTextField.setText("");
             publicNameTextField.setText("");
+            leagueNameTextField.setText("");
             passwordTextField.setText("");
             tagTextField.setText("");
             valoRankChoiceBox.setValue("none");
-            leagueRankChoiceBox.setValue("none");
+            leagueRankChoiceBoxS.setValue("none");
+            leagueRankChoiceBoxF.setValue("none");
         }
     }
 

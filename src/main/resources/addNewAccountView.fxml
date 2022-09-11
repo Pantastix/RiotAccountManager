@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="353.0" prefWidth="523.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.addNewAccountViewController">
+<AnchorPane prefHeight="442.0" prefWidth="523.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.addNewAccountViewController">
    <children>
       <Label layoutX="184.0" layoutY="14.0" text="Add new Account">
          <font>
@@ -20,17 +20,17 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="159.0" text="Account Password:">
+      <Label layoutX="30.0" layoutY="197.0" text="Account Password:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="27.0" layoutY="195.0" text="Valorant Rank:">
+      <Label layoutX="30.0" layoutY="248.0" text="Valorant Rank:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <ButtonBar buttonOrder="U+" layoutX="155.0" layoutY="294.0" prefHeight="40.0" prefWidth="200.0">
+      <ButtonBar buttonOrder="U+" layoutX="162.0" layoutY="379.0" prefHeight="40.0" prefWidth="200.0">
          <buttons>
           <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="38.0" prefWidth="118.0" text="save">
                <font>
@@ -40,21 +40,21 @@
          </buttons>
       </ButtonBar>
       <TextField fx:id="publicNameTextField" layoutX="211.0" layoutY="103.0" prefHeight="30.0" prefWidth="166.0" promptText="Public name" />
-      <TextField fx:id="passwordTextField" layoutX="209.0" layoutY="159.0" prefHeight="30.0" prefWidth="275.0" promptText="********" />
+      <TextField fx:id="passwordTextField" layoutX="211.0" layoutY="197.0" prefHeight="30.0" prefWidth="275.0" promptText="********" />
       <Label fx:id="errorLabel" layoutX="216.0" layoutY="44.0" prefHeight="17.0" prefWidth="207.0" textFill="RED" />
       <TextField fx:id="tagTextField" layoutX="391.0" layoutY="103.0" prefHeight="30.0" prefWidth="112.0" promptText="#euw" />
-      <Label layoutX="31.0" layoutY="234.0" text="League Rank:">
+      <Label layoutX="28.0" layoutY="285.0" text="League Rank Solo:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="leagueRankChoiceBox" layoutX="211.0" layoutY="234.0" prefHeight="30.0" prefWidth="200.0" />
-      <Label fx:id="accountSavedLabel" layoutX="207.0" layoutY="264.0" prefHeight="25.0" prefWidth="225.0" stylesheets="@Style.css" textFill="#00ff38">
+      <ChoiceBox fx:id="leagueRankChoiceBoxS" layoutX="211.0" layoutY="285.0" prefHeight="30.0" prefWidth="200.0" />
+      <Label fx:id="accountSavedLabel" layoutX="143.0" layoutY="354.0" prefHeight="25.0" prefWidth="225.0" stylesheets="@Style.css" textFill="#00ff38">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="valoRankChoiceBox" layoutX="211.0" layoutY="195.0" prefHeight="30.0" prefWidth="200.0" />
+      <ChoiceBox fx:id="valoRankChoiceBox" layoutX="211.0" layoutY="248.0" prefHeight="30.0" prefWidth="200.0" />
       <Label layoutX="30.0" layoutY="61.0" text="Login Name:">
          <font>
             <Font size="20.0" />
@@ -72,5 +72,17 @@
             <Font size="20.0" />
          </font>
       </Label>
+      <Label layoutX="30.0" layoutY="159.0" text="League Name:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="leagueNameTextField" layoutX="211.0" layoutY="159.0" prefHeight="30.0" prefWidth="166.0" promptText="League name" />
+      <Label layoutX="28.0" layoutY="324.0" text="League Rank Flex:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="leagueRankChoiceBoxF" layoutX="211.0" layoutY="324.0" prefHeight="30.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

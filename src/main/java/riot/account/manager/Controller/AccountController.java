@@ -55,7 +55,7 @@ public class AccountController {
                             filteredAccountList.add(account);
                         }
                     } else {
-                        if (account.getUserLeagueRank().equals(filterRank)) {
+                        if (account.getLeagueRankSolo().equals(filterRank)) {
                             filteredAccountList.add(account);
                         }
                     }
@@ -102,16 +102,16 @@ public class AccountController {
 
     /**
      * fetches the Rank Image and returns the Image for the given rank and game.
-     * @param account with the rank
+     * @param rank of the account
      * @param game that the rank is for
      * @return the image of the rank
      */
-    public static Image getRankImage(Account account, String game) {
+    public static Image getRankImage(String rank, String game) {
         try{
             if(game.equals("Valorant")){
-                return Ranks.getRankImage(account.getUserValorantRank(), game);
+                return Ranks.getRankImage(rank, game);
             } else {
-                return Ranks.getRankImage(account.getUserLeagueRank(), game);
+                return Ranks.getRankImage(rank, game);
             }
 
         } catch (Exception e) {

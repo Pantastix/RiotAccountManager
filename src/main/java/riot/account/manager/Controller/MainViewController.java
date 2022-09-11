@@ -47,8 +47,13 @@ public class MainViewController {
     public Button editAccountButton;
 
     @FXML
-    public ImageView rankImage;
+    public ImageView valoRankImmage;
 
+    @FXML
+    public ImageView leagueRankImgFlex;
+
+    @FXML
+    public ImageView leagueRankImgSolo;
     @FXML
     public TextField nameField;
 
@@ -56,15 +61,21 @@ public class MainViewController {
     public CheckBox accountUsableCheckBox;
 
     @FXML
+    public ChoiceBox<String> changeLeagueFlexCB;
+
+    @FXML
+    public ChoiceBox<String> changeLeagueSoloCB;
+
+    @FXML
     public ChoiceBox<String> rankChoiceBox;
 
     @FXML
     public ChoiceBox<String> gameChoiceBox;
     @FXML
-    public ChoiceBox<String> changeRankChoiceBox;
+    public ChoiceBox<String> changeRankChoiceBoxV;
 
     @FXML
-    public TableView<Account>  mainTable;
+    public TableView<Account> mainTable;
 
     @FXML
     public TableColumn<Account, String> accountColumn;
@@ -82,6 +93,12 @@ public class MainViewController {
     public Label loginNameLabel;
 
     @FXML
+    public Label leagueLabel;
+
+    @FXML
+    public Label leagueLabel2;
+
+    @FXML
     public Label versionLabel;
     private Account selectedAccount;
     private static Account selectedStaticAccount;
@@ -89,7 +106,6 @@ public class MainViewController {
     /**
      * The initialize function is called when the FXML file is loaded.
      * It initializes all of the controls in this class and sets up their listeners.
-     *
      */
     @FXML
     public void initialize() {
@@ -102,11 +118,11 @@ public class MainViewController {
             public void changed(ObservableValue observableValue, Object o, Object t1) {
 
                 try {
-                    if(mainTable.getSelectionModel().getSelectedItems().get(0) != null) {
+                    if (mainTable.getSelectionModel().getSelectedItems().get(0) != null) {
                         selectedAccount = mainTable.getSelectionModel().getSelectedItems().get(0);
                     }
                     openAccountWindow(selectedAccount);
-                }catch (Exception e){
+                } catch (Exception e) {
                 }
             }
         });
@@ -124,17 +140,34 @@ public class MainViewController {
         });
 
 
-        changeRankChoiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+        changeRankChoiceBoxV.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (newValue != null) {
-                    if(gameChoiceBox.getValue().equals("Valorant")){
-                        selectedAccount.setValorantRank(newValue);
-                    }else{
-                        selectedAccount.setLeagueRank(newValue);
-                    }
+                    selectedAccount.setValorantRank(newValue);
                     mainTable.refresh();
-                    rankImage.setImage(AccountController.getRankImage(selectedAccount, gameChoiceBox.getSelectionModel().getSelectedItem()));
+                    valoRankImmage.setImage(AccountController.getRankImage(selectedAccount.getUserValorantRank(), gameChoiceBox.getSelectionModel().getSelectedItem()));
+                }
+            }
+        });
+
+        changeLeagueSoloCB.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue != null) {
+                    selectedAccount.setLeagueRankSolo(newValue);
+                    mainTable.refresh();
+                    leagueRankImgSolo.setImage(AccountController.getRankImage(selectedAccount.getLeagueRankSolo(), gameChoiceBox.getSelectionModel().getSelectedItem()));
+                }
+            }
+        });
+        changeLeagueFlexCB.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue != null) {
+                    selectedAccount.setLeagueRankFlex(newValue);
+                    mainTable.refresh();
+                    leagueRankImgFlex.setImage(AccountController.getRankImage(selectedAccount.getLeagueRankFlex(), gameChoiceBox.getSelectionModel().getSelectedItem()));
                 }
             }
         });
@@ -155,19 +188,30 @@ public class MainViewController {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 mainTable.getSelectionModel().clearSelection();
 
-                changeRankChoiceBox.getItems().clear();
                 rankChoiceBox.getItems().clear();
-                if(gameChoiceBox.getSelectionModel().getSelectedItem().equals("Valorant")) {
+                if (gameChoiceBox.getSelectionModel().getSelectedItem().equals("Valorant")) {
+                    leagueLabel.setVisible(false);
+                    leagueLabel.setVisible(false);
                     rankColumn.setCellValueFactory(cellData -> cellData.getValue().getUserValorantRankProperty());
                     rankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
-                    changeRankChoiceBox.getItems().add("none");
-                    changeRankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
-                }else{
+                    leagueRankImgFlex.setVisible(false);
+                    leagueRankImgSolo.setVisible(false);
+                    changeLeagueFlexCB.setVisible(false);
+                    changeLeagueSoloCB.setVisible(false);
+                    changeRankChoiceBoxV.setVisible(true);
+                    valoRankImmage.setVisible(true);
+                } else {
+                    leagueLabel.setVisible(true);
+                    leagueLabel2.setVisible(true);
                     rankColumn.setCellValueFactory(cellData -> cellData.getValue().getUserLeagueRankProperty());
                     rankChoiceBox.getItems().clear();
                     rankChoiceBox.getItems().addAll(Ranks.getLeagueRankArray());
-                    changeRankChoiceBox.getItems().add("none");
-                    changeRankChoiceBox.getItems().addAll(Ranks.getLeagueRankArray());
+                    leagueRankImgFlex.setVisible(true);
+                    leagueRankImgSolo.setVisible(true);
+                    changeLeagueFlexCB.setVisible(true);
+                    changeLeagueSoloCB.setVisible(true);
+                    changeRankChoiceBoxV.setVisible(false);
+                    valoRankImmage.setVisible(false);
                 }
                 rankChoiceBox.getItems().add("all Ranks");
                 rankChoiceBox.setValue("all Ranks");
@@ -189,11 +233,11 @@ public class MainViewController {
         });
 
 
-        AccountController.getAccountListObservable().addListener(new ListChangeListener(){
+        AccountController.getAccountListObservable().addListener(new ListChangeListener() {
 
             @Override
             public void onChanged(Change pChange) {
-                while(pChange.next()) {
+                while (pChange.next()) {
                     mainTable.refresh();
                     reloadTable();
                 }
@@ -213,6 +257,7 @@ public class MainViewController {
 
     /**
      * opens the window to add a new account to the list
+     *
      * @param event
      * @throws IOException
      */
@@ -221,7 +266,7 @@ public class MainViewController {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/addNewAccountView.fxml"));
         Stage stage = new Stage();
-        Scene scene =  new Scene (fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("/Style.css").toExternalForm());
         stage.setScene(scene);
 //        stage.getScene().getWindow().addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, this::closeWindowEvent);
@@ -238,6 +283,7 @@ public class MainViewController {
 
     /**
      * deletes the selected account from the list and the database
+     *
      * @param event
      * @throws IOException
      */
@@ -254,6 +300,7 @@ public class MainViewController {
 
     /**
      * opens the change password window
+     *
      * @param event
      * @throws IOException
      */
@@ -261,7 +308,7 @@ public class MainViewController {
     void changePasswordButtonPressed(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/EditAccountView.fxml"));
         Stage stage = new Stage();
-        Scene scene =  new Scene (fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("/Style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
@@ -271,6 +318,7 @@ public class MainViewController {
 
     /**
      * copy the username into the clipboard
+     *
      * @param event
      */
     @FXML
@@ -283,6 +331,7 @@ public class MainViewController {
 
     /**
      * copy the passwort into the clipboard
+     *
      * @param event
      */
     @FXML
@@ -295,25 +344,29 @@ public class MainViewController {
 
     /**
      * opens the account panel for the selected account
+     *
      * @param account
      */
     private void openAccountWindow(Account account) {
-        if(account.getPublicName().equals(account.getUserName())){
+        if (account.getPublicNameValorant().equals(account.getUserName())) {
             loginNameLabel.setVisible(false);
             accountNameLabel.setText(account.getUserName());
-        }else {
+        } else {
             loginNameLabel.setVisible(true);
             loginNameLabel.setText(account.getUserName());
-            accountNameLabel.setText(account.getPublicName() + " " + account.getTag());
+            accountNameLabel.setText(account.getPublicNameValorant() + " " + account.getTag());
         }
         accountUsableCheckBox.setSelected(account.isAvailable());
-        if(gameChoiceBox.getSelectionModel().getSelectedItem().equals("Valorant")) {
-            changeRankChoiceBox.setValue(account.getUserValorantRank());
-        }else{
-            changeRankChoiceBox.setValue(account.getUserLeagueRank());
+        if (gameChoiceBox.getSelectionModel().getSelectedItem().equals("Valorant")) {
+            changeRankChoiceBoxV.setValue(account.getUserValorantRank());
+            valoRankImmage.setImage(AccountController.getRankImage(account.getUserValorantRank(), "Valorant"));
+        } else {
+            changeLeagueSoloCB.setValue(account.getLeagueRankSolo());
+            changeLeagueFlexCB.setValue(account.getLeagueRankFlex());
+            leagueRankImgFlex.setImage(AccountController.getRankImage(account.getLeagueRankFlex(), "League"));
+            leagueRankImgSolo.setImage(AccountController.getRankImage(account.getLeagueRankSolo(), "League"));
         }
         selectedStaticAccount = account;
-        rankImage.setImage(AccountController.getRankImage(account, gameChoiceBox.getSelectionModel().getSelectedItem()));
     }
 
     /**
@@ -330,7 +383,7 @@ public class MainViewController {
     /**
      * Reloads the table with the current account list
      */
-    public void reloadTable(){
+    public void reloadTable() {
         mainTable.getItems().clear();
         mainTable.getItems().addAll(AccountController.getAccountListObservable());
     }
@@ -339,23 +392,33 @@ public class MainViewController {
      * fills the choice boxes with the current data
      * account info AchorPane is set to invisible and disabled
      */
-    public void fillWindow(){
+    public void fillWindow() {
+        leagueRankImgFlex.setVisible(false);
+        leagueRankImgSolo.setVisible(false);
+        changeLeagueFlexCB.setVisible(false);
+        changeLeagueSoloCB.setVisible(false);
         gameChoiceBox.getItems().addAll("Valorant", "League");
         rankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
         rankChoiceBox.getItems().add("all Ranks");
-        changeRankChoiceBox.getItems().addAll("none");
-        changeRankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
+        changeRankChoiceBoxV.getItems().addAll("none");
+        changeRankChoiceBoxV.getItems().addAll(Ranks.getValorantRankArray());
+        changeLeagueSoloCB.getItems().addAll("none");
+        changeLeagueSoloCB.getItems().addAll(Ranks.getLeagueRankArray());
+        changeLeagueFlexCB.getItems().addAll("none");
+        changeLeagueFlexCB.getItems().addAll(Ranks.getLeagueRankArray());
         rankChoiceBox.setValue("all Ranks");
         gameChoiceBox.setValue("Valorant");
         versionLabel.setText("v. " + STATICS.VERSION);
+        leagueLabel.setVisible(false);
+        leagueLabel2.setVisible(false);
         try {
             mainTable.getSelectionModel().selectFirst();
             openAccountWindow(mainTable.getSelectionModel().getSelectedItem());
             selectedAccount = mainTable.getSelectionModel().getSelectedItem();
-        }catch(NullPointerException e){
+        } catch (NullPointerException e) {
             accountNameLabel.setText("You have no accounts");
         }
-        }
+    }
 
     public static Account getSelectedAccount() {
         return selectedStaticAccount;
