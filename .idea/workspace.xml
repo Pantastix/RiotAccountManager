@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="League Rank Pictures">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="dc069646-ab3f-4a3e-85d5-dcc1a7edc1f1" name="Changes" comment="README.md picture updated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,7 +174,7 @@
       <workItem from="1662807888283" duration="52000" />
       <workItem from="1662810154530" duration="2755000" />
       <workItem from="1662846965812" duration="1720000" />
-      <workItem from="1662887202601" duration="23345000" />
+      <workItem from="1662887202601" duration="23536000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1661776537054</created>
@@ -360,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662913683122</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="README.md picture updated">
+      <created>1662915941253</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1662915941253</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,6 +405,7 @@
     <MESSAGE value="images - for README.md" />
     <MESSAGE value="League integration with 2 Ranks (solo and Flex) and league ingame name" />
     <MESSAGE value="League Rank Pictures" />
-    <option name="LAST_COMMIT_MESSAGE" value="League Rank Pictures" />
+    <MESSAGE value="README.md picture updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md picture updated" />
   </component>
 </project>
