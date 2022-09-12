@@ -58,7 +58,4 @@ public class AES {
         random.nextBytes(randomKeyBytes);
         System.out.println(new SecretKeySpec(randomKeyBytes, cipher).getEncoded());
     }
-
-
-
 }

@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import riot.account.manager.Core.Account;
+import riot.account.manager.Core.Updater;
 import riot.account.manager.Util.Ranks;
 import riot.account.manager.Util.STATICS;
 
@@ -100,6 +101,10 @@ public class MainViewController {
 
     @FXML
     public Label versionLabel;
+
+    @FXML
+    public Label updateLabel;
+
     private Account selectedAccount;
     private static Account selectedStaticAccount;
 
@@ -393,6 +398,9 @@ public class MainViewController {
      * account info AchorPane is set to invisible and disabled
      */
     public void fillWindow() {
+        if(!Updater.isAvailable()) {
+            updateLabel.setVisible(false);
+        }
         leagueRankImgFlex.setVisible(false);
         leagueRankImgSolo.setVisible(false);
         changeLeagueFlexCB.setVisible(false);
@@ -423,4 +431,5 @@ public class MainViewController {
     public static Account getSelectedAccount() {
         return selectedStaticAccount;
     }
+
 }

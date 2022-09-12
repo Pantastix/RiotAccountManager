@@ -175,3 +175,8 @@
 .hyperlink{
     -fx-text-fill: #5f63ff;
 }
+
+#updateLabel{
+    -fx-text-fill: #18ff00;
+    -fx-font-weight: bold;
+}

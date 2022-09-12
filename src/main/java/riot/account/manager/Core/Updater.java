@@ -1,46 +1,38 @@
 package riot.account.manager.Core;
 
+import riot.account.manager.Controller.MainViewController;
 import riot.account.manager.Util.STATICS;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 
 import static java.lang.String.valueOf;
 
+
+
 public class Updater {
 
-    public static Thread updaterThread = new Thread(() -> {
-        downlaodUpdate();
-    });
 
+//    public static void downlaodUpdate() {
+//
+//        InputStream in = null;
+//
+//        String url = findURL();
+//
+//        if(url != null){
+//            try {
+//                in = new URL(url).openStream();
+//                System.out.println("Downloading Update");
+//                Files.copy(in, Paths.get("RiotAccountManager.jar"), StandardCopyOption.REPLACE_EXISTING);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//    }
 
-    public static void downlaodUpdate() {
-
-        InputStream in = null;
-
-        String url = findURL();
-
-        if(url != null){
-            try {
-                in = new URL(url).openStream();
-                System.out.println("Downloading Update");
-                Files.copy(in, Paths.get("RiotAccountManager.jar"), StandardCopyOption.REPLACE_EXISTING);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-    private static String findURL() {
+    public static boolean isAvailable() {
         String url = STATICS.CHECKURL;
         url = url.replace("[0]", valueOf(STATICS.getVersionArray()[0]));
         url = url.replace("[1]", valueOf(STATICS.getVersionArray()[1]));
@@ -115,12 +107,11 @@ public class Updater {
         }
 
         if (finalURL[0] <= Integer.valueOf(STATICS.getVersionArray()[0]) && finalURL[1] <= Integer.valueOf(STATICS.getVersionArray()[1]) && finalURL[2] <= Integer.valueOf(STATICS.getVersionArray()[2])) {
-            return null;
+            return false;
+        }else{
+            return true;
         }
-        return url;
     }
-        public Thread getUpdaterThread() {
-            return updaterThread;
-        }
+
     }
 

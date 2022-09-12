@@ -58,7 +58,7 @@ public class App extends Application {
      */
     @Override
     public void start(Stage primaryStage) {
-        Updater.updaterThread.start();
+
 
         try {
             Scene scene;
@@ -78,12 +78,6 @@ public class App extends Application {
                 @Override
                 public void handle(WindowEvent e) {
                     CreateSavestate.createSavestate();
-                    primaryStage.setIconified(true);
-                    try {
-                        Updater.updaterThread.join();
-                    } catch (InterruptedException ex) {
-                        throw new RuntimeException(ex);
-                    }
                 }
             });
 

@@ -137,6 +137,7 @@
                <children>
                   <Label fx:id="versionLabel" layoutX="9.0" layoutY="2.0" />
                   <Label layoutX="536.0" layoutY="2.0" text="by Chris Simbeck" />
+                  <Label fx:id="updateLabel" layoutX="282.0" layoutY="1.0" text="Update Available" />
                </children>
             </Pane>
             </children>
