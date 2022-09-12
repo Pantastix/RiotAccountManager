@@ -17,7 +17,6 @@ upcomming features:
 - Automaticly update the account ranks
 - Stats for the Accounts
 - more detailed Ranks
-- auto login feature
 - better League support
 
 ## Screenshots
@@ -31,7 +30,7 @@ Version 1.1.0
 
 ## Updates
 
-Since Version 1.2.0 the Programm should keep itself up-to-date most of the time.
+In case your installing a new version, you can just copy the SaveState.Json into the Json folder of the new copy.
 But if you want to transfer your save to a new machine, you can simply copy the SaveState.json into the Json folder of the new Application.
 
 ## Security and Encryption
