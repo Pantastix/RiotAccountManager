@@ -123,7 +123,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <ImageView fx:id="leagueRankImgSolo" fitHeight="137.0" fitWidth="137.0" layoutX="44.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="leagueRankImgSolo" fitHeight="137.0" fitWidth="137.0" layoutX="48.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true" />
                         <ChoiceBox fx:id="changeLeagueSoloCB" layoutX="62.0" layoutY="184.0" prefHeight="25.0" prefWidth="101.0" />
                         <ImageView fx:id="leagueRankImgFlex" fitHeight="137.0" fitWidth="137.0" layoutX="183.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true" />
                         <ChoiceBox fx:id="changeLeagueFlexCB" layoutX="201.0" layoutY="184.0" prefHeight="25.0" prefWidth="101.0" />

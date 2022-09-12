@@ -23,9 +23,6 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-
-    //TODO: ADVINST tool nutzen
-
     static boolean ranks = false;
 
     public static void main(String[] args) {
@@ -43,9 +40,9 @@ public class App extends Application {
             e.printStackTrace();
         }
 
-        if (Ranks.isAvailable()) {
+//        if (Ranks.isAvailable()) {
             ranks = true;
-        }
+//        }
         launch(args);
     }
 

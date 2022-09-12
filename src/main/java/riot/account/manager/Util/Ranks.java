@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.net.URL;
 
 /**
  * includes all information about ranks
@@ -19,14 +20,12 @@ public class Ranks {
     private static final String[] leagueRanks = {"Iron","Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Grandmaster", "Challenger"};
 
     public static Image getRankImage(String rank, String game) throws FileNotFoundException {
-        ClassLoader classLoader = Ranks.class.getClassLoader();
         FileInputStream inputStream;
-        File file;
         if(game.equals("Valorant")){
             if(rank.equals("Radiant")) {
                 inputStream = new FileInputStream(valorantPath + rank + ".png");
             }else{
-                inputStream = new FileInputStream(valorantPath + rank + "_3.png");
+                inputStream = new FileInputStream((valorantPath + rank + "_3.png"));
             }
 
         } else {
