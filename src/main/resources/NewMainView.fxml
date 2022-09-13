@@ -20,11 +20,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="445.0" prefWidth="1303.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.NewMainViewController">
+<AnchorPane prefHeight="472.0" prefWidth="1242.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.NewMainViewController">
    <children>
-      <VBox prefHeight="472.0" prefWidth="1303.0">
+      <VBox maxWidth="1241.0" minWidth="1241.0" prefHeight="472.0" prefWidth="1241.0">
          <children>
-            <HBox prefHeight="38.0" prefWidth="1304.0">
+            <HBox maxWidth="1250.0" minWidth="1241.0" prefHeight="38.0" prefWidth="1241.0">
                <children>
                   <Label prefHeight="42.0" prefWidth="101.0" text="Filter:">
                      <font>
@@ -45,17 +45,7 @@
                      </HBox.margin>
                   </TextField>
                   <Label prefHeight="39.0" prefWidth="93.0" text="                           " />
-                  <Label prefHeight="38.0" prefWidth="58.0" text="Rank:">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-                  <ChoiceBox fx:id="rankFilterChoiceBox" prefHeight="28.0" prefWidth="119.0">
-                     <HBox.margin>
-                        <Insets top="5.0" />
-                     </HBox.margin>
-                  </ChoiceBox>
-                  <Label prefHeight="38.0" prefWidth="172.0" text="   Game / Playlist:">
+                  <Label prefHeight="38.0" prefWidth="147.0" text="Game / Playlist:">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -65,18 +55,28 @@
                         <Insets top="5.0" />
                      </HBox.margin>
                   </ChoiceBox>
+                  <Label prefHeight="38.0" prefWidth="78.0" text="    Rank:">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="rankFilterChoiceBox" disable="true" prefHeight="28.0" prefWidth="119.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
                </children>
             </HBox>
-            <Line endX="1198.2928466796875" endY="-7.241964340209961E-4" startX="-100.0" stroke="#2f2f2f" style="-fx-stroke: #6a6a6e;" />
-            <SplitPane dividerPositions="0.3" maxHeight="410.0" maxWidth="1300.0" minHeight="410.0" minWidth="1300.0" prefHeight="410.0" prefWidth="1300.0">
+            <Line endX="1140.2928466796875" endY="7.179379463195801E-4" startX="-100.0" stroke="#2f2f2f" style="-fx-stroke: #6a6a6e;" />
+            <SplitPane dividerPositions="0.2962962962962963" maxHeight="410.0" maxWidth="1250.0" minHeight="410.0" minWidth="1234.0" prefHeight="410.0" prefWidth="1200.0">
                <items>
-                  <VBox prefHeight="408.0" prefWidth="374.0">
+                  <VBox maxWidth="380.0" minWidth="370.0" prefHeight="406.0" prefWidth="370.0">
                      <children>
-                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="423.0" minWidth="305.0" prefHeight="368.0" prefWidth="367.0">
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="423.0" minWidth="305.0" prefHeight="365.0" prefWidth="358.0">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="365.0" style="-fx-background-color: #000000;" AnchorPane.rightAnchor="0.0">
                                  <children>
-                                    <TableView fx:id="mainTable" layoutX="-6.0" layoutY="-1.0" prefHeight="367.0" prefWidth="385.0" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-14.0" AnchorPane.topAnchor="-1.0">
+                                    <TableView fx:id="mainTable" layoutX="-6.0" layoutY="-1.0" prefHeight="367.0" prefWidth="392.0" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-26.0" AnchorPane.topAnchor="-1.0">
                                        <columns>
                                           <TableColumn fx:id="accountColumn" maxWidth="265.0" minWidth="113.0" prefWidth="136.0" resizable="false" text="  Account" />
                                           <TableColumn fx:id="flexColumn" maxWidth="222.0" minWidth="18.0" prefWidth="77.0" resizable="false" text="Flex" />
@@ -100,7 +100,7 @@
                         </ButtonBar>
                      </children>
                   </VBox>
-                  <VBox minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="863.0">
+                  <VBox maxWidth="851.0" minHeight="0.0" minWidth="0.0" prefHeight="406.0" prefWidth="851.0">
                      <children>
                         <HBox prefHeight="38.0" prefWidth="849.0">
                            <children>
@@ -144,27 +144,27 @@
                               </CheckBox>
                            </children>
                         </HBox>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="396.0" prefWidth="863.0">
+                        <AnchorPane maxWidth="860.0" minHeight="0.0" minWidth="850.0" prefHeight="369.0" prefWidth="850.0">
                            <children>
-                              <ImageView fx:id="valoBackgroundImage" fitHeight="410.0" fitWidth="663.0" layoutX="-291.0" layoutY="-1.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="valoBackgroundImage" fitHeight="410.0" fitWidth="663.0" layoutX="-291.0" layoutY="-1.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../images/ValorantBackground.png" />
                                  </image></ImageView>
-                              <ImageView fx:id="leagueBackgroundImage" fitHeight="441.0" fitWidth="595.0" layoutX="371.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="leagueBackgroundImage" fitHeight="400.0" fitWidth="499.0" layoutX="371.0" layoutY="-1.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../images/LeagueBackground.png" />
                                  </image></ImageView>
-                              <Label prefHeight="39.0" prefWidth="336.0" style="-fx-alignment: Center;" text="Valorant" textOverrun="CENTER_ELLIPSIS" underline="true">
+                              <Label prefHeight="39.0" prefWidth="336.0" style="-fx-alignment: Center; -fx-font-weight: Bold;" text="Valorant" textOverrun="CENTER_ELLIPSIS" underline="true">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <Label layoutY="43.0" prefHeight="30.0" prefWidth="70.0" text="Riot ID:">
+                              <Label layoutX="16.0" layoutY="44.0" prefHeight="30.0" prefWidth="70.0" text="Riot ID:">
                                  <font>
                                     <Font size="21.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="riotIDLabel" layoutX="82.0" layoutY="40.0" prefHeight="38.0" prefWidth="243.0" text="[Name]" textAlignment="CENTER">
+                              <Label fx:id="riotIDLabel" layoutX="106.0" layoutY="40.0" prefHeight="38.0" prefWidth="243.0" text="[Name]" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
@@ -175,7 +175,7 @@
                                  </font>
                               </Label>
                               <ChoiceBox fx:id="changeValoRank" layoutX="118.0" layoutY="103.0" prefHeight="25.0" prefWidth="101.0" />
-                              <Label layoutX="378.0" prefHeight="39.0" prefWidth="480.0" style="-fx-alignment: Center;" text="League of Legends" textOverrun="CENTER_ELLIPSIS" underline="true">
+                              <Label layoutX="378.0" prefHeight="39.0" prefWidth="480.0" style="-fx-alignment: Center; -fx-font-weight: Bold;" text="League of Legends" textOverrun="CENTER_ELLIPSIS" underline="true">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -185,7 +185,7 @@
                                     <Font size="21.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="leagueNameLabel" layoutX="527.0" layoutY="41.0" prefHeight="38.0" prefWidth="323.0" text="[Name]" textAlignment="CENTER">
+                              <Label fx:id="leagueNameLabel" layoutX="527.0" layoutY="41.0" prefHeight="38.0" prefWidth="304.0" text="[Name]" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
@@ -217,12 +217,12 @@
                   </VBox>
                </items>
             </SplitPane>
-            <Line endX="1196.2928466796875" endY="-1.7380714416503906E-4" startX="-100.0" stroke="#2f2f2f" style="-fx-stroke: #6a6a6e;" />
-            <Pane prefHeight="18.0" prefWidth="1303.0">
+            <Line endX="1140.2928466796875" endY="1.6862154006958008E-4" startX="-100.0" stroke="#2f2f2f" style="-fx-stroke: #6a6a6e;" />
+            <Pane maxWidth="1250.0" minWidth="1250.0" prefHeight="18.0" prefWidth="1250.0">
                <children>
-                  <Label layoutX="1212.0" layoutY="1.0" text="by Chris Simbeck" />
+                  <Label layoutX="1143.0" layoutY="1.0" text="by Chris Simbeck" />
                   <Label fx:id="versionLabel" layoutY="1.0" prefHeight="17.0" prefWidth="296.0" />
-                  <Label fx:id="updateLabel" layoutX="603.0" layoutY="1.0" text="Update Available" />
+                  <Label fx:id="updateLabel" layoutX="577.0" layoutY="1.0" text="Update Available" />
                </children>
             </Pane>
          </children>

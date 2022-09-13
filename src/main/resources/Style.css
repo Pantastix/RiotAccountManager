@@ -12,14 +12,14 @@
 
 #riotIDLabel, #leagueNameLabel{
     -fx-alignment: center;
-    -fx-border-color: -fx-accent;
+    /*-fx-border-color: -fx-accent;*/
     -fx-font-weight: bold;
     -fx-font-size: 25px;
 }
 
 #loginNameLabel{
     -fx-alignment: center;
-    -fx-border-color: -fx-accent;
+    /*-fx-border-color: -fx-accent;*/
     -fx-font-weight: bold;
 }
 

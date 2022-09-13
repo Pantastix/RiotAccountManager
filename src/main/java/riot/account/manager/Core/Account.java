@@ -13,19 +13,19 @@ import riot.account.manager.Controller.AccountController;
 public class Account {
 
     private String leagueRankFlex;
-    private String publicNameLeague;
+    private String leagueName;
     private String userName;
-    private String publicNameValorant;
+    private String riotID;
     private String valorantRank;
     private String leagueRankSolo;
     private boolean available;
     private String password;
     private String tag;
 
-    public Account(String userName, String publicNameValorant, String tag,String publicNameLeague, String valorantRank, String leagueRankSolo,String leagueRankFlex, String password) {
+    public Account(String userName, String riotID, String tag, String leagueName, String valorantRank, String leagueRankSolo, String leagueRankFlex, String password) {
         this.userName = userName;
-        this.publicNameValorant = publicNameValorant;
-        this.publicNameLeague = publicNameLeague;
+        this.riotID = riotID;
+        this.leagueName = leagueName;
         this.tag = tag;
         this.valorantRank = valorantRank;
         this.leagueRankSolo = leagueRankSolo;
@@ -34,10 +34,10 @@ public class Account {
         this.available = true;
         AccountController.addAccount(userName, this);
     }
-    public Account(String userName, String publicNameValorant, String tag,String publicNameLeague, String valorantRank, String leagueRankSolo,String leagueRankFlex, String password, Boolean isAvailable) {
+    public Account(String userName, String riotID, String tag, String leagueName, String valorantRank, String leagueRankSolo, String leagueRankFlex, String password, Boolean isAvailable) {
         this.userName = userName;
-        this.publicNameValorant = publicNameValorant;
-        this.publicNameLeague = publicNameLeague;
+        this.riotID = riotID;
+        this.leagueName = leagueName;
         this.tag = tag;
         this.valorantRank = valorantRank;
         this.leagueRankSolo = leagueRankSolo;
@@ -97,7 +97,7 @@ public class Account {
 
     public StringProperty getUserNameProperty() {
         String out;
-        out = this.publicNameValorant +" "+this.tag;
+        out = this.riotID +" "+this.tag;
         return new SimpleStringProperty(out);
     }
 
@@ -111,18 +111,18 @@ public class Account {
         return new SimpleStringProperty(this.leagueRankFlex);
     }
 
-    public String getPublicNameValorant() {
-        return this.publicNameValorant;
+    public String getRiotID() {
+        return this.riotID;
     }
 
-    public void setPublicNameValorant(String publicNameValorant) {
-        this.publicNameValorant = publicNameValorant;
+    public void setRiotID(String riotID) {
+        this.riotID = riotID;
     }
-    public String getPublicNameLeague() {
-        return this.publicNameLeague;
+    public String getLeagueName() {
+        return this.leagueName;
     }
 
-    public void setPublicNameLeague(String publicNameLeague) {
-        this.publicNameLeague = publicNameLeague;
+    public void setLeagueName(String leagueName) {
+        this.leagueName = leagueName;
     }
 }

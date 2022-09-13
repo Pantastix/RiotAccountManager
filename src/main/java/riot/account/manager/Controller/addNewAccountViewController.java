@@ -57,7 +57,7 @@ public class addNewAccountViewController {
     @FXML
     void initialize() {
         valoRankChoiceBox.getItems().add("none");
-        valoRankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
+        valoRankChoiceBox.getItems().addAll(Ranks.getValorantRanks());
         valoRankChoiceBox.setValue("none");
         leagueRankChoiceBoxS.getItems().add("none");
         leagueRankChoiceBoxS.getItems().addAll(Ranks.getLeagueRankArray());

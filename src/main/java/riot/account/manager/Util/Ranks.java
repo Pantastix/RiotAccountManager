@@ -6,7 +6,6 @@ import javafx.scene.image.Image;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.net.URL;
 
 /**
  * includes all information about ranks
@@ -16,35 +15,40 @@ import java.net.URL;
 public class Ranks {
     static final String valorantPath = "Valorant_rank_pictures/";
     static final String leaguePath = "League_rank_pictures/";
-    private static final String[] valorantRanks = {"Iron","Bronze", "Silver", "Gold", "Platinum", "Diamond", "Ascendant", "Immortal", "Radiant"};
-    private static final String[] leagueRanks = {"Iron","Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Grandmaster", "Challenger"};
+    private static final String[] valorantRanks = {"Iron", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Ascendant", "Immortal", "Radiant"};
+    private static final String[] leagueRanks = {"Iron", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Grandmaster", "Challenger"};
 
-    public static Image getRankImage(String rank, String game) throws FileNotFoundException {
+    public static Image getRankImage(String rank, String game) {
         FileInputStream inputStream;
-        if(game.equals("Valorant")){
-            if(rank.equals("Radiant")) {
-                inputStream = new FileInputStream(valorantPath + rank + ".png");
-            }else{
-                inputStream = new FileInputStream((valorantPath + rank + "_3.png"));
-            }
+        try {
+            if (game.equals("Valorant")) {
+                if (rank.equals("Radiant")) {
+                    inputStream = new FileInputStream(valorantPath + rank + ".png");
+                } else {
+                    inputStream = new FileInputStream((valorantPath + rank + "_3.png"));
+                }
 
-        } else {
-            inputStream = new FileInputStream(leaguePath + rank + "_1.png");
+            } else {
+                inputStream = new FileInputStream(leaguePath + rank + "_1.png");
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return new Image(inputStream);
     }
 
-    public static String[] getValorantRankArray(){
+    public static String[] getValorantRanks() {
         return valorantRanks;
     }
-    public static String[] getLeagueRankArray(){
+
+    public static String[] getLeagueRankArray() {
         return leagueRanks;
     }
 
     public static boolean isAvailable() {
         File league = new File(leaguePath);
         File valo = new File(valorantPath);
-        if(valo.exists() && league.exists()){
+        if (valo.exists() && league.exists()) {
             return true;
         } else {
             return false;

@@ -1,5 +1,7 @@
 package riot.account.manager.Controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,6 +13,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import riot.account.manager.Core.Account;
+import riot.account.manager.Core.Updater;
+import riot.account.manager.Util.Ranks;
+import riot.account.manager.Util.STATICS;
 
 public class NewMainViewController {
 
@@ -104,8 +109,78 @@ public class NewMainViewController {
     @FXML
     public void initialize() {
         fillMainTable();
-    }
+        fillWindow();
 
+
+        mainTable.getFocusModel().focusedCellProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observableValue, Object o, Object t1) {
+
+                try {
+                    if (mainTable.getSelectionModel().getSelectedItems().get(0) != null) {
+                        openAccountWindow(mainTable.getSelectionModel().getSelectedItems().get(0));
+                    }
+                } catch (Exception e) {
+                }
+            }
+        });
+
+
+        gameFilterChoiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(javafx.beans.value.ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue.equals("All")) {
+                    rankFilterChoiceBox.getItems().clear();
+                    rankFilterChoiceBox.getItems().add("All Ranks");
+                    rankFilterChoiceBox.setValue("All Ranks");
+                    rankFilterChoiceBox.setDisable(true);
+                } else if (newValue.equals("Valorant")) {
+                    nameFilterField.setText("");
+                    mainTable.setItems(AccountController.getAccountListFilteredByRank("Iron","Valorant"));
+                    reloadTable();
+                    rankFilterChoiceBox.setDisable(false);
+                    rankFilterChoiceBox.getItems().clear();
+                    rankFilterChoiceBox.getItems().addAll(Ranks.getValorantRanks());
+                    rankFilterChoiceBox.setValue("Iron");
+                } else {
+                    nameFilterField.setText("");
+                    mainTable.setItems(AccountController.getAccountListFilteredByRank("Iron","League"));
+                    reloadTable();
+                    rankFilterChoiceBox.setDisable(false);
+                    rankFilterChoiceBox.getItems().clear();
+                    rankFilterChoiceBox.getItems().addAll(Ranks.getLeagueRankArray());
+                    rankFilterChoiceBox.setValue("Iron");
+                }
+            }
+
+
+        });
+
+        gameFilterChoiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(javafx.beans.value.ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                mainTable.getSelectionModel().clearSelection();
+                if(gameFilterChoiceBox.getValue().equals("Valorant")) {
+                    mainTable.setItems(AccountController.getAccountListFilteredByRank(rankFilterChoiceBox.getValue(), "Valorant"));
+                }else{
+                    mainTable.setItems(AccountController.getAccountListFilteredByRank(rankFilterChoiceBox.getValue(), "League"));
+                }
+                reloadTable();
+            }
+        });
+
+        nameFilterField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                mainTable.getSelectionModel().clearSelection();
+                rankFilterChoiceBox.setValue("All Ranks");
+                gameFilterChoiceBox.setValue("All");
+                rankFilterChoiceBox.setDisable(true);
+                mainTable.setItems(AccountController.getAccountListFilteredByName(newValue));
+                mainTable.refresh();
+            }
+        });
+    }
 
 
     @FXML
@@ -139,6 +214,66 @@ public class NewMainViewController {
         valorantColumn.setCellValueFactory(cellData -> cellData.getValue().getUserValorantRankProperty());
         soloColumn.setCellValueFactory(cellData -> cellData.getValue().getUserSoloRankProperty());
         flexColumn.setCellValueFactory(cellData -> cellData.getValue().getUserFlexRankProperty());
+
+    }
+
+    public void fillWindow() {
+        if (!Updater.isAvailable()) {
+            updateLabel.setVisible(false);
+        }
+        gameFilterChoiceBox.getItems().addAll("All", "Valorant", "League Solo", "League Flex");
+        gameFilterChoiceBox.setValue("All");
+        changeValoRank.getItems().addAll(Ranks.getValorantRanks());
+        changeSoloRank.getItems().addAll(Ranks.getLeagueRankArray());
+        changeFlexRank.getItems().addAll(Ranks.getLeagueRankArray());
+        rankFilterChoiceBox.getItems().addAll("All Ranks");
+        rankFilterChoiceBox.setValue("All Ranks");
+
+        versionLabel.setText("v. " + STATICS.VERSION);
+
+        try {
+            mainTable.getSelectionModel().selectFirst();
+            openAccountWindow(mainTable.getSelectionModel().getSelectedItem());
+        } catch (NullPointerException e) {
+            leagueNameLabel.setText("");
+            riotIDLabel.setText("");
+            loginNameLabel.setText("");
+        }
+
+        valoBackgroundImage.setImage(STATICS.getValoBackground());
+        leagueBackgroundImage.setImage(STATICS.getLeagueBackground());
+    }
+
+    private void openAccountWindow(Account account) {
+        if (account.getRiotID().equals(account.getUserName())) {
+            riotIDLabel.setVisible(false);
+        } else {
+            riotIDLabel.setVisible(true);
+            riotIDLabel.setText(account.getRiotID());
+        }
+
+        if (account.getLeagueName().equals(account.getUserName())) {
+            leagueNameLabel.setVisible(false);
+        } else {
+            leagueLabel.setVisible(true);
+            leagueNameLabel.setText(account.getRiotID());
+        }
+
+        loginNameLabel.setText(account.getUserName());
+        accountUsableCheckBox.setSelected(account.isAvailable());
+
+        changeValoRank.setValue(account.getUserValorantRank());
+        valoRankImg.setImage(Ranks.getRankImage(account.getUserValorantRank(), "Valorant"));
+        changeSoloRank.setValue(account.getLeagueRankSolo());
+        leagueSoloImg.setImage(Ranks.getRankImage(account.getLeagueRankSolo(), "League"));
+        changeFlexRank.setValue(account.getLeagueRankFlex());
+        leagueFlexImg.setImage(Ranks.getRankImage(account.getLeagueRankFlex(), "League"));
+    }
+
+    public void reloadTable() {
+        mainTable.getItems().clear();
+        mainTable.getItems().addAll(AccountController.getAccountListObservable());
+        mainTable.refresh();
     }
 }
 
