@@ -11,6 +11,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -18,7 +19,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="445.0" prefWidth="1303.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.NewMainViewController">
    <children>
@@ -68,20 +68,20 @@
                </children>
             </HBox>
             <Line endX="1198.2928466796875" endY="-7.241964340209961E-4" startX="-100.0" stroke="#2f2f2f" style="-fx-stroke: #6a6a6e;" />
-            <SplitPane dividerPositions="0.33229571984435796" maxHeight="504.0" maxWidth="1346.0" minHeight="412.0" minWidth="635.0" prefHeight="412.0" prefWidth="1303.0">
+            <SplitPane dividerPositions="0.3" maxHeight="410.0" maxWidth="1300.0" minHeight="410.0" minWidth="1300.0" prefHeight="410.0" prefWidth="1300.0">
                <items>
-                  <VBox prefHeight="410.0" prefWidth="428.0">
+                  <VBox prefHeight="408.0" prefWidth="374.0">
                      <children>
-                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="423.0" minWidth="305.0" prefHeight="363.0" prefWidth="423.0">
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="423.0" minWidth="305.0" prefHeight="368.0" prefWidth="367.0">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="437.0" prefWidth="371.0" style="-fx-background-color: #373e43;" AnchorPane.rightAnchor="0.0">
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="365.0" style="-fx-background-color: #000000;" AnchorPane.rightAnchor="0.0">
                                  <children>
-                                    <TableView fx:id="mainTable" layoutY="-1.0" prefHeight="430.0" prefWidth="421.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-18.0" AnchorPane.topAnchor="-1.0">
+                                    <TableView fx:id="mainTable" layoutX="-6.0" layoutY="-1.0" prefHeight="367.0" prefWidth="385.0" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-14.0" AnchorPane.topAnchor="-1.0">
                                        <columns>
-                                          <TableColumn fx:id="accountColumn" maxWidth="265.0" minWidth="113.0" prefWidth="148.0" resizable="false" text="Account" />
-                                          <TableColumn fx:id="flexColumn" maxWidth="222.0" minWidth="18.0" prefWidth="85.0" resizable="false" text="Flex" />
-                                          <TableColumn fx:id="soloColumn" maxWidth="253.0" minWidth="18.0" prefWidth="91.0" resizable="false" text="Solo/Duo" />
-                                          <TableColumn fx:id="valorantColumn" maxWidth="253.0" minWidth="18.0" prefWidth="79.0" resizable="false" text="Valorant" />
+                                          <TableColumn fx:id="accountColumn" maxWidth="265.0" minWidth="113.0" prefWidth="136.0" resizable="false" text="  Account" />
+                                          <TableColumn fx:id="flexColumn" maxWidth="222.0" minWidth="18.0" prefWidth="77.0" resizable="false" text="Flex" />
+                                          <TableColumn fx:id="soloColumn" maxWidth="253.0" minWidth="18.0" prefWidth="81.0" resizable="false" text="Solo/Duo" />
+                                          <TableColumn fx:id="valorantColumn" maxWidth="253.0" minWidth="18.0" prefWidth="85.0" resizable="false" text="Valorant" />
                                        </columns>
                                     </TableView>
                                  </children>
@@ -146,8 +146,14 @@
                         </HBox>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="396.0" prefWidth="863.0">
                            <children>
-                              <ImageView fx:id="valoBackgroundImage" fitHeight="371.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="leagueBackgroundImage" fitHeight="371.0" fitWidth="490.0" layoutX="373.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="valoBackgroundImage" fitHeight="410.0" fitWidth="663.0" layoutX="-291.0" layoutY="-1.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/ValorantBackground.png" />
+                                 </image></ImageView>
+                              <ImageView fx:id="leagueBackgroundImage" fitHeight="441.0" fitWidth="595.0" layoutX="371.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/LeagueBackground.png" />
+                                 </image></ImageView>
                               <Label prefHeight="39.0" prefWidth="336.0" style="-fx-alignment: Center;" text="Valorant" textOverrun="CENTER_ELLIPSIS" underline="true">
                                  <font>
                                     <Font size="22.0" />

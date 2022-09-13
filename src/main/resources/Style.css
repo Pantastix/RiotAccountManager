@@ -105,11 +105,13 @@
 
 .table-view{
     -fx-selection-bar-non-focused: derive(-fx-base, 50%);
+
 }
 
 .table-view .column-header {
     -fx-background-color: transparent;
 }
+
 
 .table-view .column-header-background{
     -fx-background-color: -fx-accent;
@@ -121,8 +123,8 @@
 
 .table-view .column-header .label{
     -fx-alignment: CENTER_LEFT;
-    -fx-font-weight: none;
-    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
 }
 
 .list-cell:even,
@@ -154,6 +156,7 @@
 .scroll-pane{
     -fx-border-color: transparent;
     -fx-divider-color: transparent;
+    -fx-background-color: transparent;
 }
 
 .split-pane .split-pane-divider{

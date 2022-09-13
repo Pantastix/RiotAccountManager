@@ -208,7 +208,7 @@ public class MainViewController {
                 } else {
                     leagueLabel.setVisible(true);
                     leagueLabel2.setVisible(true);
-                    rankColumn.setCellValueFactory(cellData -> cellData.getValue().getUserLeagueRankProperty());
+                    rankColumn.setCellValueFactory(cellData -> cellData.getValue().getUserSoloRankProperty());
                     rankChoiceBox.getItems().clear();
                     rankChoiceBox.getItems().addAll(Ranks.getLeagueRankArray());
                     leagueRankImgFlex.setVisible(true);

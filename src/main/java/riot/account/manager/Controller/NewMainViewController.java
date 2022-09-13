@@ -10,11 +10,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import riot.account.manager.Core.Account;
 
 public class NewMainViewController {
 
     @FXML
-    private TableColumn<?, ?> accountColumn;
+    private TableColumn<Account, String> accountColumn;
 
     @FXML
     private CheckBox accountUsableCheckBox;
@@ -23,13 +24,13 @@ public class NewMainViewController {
     private Button addNewButton;
 
     @FXML
-    private ChoiceBox<?> changeFlexRank;
+    private ChoiceBox<String> changeFlexRank;
 
     @FXML
-    private ChoiceBox<?> changeSoloRank;
+    private ChoiceBox<String> changeSoloRank;
 
     @FXML
-    private ChoiceBox<?> changeValoRank;
+    private ChoiceBox<String> changeValoRank;
 
     @FXML
     private Button copyPasswordButton;
@@ -44,10 +45,10 @@ public class NewMainViewController {
     private Button editAccountButton;
 
     @FXML
-    private TableColumn<?, ?> flexColumn;
+    private TableColumn<Account, String> flexColumn;
 
     @FXML
-    private ChoiceBox<?> gameFilterChoiceBox;
+    private ChoiceBox<String> gameFilterChoiceBox;
 
     @FXML
     private ImageView leagueBackgroundImage;
@@ -71,19 +72,19 @@ public class NewMainViewController {
     private Label loginNameLabel;
 
     @FXML
-    private TableView<?> mainTable;
+    private TableView<Account> mainTable;
 
     @FXML
     private TextField nameFilterField;
 
     @FXML
-    private ChoiceBox<?> rankFilterChoiceBox;
+    private ChoiceBox<String> rankFilterChoiceBox;
 
     @FXML
     private Label riotIDLabel;
 
     @FXML
-    private TableColumn<?, ?> soloColumn;
+    private TableColumn<Account, String> soloColumn;
 
     @FXML
     private Label updateLabel;
@@ -95,14 +96,14 @@ public class NewMainViewController {
     private ImageView valoRankImg;
 
     @FXML
-    private TableColumn<?, ?> valorantColumn;
+    private TableColumn<Account, String> valorantColumn;
 
     @FXML
     private Label versionLabel;
 
     @FXML
     public void initialize() {
-        // TODO
+        fillMainTable();
     }
 
 
@@ -132,5 +133,12 @@ public class NewMainViewController {
 
     }
 
+    private void fillMainTable() {
+        mainTable.setItems(AccountController.getAccountListObservable());
+        accountColumn.setCellValueFactory(cellData -> cellData.getValue().getUserNameProperty());
+        valorantColumn.setCellValueFactory(cellData -> cellData.getValue().getUserValorantRankProperty());
+        soloColumn.setCellValueFactory(cellData -> cellData.getValue().getUserSoloRankProperty());
+        flexColumn.setCellValueFactory(cellData -> cellData.getValue().getUserFlexRankProperty());
+    }
 }
 

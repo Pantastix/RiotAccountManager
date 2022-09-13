@@ -60,7 +60,7 @@ public class App extends Application {
         try {
             Scene scene;
             if (ranks) {
-                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/MainView.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/NewMainView.fxml"));
                 scene = new Scene(fxmlLoader.load());
             }else{
                 FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/MissingFilesView.fxml"));

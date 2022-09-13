@@ -104,8 +104,11 @@ public class Account {
     public StringProperty getUserValorantRankProperty() {
         return new SimpleStringProperty(this.valorantRank);
     }
-    public StringProperty getUserLeagueRankProperty() {
+    public StringProperty getUserSoloRankProperty() {
         return new SimpleStringProperty(this.leagueRankSolo);
+    }
+    public StringProperty getUserFlexRankProperty() {
+        return new SimpleStringProperty(this.leagueRankFlex);
     }
 
     public String getPublicNameValorant() {
