@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="445.0" prefWidth="1303.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NewMainView">
+<AnchorPane prefHeight="445.0" prefWidth="1303.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.NewMainViewController">
    <children>
       <VBox prefHeight="472.0" prefWidth="1303.0">
          <children>
