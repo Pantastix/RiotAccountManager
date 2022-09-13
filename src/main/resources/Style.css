@@ -10,7 +10,7 @@
     -fx-text-fill: lightgray;
 }
 
-#accountNameLabel{
+#riotIDLabel, #leagueNameLabel{
     -fx-alignment: center;
     -fx-border-color: -fx-accent;
     -fx-font-weight: bold;
