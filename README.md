@@ -14,8 +14,6 @@ Features:
 - Save the League and Valorant Ranks
 
 upcomming features:
-- Automaticly update the account ranks
-- Stats for the Accounts
 - more detailed Ranks
 - better League support
 
