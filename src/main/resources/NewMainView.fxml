@@ -7,7 +7,6 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -20,11 +19,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="472.0" prefWidth="1242.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.NewMainViewController">
+<AnchorPane maxWidth="1188.0" minWidth="1188.0" prefHeight="472.0" prefWidth="1188.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="riot.account.manager.Controller.NewMainViewController">
    <children>
-      <VBox maxWidth="1241.0" minWidth="1241.0" prefHeight="472.0" prefWidth="1241.0">
+      <VBox maxWidth="1241.0" minWidth="1188.0" prefHeight="472.0" prefWidth="1188.0">
          <children>
-            <HBox maxWidth="1250.0" minWidth="1241.0" prefHeight="38.0" prefWidth="1241.0">
+            <HBox maxWidth="1250.0" minWidth="1176.0" prefHeight="38.0" prefWidth="1176.0">
                <children>
                   <Label prefHeight="42.0" prefWidth="101.0" text="Filter:">
                      <font>
@@ -67,9 +66,9 @@
                   </ChoiceBox>
                </children>
             </HBox>
-            <Line endX="1140.2928466796875" endY="7.179379463195801E-4" startX="-100.0" stroke="#2f2f2f" style="-fx-stroke: #6a6a6e;" />
-            <SplitPane dividerPositions="0.2962962962962963" maxHeight="410.0" maxWidth="1250.0" minHeight="410.0" minWidth="1234.0" prefHeight="410.0" prefWidth="1200.0">
-               <items>
+            <Line endX="1087.2928466796875" endY="4.127621650695801E-4" startX="-100.0" stroke="#2f2f2f" style="-fx-stroke: #6a6a6e;" />
+            <HBox maxWidth="1188.0" minWidth="1188.0" prefHeight="408.0" prefWidth="1188.0">
+               <children>
                   <VBox maxWidth="380.0" minWidth="370.0" prefHeight="406.0" prefWidth="370.0">
                      <children>
                         <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="423.0" minWidth="305.0" prefHeight="365.0" prefWidth="358.0">
@@ -78,10 +77,10 @@
                                  <children>
                                     <TableView fx:id="mainTable" layoutX="-6.0" layoutY="-1.0" prefHeight="367.0" prefWidth="392.0" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-26.0" AnchorPane.topAnchor="-1.0">
                                        <columns>
-                                          <TableColumn fx:id="accountColumn" maxWidth="265.0" minWidth="113.0" prefWidth="136.0" resizable="false" text="  Account" />
-                                          <TableColumn fx:id="flexColumn" maxWidth="222.0" minWidth="18.0" prefWidth="77.0" resizable="false" text="Flex" />
-                                          <TableColumn fx:id="soloColumn" maxWidth="253.0" minWidth="18.0" prefWidth="81.0" resizable="false" text="Solo/Duo" />
-                                          <TableColumn fx:id="valorantColumn" maxWidth="253.0" minWidth="18.0" prefWidth="85.0" resizable="false" text="Valorant" />
+                                          <TableColumn fx:id="accountColumn" maxWidth="265.0" minWidth="102.0" prefWidth="138.0" resizable="false" text="  Account" />
+                                          <TableColumn fx:id="flexColumn" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" resizable="false" text="Flex" />
+                                          <TableColumn fx:id="soloColumn" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" resizable="false" text="Solo/Duo" />
+                                          <TableColumn fx:id="valorantColumn" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" resizable="false" text="Valorant" />
                                        </columns>
                                     </TableView>
                                  </children>
@@ -95,14 +94,14 @@
                               <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonPressed" prefHeight="35.0" prefWidth="137.0" text="Delete" />
                            </buttons>
                            <VBox.margin>
-                              <Insets right="18.0" />
+                              <Insets left="5.0" right="22.0" />
                            </VBox.margin>
                         </ButtonBar>
                      </children>
                   </VBox>
-                  <VBox maxWidth="851.0" minHeight="0.0" minWidth="0.0" prefHeight="406.0" prefWidth="851.0">
+                  <VBox fx:id="openAccountPane" maxWidth="851.0" minHeight="0.0" minWidth="0.0" prefHeight="408.0" prefWidth="819.0">
                      <children>
-                        <HBox prefHeight="38.0" prefWidth="849.0">
+                        <HBox prefHeight="38.0" prefWidth="808.0">
                            <children>
                               <Label prefHeight="37.0" prefWidth="118.0" text="Login Name:">
                                  <font>
@@ -144,13 +143,14 @@
                               </CheckBox>
                            </children>
                         </HBox>
-                        <AnchorPane maxWidth="860.0" minHeight="0.0" minWidth="850.0" prefHeight="369.0" prefWidth="850.0">
+                        <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="808.0" prefHeight="369.0" prefWidth="808.0">
                            <children>
-                              <ImageView fx:id="valoBackgroundImage" fitHeight="410.0" fitWidth="663.0" layoutX="-291.0" layoutY="-1.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="valoBackgroundImage" fitHeight="369.0" fitWidth="578.0" layoutX="-1.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../images/ValorantBackground.png" />
-                                 </image></ImageView>
-                              <ImageView fx:id="leagueBackgroundImage" fitHeight="400.0" fitWidth="499.0" layoutX="371.0" layoutY="-1.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="leagueBackgroundImage" fitHeight="369.0" fitWidth="448.0" layoutX="373.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../images/LeagueBackground.png" />
                                  </image></ImageView>
@@ -169,13 +169,13 @@
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <Label layoutY="100.0" text="Rank:">
+                              <Label layoutX="16.0" layoutY="100.0" text="Rank:">
                                  <font>
                                     <Font size="21.0" />
                                  </font>
                               </Label>
                               <ChoiceBox fx:id="changeValoRank" layoutX="118.0" layoutY="103.0" prefHeight="25.0" prefWidth="101.0" />
-                              <Label layoutX="378.0" prefHeight="39.0" prefWidth="480.0" style="-fx-alignment: Center; -fx-font-weight: Bold;" text="League of Legends" textOverrun="CENTER_ELLIPSIS" underline="true">
+                              <Label layoutX="371.0" prefHeight="39.0" prefWidth="448.0" style="-fx-alignment: Center; -fx-font-weight: Bold;" text="League of Legends" textOverrun="CENTER_ELLIPSIS" underline="true">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -185,7 +185,7 @@
                                     <Font size="21.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="leagueNameLabel" layoutX="527.0" layoutY="41.0" prefHeight="38.0" prefWidth="304.0" text="[Name]" textAlignment="CENTER">
+                              <Label fx:id="leagueNameLabel" layoutX="527.0" layoutY="41.0" prefHeight="38.0" prefWidth="286.0" text="[Name]" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
@@ -195,34 +195,34 @@
                                     <Font size="21.0" />
                                  </font>
                               </Label>
-                              <Line endX="100.0" layoutX="271.0" startX="100.0" startY="440.0" style="-fx-stroke: #6a6a6e;" />
-                              <ChoiceBox fx:id="changeSoloRank" layoutX="489.0" layoutY="119.0" prefHeight="25.0" prefWidth="101.0" />
-                              <ChoiceBox fx:id="changeFlexRank" layoutX="675.0" layoutY="119.0" prefHeight="25.0" prefWidth="101.0" />
-                              <Label fx:id="leagueLabel2" layoutX="504.0" layoutY="100.0" prefHeight="21.0" prefWidth="72.0" text="Solo/Duo">
+                              <Line endX="100.0" layoutX="271.0" startX="100.0" startY="370.0" style="-fx-stroke: #6a6a6e;" />
+                              <ChoiceBox fx:id="changeSoloRank" layoutX="469.0" layoutY="121.0" prefHeight="25.0" prefWidth="101.0" />
+                              <ChoiceBox fx:id="changeFlexRank" layoutX="635.0" layoutY="124.0" prefHeight="25.0" prefWidth="101.0" />
+                              <Label fx:id="leagueLabel2" layoutX="484.0" layoutY="102.0" prefHeight="21.0" prefWidth="72.0" text="Solo/Duo">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="leagueLabel" layoutX="713.0" layoutY="100.0" text="Flex">
+                              <Label fx:id="leagueLabel" layoutX="673.0" layoutY="105.0" text="Flex">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <ImageView fx:id="leagueFlexImg" fitHeight="137.0" fitWidth="137.0" layoutX="658.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="leagueSoloImg" fitHeight="137.0" fitWidth="137.0" layoutX="474.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="valoRankImg" fitHeight="137.0" fitWidth="137.0" layoutX="106.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="leagueFlexImg" fitHeight="137.0" fitWidth="137.0" layoutX="618.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="leagueSoloImg" fitHeight="137.0" fitWidth="137.0" layoutX="454.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="valoRankImg" fitHeight="137.0" fitWidth="137.0" layoutX="100.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </AnchorPane>
                      </children>
                   </VBox>
-               </items>
-            </SplitPane>
-            <Line endX="1140.2928466796875" endY="1.6862154006958008E-4" startX="-100.0" stroke="#2f2f2f" style="-fx-stroke: #6a6a6e;" />
-            <Pane maxWidth="1250.0" minWidth="1250.0" prefHeight="18.0" prefWidth="1250.0">
+               </children>
+            </HBox>
+            <Line endX="1085.585693359375" endY="4.127621650695801E-4" startX="-100.0" stroke="#2f2f2f" style="-fx-stroke: #6a6a6e;" />
+            <Pane maxWidth="1250.0" minWidth="1180.0" prefHeight="18.0" prefWidth="1180.0">
                <children>
-                  <Label layoutX="1143.0" layoutY="1.0" text="by Chris Simbeck" />
+                  <Label layoutX="1087.0" layoutY="1.0" text="by Chris Simbeck" />
                   <Label fx:id="versionLabel" layoutY="1.0" prefHeight="17.0" prefWidth="296.0" />
-                  <Label fx:id="updateLabel" layoutX="577.0" layoutY="1.0" text="Update Available" />
+                  <Label fx:id="updateLabel" layoutX="546.0" layoutY="1.0" text="Update Available" />
                </children>
             </Pane>
          </children>
