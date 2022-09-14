@@ -38,45 +38,45 @@ public class AccountController {
      * The getAccountListFilteredByRank function returns an ObservableList of Account objects that have the same rank as
      * the user input. If no accounts are found, it returns an empty list.
      *
-     *
      * @param filterRank Filter the account list by rank
-     *
      * @return An observablelist of account objects that have a userrank matching the newvalue parameter
      */
     public static ObservableList<Account> getAccountListFilteredByRank(String filterRank, String game) {
         ArrayList<Account> filteredAccountList = new ArrayList<>();
         try {
-            if (filterRank.equals("all Ranks")) {
+            if (filterRank.equals("All Ranks")) {
                 filteredAccountList.addAll(accountList.values());
             } else {
                 for (Account account : accountList.values()) {
-                    if(game.equals("Valorant")){
-                        if (account.getUserValorantRank().equals(filterRank)) {
+                    if (game.equals("Valorant")) {
+                        if (account.getUserValorantRank().contains(filterRank)) {
                             filteredAccountList.add(account);
                         }
-                    } else {
-                        if (account.getLeagueRankSolo().equals(filterRank)) {
+                    } else if(game.equals("LeagueSolo")) {
+                        if (account.getLeagueRankSolo().contains(filterRank)) {
+                            filteredAccountList.add(account);
+                        }
+                    }else{
+                        if (account.getLeagueRankFlex().contains(filterRank)) {
                             filteredAccountList.add(account);
                         }
                     }
 
                 }
             }
-        }catch(NullPointerException e){
+        } catch (NullPointerException e) {
             //Do nothing
         }
 
         return FXCollections.observableArrayList(filteredAccountList);
-}
+    }
 
 
     /**
      * The getAccountListFilteredByName function returns an ObservableList of Account objects that have the same Name as
      * the user input. If no accounts are found, it returns an empty list.
      *
-     *
      * @param newValue Filter the account list by Name
-     *
      * @return An observablelist of account objects that have a username matching the newvalue parameter
      */
     public static ObservableList<Account> getAccountListFilteredByName(String newValue) {
@@ -102,13 +102,14 @@ public class AccountController {
 
     /**
      * fetches the Rank Image and returns the Image for the given rank and game.
+     *
      * @param rank of the account
      * @param game that the rank is for
      * @return the image of the rank
      */
     public static Image getRankImage(String rank, String game) {
-        try{
-            if(game.equals("Valorant")){
+        try {
+            if (game.equals("Valorant")) {
                 return Ranks.getRankImage(rank, game);
             } else {
                 return Ranks.getRankImage(rank, game);
@@ -125,8 +126,8 @@ public class AccountController {
      *
      * @return ArrayList of all accounts
      */
-    public static ArrayList<Account> getAccountList(){
-        ArrayList <Account> accountArrayList = new ArrayList<>();
+    public static ArrayList<Account> getAccountList() {
+        ArrayList<Account> accountArrayList = new ArrayList<>();
         for (Account account : accountList.values()) {
             accountArrayList.add(account);
         }

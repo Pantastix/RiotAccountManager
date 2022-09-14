@@ -133,12 +133,14 @@ public class NewMainViewController {
             public void changed(javafx.beans.value.ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (newValue.equals("All")) {
                     rankFilterChoiceBox.getItems().clear();
+                    mainTable.getItems().clear();
                     rankFilterChoiceBox.getItems().add("All Ranks");
                     rankFilterChoiceBox.setValue("All Ranks");
                     rankFilterChoiceBox.setDisable(true);
                 } else if (newValue.equals("Valorant")) {
                     nameFilterField.setText("");
-                    mainTable.setItems(AccountController.getAccountListFilteredByRank("Iron","Valorant"));
+                    mainTable.getItems().clear();
+                    mainTable.setItems(AccountController.getAccountListFilteredByRank("Iron", "Valorant"));
                     reloadTable();
                     rankFilterChoiceBox.setDisable(false);
                     rankFilterChoiceBox.getItems().clear();
@@ -146,7 +148,8 @@ public class NewMainViewController {
                     rankFilterChoiceBox.setValue("Iron");
                 } else {
                     nameFilterField.setText("");
-                    mainTable.setItems(AccountController.getAccountListFilteredByRank("Iron","League"));
+                    mainTable.getItems().clear();
+                    mainTable.setItems(AccountController.getAccountListFilteredByRank("Iron", "League"));
                     reloadTable();
                     rankFilterChoiceBox.setDisable(false);
                     rankFilterChoiceBox.getItems().clear();
@@ -158,16 +161,25 @@ public class NewMainViewController {
 
         });
 
-        gameFilterChoiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+        rankFilterChoiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(javafx.beans.value.ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 mainTable.getSelectionModel().clearSelection();
-                if(gameFilterChoiceBox.getValue().equals("Valorant")) {
+                if (gameFilterChoiceBox.getValue().equals("Valorant")) {
+                    mainTable.getItems().clear();
                     mainTable.setItems(AccountController.getAccountListFilteredByRank(rankFilterChoiceBox.getValue(), "Valorant"));
-                }else{
-                    mainTable.setItems(AccountController.getAccountListFilteredByRank(rankFilterChoiceBox.getValue(), "League"));
+                    mainTable.refresh();
+                } else if(gameFilterChoiceBox.getValue().equals("League Solo")){
+                    mainTable.getItems().clear();
+                    mainTable.setItems(AccountController.getAccountListFilteredByRank(rankFilterChoiceBox.getValue(), "LeagueSolo"));
+                    mainTable.refresh();
+                } else{
+                    mainTable.getItems().clear();
+                    mainTable.setItems(AccountController.getAccountListFilteredByRank(rankFilterChoiceBox.getValue(), "LeagueFlex"));
+                    mainTable.refresh();
                 }
-                reloadTable();
+                mainTable.refresh();
+                System.out.println("Game Filter changed to: " + newValue);
             }
         });
 
@@ -211,7 +223,7 @@ public class NewMainViewController {
                 if (newValue != null) {
                     mainTable.getSelectionModel().getSelectedItem().setLeagueRankFlex(newValue);
                     mainTable.refresh();
-                    leagueFlexImg.setImage(AccountController.getRankImage(mainTable.getSelectionModel().getSelectedItem().getLeagueRankFlex(), "Valorant"));
+                    leagueFlexImg.setImage(AccountController.getRankImage(mainTable.getSelectionModel().getSelectedItem().getLeagueRankFlex(), "League"));
                 }
             }
         });

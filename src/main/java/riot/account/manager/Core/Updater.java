@@ -103,7 +103,7 @@ public class Updater {
         try {
             new URL(url).openStream();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            //nth.
         }
 
         if (finalURL[0] <= Integer.valueOf(STATICS.getVersionArray()[0]) && finalURL[1] <= Integer.valueOf(STATICS.getVersionArray()[1]) && finalURL[2] <= Integer.valueOf(STATICS.getVersionArray()[2])) {

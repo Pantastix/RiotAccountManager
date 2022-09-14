@@ -89,7 +89,7 @@
                         </ScrollPane>
                         <ButtonBar buttonOrder="U+" prefHeight="42.0" prefWidth="389.0">
                            <buttons>
-                              <Button id="newButton" fx:id="addNewButton" mnemonicParsing="false" onAction="#addNewButtonPressed" prefHeight="37.0" prefWidth="110.0" stylesheets="@Style.css" text="Add New" />
+                              <Button id="newButton" fx:id="addNewButton" mnemonicParsing="false" onAction="#addNewButtonPressed" prefHeight="34.0" stylesheets="@Style.css" text="Add New" />
                               <Button fx:id="editAccountButton" mnemonicParsing="false" onAction="#changePasswordButtonPressed" prefHeight="34.0" text="Edit Account" />
                               <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonPressed" prefHeight="35.0" prefWidth="137.0" text="Delete" />
                            </buttons>
@@ -221,7 +221,7 @@
             <Pane maxWidth="1250.0" minWidth="1180.0" prefHeight="18.0" prefWidth="1180.0">
                <children>
                   <Label layoutX="1087.0" layoutY="1.0" text="by Chris Simbeck" />
-                  <Label fx:id="versionLabel" layoutY="1.0" prefHeight="17.0" prefWidth="296.0" />
+                  <Label fx:id="versionLabel" layoutX="12.0" layoutY="1.0" prefHeight="17.0" prefWidth="296.0" />
                   <Label fx:id="updateLabel" layoutX="546.0" layoutY="1.0" text="Update Available" />
                </children>
             </Pane>

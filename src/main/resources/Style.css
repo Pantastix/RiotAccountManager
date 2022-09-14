@@ -10,6 +10,7 @@
     -fx-text-fill: lightgray;
 }
 
+
 #riotIDLabel, #leagueNameLabel{
     -fx-alignment: center;
     /*-fx-border-color: -fx-accent;*/
@@ -30,7 +31,7 @@
 
 .button{
     -fx-focus-traversable: false;
-    -fx-background-radius: 999999;
+    -fx-background-radius: 9999;
     -fx-background-insets: 0;
     -fx-background-color: derive(-fx-base, 10%);
 }
@@ -183,3 +184,5 @@
     -fx-text-fill: #18ff00;
     -fx-font-weight: bold;
 }
+
+
