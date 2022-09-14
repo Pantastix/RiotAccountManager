@@ -60,10 +60,10 @@ public class addNewAccountViewController {
         valoRankChoiceBox.getItems().addAll(Ranks.getValorantRanks());
         valoRankChoiceBox.setValue("none");
         leagueRankChoiceBoxS.getItems().add("none");
-        leagueRankChoiceBoxS.getItems().addAll(Ranks.getLeagueRankArray());
+        leagueRankChoiceBoxS.getItems().addAll(Ranks.getLeagueRanks());
         leagueRankChoiceBoxS.setValue("none");
         leagueRankChoiceBoxF.getItems().add("none");
-        leagueRankChoiceBoxF.getItems().addAll(Ranks.getLeagueRankArray());
+        leagueRankChoiceBoxF.getItems().addAll(Ranks.getLeagueRanks());
         leagueRankChoiceBoxF.setValue("none");
     }
 

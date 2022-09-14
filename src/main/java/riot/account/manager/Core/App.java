@@ -23,6 +23,19 @@ import java.io.IOException;
  */
 public class App extends Application {
 
+    //TODO: ranks 1-3 hinzufügen
+    //TODO: rank filter überarbeiten (bug)
+    //TODO: ranks in json speichern udn bilder filtern
+    //TODO: rank filter anpassen
+    //TODO: change rank anpassen
+    //TODO: edit account window erstellen
+    //TODO: funktionalität und ui herstellen (evtl background img)
+    //TODO: add new account window erstellen
+    //TODO: funktionalität und ui herstellen (evtl background img)
+    //TODO: new screenshot for readme
+    //TODO: rework readme
+
+
     static boolean ranks = false;
 
     public static void main(String[] args) {

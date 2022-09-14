@@ -31,9 +31,9 @@ public class CreateSavestate {
             JSONArray accountArray = new JSONArray();
             try {
                 accountArray.put(AES.encrypt(account.getUserName(), SECRETS.getEncryptionKey()));
-                accountArray.put(AES.encrypt(account.getPublicNameValorant(), SECRETS.getEncryptionKey()));
+                accountArray.put(AES.encrypt(account.getRiotID(), SECRETS.getEncryptionKey()));
                 accountArray.put(AES.encrypt(account.getTag(), SECRETS.getEncryptionKey()));
-                accountArray.put(AES.encrypt(account.getPublicNameLeague(), SECRETS.getEncryptionKey()));
+                accountArray.put(AES.encrypt(account.getLeagueName(), SECRETS.getEncryptionKey()));
                 accountArray.put(AES.encrypt(account.getUserValorantRank(), SECRETS.getEncryptionKey()));
                 accountArray.put(AES.encrypt(account.getLeagueRankSolo(), SECRETS.getEncryptionKey()));
                 accountArray.put(AES.encrypt(account.getLeagueRankFlex(), SECRETS.getEncryptionKey()));
@@ -70,9 +70,9 @@ public class CreateSavestate {
             accountArray.put(AES.encrypt("Example", SECRETS.getEncryptionKey()));
             accountArray.put(AES.encrypt("#1234", SECRETS.getEncryptionKey()));
             accountArray.put(AES.encrypt("Example", SECRETS.getEncryptionKey()));
-            accountArray.put(AES.encrypt("Immortal", SECRETS.getEncryptionKey()));
-            accountArray.put(AES.encrypt("Challenger", SECRETS.getEncryptionKey()));
-            accountArray.put(AES.encrypt("Diamond", SECRETS.getEncryptionKey()));
+            accountArray.put(AES.encrypt("Immortal 1", SECRETS.getEncryptionKey()));
+            accountArray.put(AES.encrypt("Challenger 2", SECRETS.getEncryptionKey()));
+            accountArray.put(AES.encrypt("Diamond 3", SECRETS.getEncryptionKey()));
             accountArray.put(AES.encrypt("Password1234", SECRETS.getEncryptionKey()));
             accountArray.put(AES.encrypt("false", SECRETS.getEncryptionKey()));
         } catch (JSONException e) {

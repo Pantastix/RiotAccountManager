@@ -12,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import riot.account.manager.Core.Account;
 import riot.account.manager.Core.Updater;
 import riot.account.manager.Util.Ranks;
@@ -107,11 +108,12 @@ public class NewMainViewController {
     private Label versionLabel;
 
     @FXML
+    private VBox openAccountPane;
+
+    @FXML
     public void initialize() {
         fillMainTable();
         fillWindow();
-
-
         mainTable.getFocusModel().focusedCellProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
@@ -140,7 +142,7 @@ public class NewMainViewController {
                     reloadTable();
                     rankFilterChoiceBox.setDisable(false);
                     rankFilterChoiceBox.getItems().clear();
-                    rankFilterChoiceBox.getItems().addAll(Ranks.getValorantRanks());
+                    rankFilterChoiceBox.getItems().addAll(Ranks.getValorantFilterArray());
                     rankFilterChoiceBox.setValue("Iron");
                 } else {
                     nameFilterField.setText("");
@@ -148,7 +150,7 @@ public class NewMainViewController {
                     reloadTable();
                     rankFilterChoiceBox.setDisable(false);
                     rankFilterChoiceBox.getItems().clear();
-                    rankFilterChoiceBox.getItems().addAll(Ranks.getLeagueRankArray());
+                    rankFilterChoiceBox.getItems().addAll(Ranks.getLeagueFilterArray());
                     rankFilterChoiceBox.setValue("Iron");
                 }
             }
@@ -180,6 +182,40 @@ public class NewMainViewController {
                 mainTable.refresh();
             }
         });
+
+        changeValoRank.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue != null) {
+                    mainTable.getSelectionModel().getSelectedItem().setValorantRank(newValue);
+                    mainTable.refresh();
+                    valoRankImg.setImage(AccountController.getRankImage(mainTable.getSelectionModel().getSelectedItem().getUserValorantRank(), "Valorant"));
+                }
+            }
+        });
+
+        changeSoloRank.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue != null) {
+                    mainTable.getSelectionModel().getSelectedItem().setLeagueRankSolo(newValue);
+                    mainTable.refresh();
+                    leagueSoloImg.setImage(AccountController.getRankImage(mainTable.getSelectionModel().getSelectedItem().getLeagueRankSolo(), "League"));
+                }
+            }
+        });
+
+        changeFlexRank.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue != null) {
+                    mainTable.getSelectionModel().getSelectedItem().setLeagueRankFlex(newValue);
+                    mainTable.refresh();
+                    leagueFlexImg.setImage(AccountController.getRankImage(mainTable.getSelectionModel().getSelectedItem().getLeagueRankFlex(), "Valorant"));
+                }
+            }
+        });
+
     }
 
 
@@ -205,7 +241,12 @@ public class NewMainViewController {
 
     @FXML
     void deleteButtonPressed(ActionEvent event) {
-
+        if (mainTable.getSelectionModel().getSelectedItems().size() > 0) {
+            AccountController.deleteAccount(mainTable.getSelectionModel().getSelectedItems().get(0));
+            mainTable.getSelectionModel().clearSelection();
+            reloadTable();
+            mainTable.getSelectionModel().select(0);
+        }
     }
 
     private void fillMainTable() {
@@ -224,8 +265,8 @@ public class NewMainViewController {
         gameFilterChoiceBox.getItems().addAll("All", "Valorant", "League Solo", "League Flex");
         gameFilterChoiceBox.setValue("All");
         changeValoRank.getItems().addAll(Ranks.getValorantRanks());
-        changeSoloRank.getItems().addAll(Ranks.getLeagueRankArray());
-        changeFlexRank.getItems().addAll(Ranks.getLeagueRankArray());
+        changeSoloRank.getItems().addAll(Ranks.getLeagueRanks());
+        changeFlexRank.getItems().addAll(Ranks.getLeagueRanks());
         rankFilterChoiceBox.getItems().addAll("All Ranks");
         rankFilterChoiceBox.setValue("All Ranks");
 
