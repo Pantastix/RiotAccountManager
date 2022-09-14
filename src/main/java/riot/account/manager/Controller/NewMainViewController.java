@@ -12,6 +12,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.VBox;
 import riot.account.manager.Core.Account;
 import riot.account.manager.Core.Updater;
@@ -61,12 +63,6 @@ public class NewMainViewController {
 
     @FXML
     private ImageView leagueFlexImg;
-
-    @FXML
-    private Label leagueLabel;
-
-    @FXML
-    private Label leagueLabel2;
 
     @FXML
     private Label leagueNameLabel;
@@ -179,7 +175,6 @@ public class NewMainViewController {
                     mainTable.refresh();
                 }
                 mainTable.refresh();
-                System.out.println("Game Filter changed to: " + newValue);
             }
         });
 
@@ -237,18 +232,24 @@ public class NewMainViewController {
     }
 
     @FXML
-    void changePasswordButtonPressed(ActionEvent event) {
+    void editAccountButtonPressed(ActionEvent event) {
 
     }
 
     @FXML
     void copyPasswordButtonPressed(ActionEvent event) {
-
+        final Clipboard clipboard = Clipboard.getSystemClipboard();
+        final ClipboardContent content = new ClipboardContent();
+        content.putString(mainTable.getSelectionModel().getSelectedItem().getPassword());
+        clipboard.setContent(content);
     }
 
     @FXML
     void copyUserNameButtonPressed(ActionEvent event) {
-
+        final Clipboard clipboard = Clipboard.getSystemClipboard();
+        final ClipboardContent content = new ClipboardContent();
+        content.putString(mainTable.getSelectionModel().getSelectedItem().getUserName());
+        clipboard.setContent(content);
     }
 
     @FXML
@@ -308,7 +309,7 @@ public class NewMainViewController {
         if (account.getLeagueName().equals(account.getUserName())) {
             leagueNameLabel.setVisible(false);
         } else {
-            leagueLabel.setVisible(true);
+            leagueNameLabel.setVisible(true);
             leagueNameLabel.setText(account.getRiotID());
         }
 

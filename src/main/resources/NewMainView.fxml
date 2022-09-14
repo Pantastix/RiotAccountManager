@@ -90,7 +90,7 @@
                         <ButtonBar buttonOrder="U+" prefHeight="42.0" prefWidth="389.0">
                            <buttons>
                               <Button id="newButton" fx:id="addNewButton" mnemonicParsing="false" onAction="#addNewButtonPressed" prefHeight="34.0" stylesheets="@Style.css" text="Add New" />
-                              <Button fx:id="editAccountButton" mnemonicParsing="false" onAction="#changePasswordButtonPressed" prefHeight="34.0" text="Edit Account" />
+                              <Button fx:id="editAccountButton" mnemonicParsing="false" onAction="#editAccountButtonPressed" prefHeight="34.0" text="Edit Account" />
                               <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonPressed" prefHeight="35.0" prefWidth="137.0" text="Delete" />
                            </buttons>
                            <VBox.margin>
@@ -118,8 +118,8 @@
                               </Label>
                               <ButtonBar buttonOrder="U+FBIX_NCYOA_R" prefHeight="39.0" prefWidth="253.0">
                                  <buttons>
-                                    <Button fx:id="copyUserNameButton" mnemonicParsing="false" onAction="#copyUserNameButtonPressed" prefHeight="32.0" prefWidth="131.0" text="copy Username" />
-                                    <Button fx:id="copyPasswordButton" mnemonicParsing="false" onAction="#copyPasswordButtonPressed" prefHeight="32.0" prefWidth="175.0" text="copy Password" />
+                                    <Button fx:id="copyUserNameButton" mnemonicParsing="false" onAction="#copyUserNameButtonPressed" prefHeight="32.0" prefWidth="131.0" text="Copy Username" />
+                                    <Button fx:id="copyPasswordButton" mnemonicParsing="false" onAction="#copyPasswordButtonPressed" prefHeight="32.0" prefWidth="175.0" text="Copy Password" />
                                  </buttons>
                                  <HBox.margin>
                                     <Insets left="10.0" />
@@ -198,12 +198,12 @@
                               <Line endX="100.0" layoutX="271.0" startX="100.0" startY="370.0" style="-fx-stroke: #6a6a6e;" />
                               <ChoiceBox fx:id="changeSoloRank" layoutX="469.0" layoutY="121.0" prefHeight="25.0" prefWidth="101.0" />
                               <ChoiceBox fx:id="changeFlexRank" layoutX="635.0" layoutY="124.0" prefHeight="25.0" prefWidth="101.0" />
-                              <Label fx:id="leagueLabel2" layoutX="484.0" layoutY="102.0" prefHeight="21.0" prefWidth="72.0" text="Solo/Duo">
+                              <Label layoutX="484.0" layoutY="102.0" prefHeight="21.0" prefWidth="72.0" text="Solo/Duo">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="leagueLabel" layoutX="673.0" layoutY="105.0" text="Flex">
+                              <Label layoutX="673.0" layoutY="105.0" text="Flex">
                                  <font>
                                     <Font size="15.0" />
                                  </font>

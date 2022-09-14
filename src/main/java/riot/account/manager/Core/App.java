@@ -23,9 +23,6 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    //TODO: rank filter überarbeiten (bug)
-    //TODO: ranks in json speichern
-    //TODO: rank filter anpassen
     //TODO: edit account window erstellen
     //TODO: funktionalität und ui herstellen (evtl background img)
     //TODO: add new account window erstellen
