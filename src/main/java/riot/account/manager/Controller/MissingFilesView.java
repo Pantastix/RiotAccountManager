@@ -15,7 +15,7 @@ public class MissingFilesView {
     @FXML
     public Hyperlink link;
 
-    private String downloadLink = "https://github.com/Pantastix/RiotAccountManager/releases/download/v"+STATICS.VERSION+"/RiotAccountManager-v"+STATICS.VERSION+".rar";
+    private String downloadLink = "https://github.com/Pantastix/RiotAccountManager/releases/download/v"+STATICS.VERSION +"/RiotAccountManager.rar";
     @FXML
     public void openLink(ActionEvent event){
 

@@ -25,11 +25,9 @@ public class App extends Application {
 
     //TODO: edit account window erstellen
     //TODO: funktionalität und ui herstellen (evtl background img)
-    //TODO: add new account window erstellen
-    //TODO: funktionalität und ui herstellen (evtl background img)
+
     //TODO: rework readme
 
-    //TODO: AutoLogin?
 
 
     static boolean ranks = false;
@@ -49,9 +47,9 @@ public class App extends Application {
             e.printStackTrace();
         }
 
-//        if (Ranks.isAvailable()) {
+        if (Ranks.isAvailable()) {
             ranks = true;
-//        }
+        }
         launch(args);
     }
 
@@ -83,6 +81,7 @@ public class App extends Application {
             primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
                 @Override
                 public void handle(WindowEvent e) {
+                    primaryStage.setIconified(true);
                     CreateSavestate.createSavestate();
                 }
             });

@@ -13,21 +13,15 @@
 
 #riotIDLabel, #leagueNameLabel{
     -fx-alignment: center;
-    /*-fx-border-color: -fx-accent;*/
     -fx-font-weight: bold;
     -fx-font-size: 25px;
 }
 
 #loginNameLabel{
     -fx-alignment: center;
-    /*-fx-border-color: -fx-accent;*/
     -fx-font-weight: bold;
 }
 
-.text-field {
-    -fx-prompt-text-fill: gray;
-    -fx-background-radius: 999999;
-}
 
 .button{
     -fx-focus-traversable: false;
@@ -165,12 +159,10 @@
     -fx-border-color: transparent;
 }
 
-#errorLabel, #errorlabelE{
+#errorLabel, #errorLabelA{
     -fx-text-fill: red;
 }
-#accountSavedLabel{
-    -fx-text-fill: #18ff00;
-}
+
 #headder{
     -fx-alignment: center;
     -fx-font-weight: bold;
@@ -184,5 +176,21 @@
     -fx-text-fill: #18ff00;
     -fx-font-weight: bold;
 }
+
+#flexRankChoiceBoxA,
+#soloRankChoiceBoxA,
+#valoRankChoiceBoxA{
+    -fx-background-color: transparent;
+    -fx-border-color: #6e6e6e;
+    -fx-border-radius: 99999;
+}
+
+.text-field{
+    -fx-background-color: transparent;
+    -fx-border-color: #6e6e6e;
+    -fx-border-radius: 99999;
+    -fx-prompt-text-fill: #9f9f9f;
+}
+
 
 

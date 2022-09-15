@@ -1,5 +1,6 @@
 package riot.account.manager.Controller;
 
+import javafx.animation.FadeTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -15,7 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 import riot.account.manager.Core.Account;
 import riot.account.manager.Core.Updater;
 import riot.account.manager.Util.Ranks;
@@ -23,71 +24,62 @@ import riot.account.manager.Util.STATICS;
 
 public class NewMainViewController {
 
+    //Standart window elements
+
+    @FXML
+    private TableView<Account> mainTable;
     @FXML
     private TableColumn<Account, String> accountColumn;
-
-    @FXML
-    private CheckBox accountUsableCheckBox;
-
-    @FXML
-    private Button addNewButton;
-
-    @FXML
-    private ChoiceBox<String> changeFlexRank;
-
-    @FXML
-    private ChoiceBox<String> changeSoloRank;
-
-    @FXML
-    private ChoiceBox<String> changeValoRank;
-
-    @FXML
-    private Button copyPasswordButton;
-
-    @FXML
-    private Button copyUserNameButton;
-
-    @FXML
-    private Button deleteButton;
-
-    @FXML
-    private Button editAccountButton;
-
     @FXML
     private TableColumn<Account, String> flexColumn;
-
+    @FXML
+    private TableColumn<Account, String> soloColumn;
+    @FXML
+    private TableColumn<Account, String> valorantColumn;
     @FXML
     private ChoiceBox<String> gameFilterChoiceBox;
+    @FXML
+    private ChoiceBox<String> rankFilterChoiceBox;
+    @FXML
+    private TextField nameFilterField;
+    @FXML
+    private Button addNewButton;
+    @FXML
+    private Button deleteButton;
+    @FXML
+    private Button editAccountButton;
+    @FXML
+    private Label versionLabel;
 
+
+    //Account window elements
+    @FXML
+    private Pane openAccountPane;
+    @FXML
+    private CheckBox accountUsableCheckBox;
+    @FXML
+    private ChoiceBox<String> changeFlexRank;
+    @FXML
+    private ChoiceBox<String> changeSoloRank;
+    @FXML
+    private ChoiceBox<String> changeValoRank;
+    @FXML
+    private Button copyPasswordButton;
+    @FXML
+    private Button copyUserNameButton;
     @FXML
     private ImageView leagueBackgroundImage;
-
     @FXML
     private ImageView leagueFlexImg;
-
     @FXML
     private Label leagueNameLabel;
-
     @FXML
     private ImageView leagueSoloImg;
-
     @FXML
     private Label loginNameLabel;
 
     @FXML
-    private TableView<Account> mainTable;
-
-    @FXML
-    private TextField nameFilterField;
-
-    @FXML
-    private ChoiceBox<String> rankFilterChoiceBox;
-
-    @FXML
     private Label riotIDLabel;
-
-    @FXML
-    private TableColumn<Account, String> soloColumn;
 
     @FXML
     private Label updateLabel;
@@ -98,21 +90,50 @@ public class NewMainViewController {
     @FXML
     private ImageView valoRankImg;
 
-    @FXML
-    private TableColumn<Account, String> valorantColumn;
 
-    @FXML
-    private Label versionLabel;
 
+    //Add new account window elements
     @FXML
-    private Pane openAccountPane;
+    private Pane addNewAccountPane;
+    @FXML
+    private ImageView addAccountBackground;
+    @FXML
+    private TextField loginNameTextFieldA;
+    @FXML
+    private TextField riotIDTextFieldA;
+    @FXML
+    private TextField tagTextFieldA;
+    @FXML
+    private TextField leagueNameTextFieldA;
+    @FXML
+    private TextField passwordTextFieldA;
+    @FXML
+    private ChoiceBox<String> flexRankChoiceBoxA;
+    @FXML
+    private ChoiceBox<String> soloRankChoiceBoxA;
+    @FXML
+    private ChoiceBox<String> valoRankChoiceBoxA;
+    @FXML
+    private Label errorLabelA;
+    @FXML
+    private Button saveButtonA;
+    @FXML
+    private Button cancelButtonA;
+
+    //Edit account window elements
+    @FXML
+    private Pane editAccountPane;
+    @FXML
+    private ImageView editAccountBackground;
+
+
+
+
 
     @FXML
     public void initialize() {
         fillMainTable();
-        fillWindow();
-
-//        Account acc = new Account("Test", "Test", "Test", "Test", "Bronze 1", "Silver 2", "Gold 3", "Test", false);
+        loadWindow();
 
         mainTable.getFocusModel().focusedCellProperty().addListener(new ChangeListener() {
             @Override
@@ -244,13 +265,16 @@ public class NewMainViewController {
 
     @FXML
     void addNewButtonPressed(ActionEvent event) {
-//        openAccountPane.setVisible(false);
-//        addNewPane.setVisible(true);
+        openAccountPane.setVisible(false);
+        addNewAccountPane.setVisible(true);
+        valoRankChoiceBoxA.setValue("none");
+        flexRankChoiceBoxA.setValue("none");
+        soloRankChoiceBoxA.setValue("none");
     }
 
     @FXML
     void editAccountButtonPressed(ActionEvent event) {
-
+        fillEditAccountWindow();
     }
 
     @FXML
@@ -279,6 +303,61 @@ public class NewMainViewController {
         }
     }
 
+    @FXML
+    void saveNewButtonPressed(ActionEvent event) {
+        if (loginNameTextFieldA.getText().isEmpty() || passwordTextFieldA.getText().isEmpty()) {
+            errorLabelA.setText("Please fill in all fields with a *");
+            FadeTransition ft = new FadeTransition(Duration.millis(3000), errorLabelA);
+            ft.setFromValue(1.0);
+            ft.setToValue(0);
+
+            ft.play();
+        } else {
+            Account acc;
+            if (riotIDTextFieldA.getText().isEmpty()) {
+                if (leagueNameTextFieldA.getText().isEmpty()) {
+                    acc = new Account(loginNameTextFieldA.getText(), loginNameTextFieldA.getText(), tagTextFieldA.getText(), loginNameTextFieldA.getText(), valoRankChoiceBoxA.getValue(), soloRankChoiceBoxA.getValue(), flexRankChoiceBoxA.getValue(), passwordTextFieldA.getText());
+                } else {
+                    acc = new Account(loginNameTextFieldA.getText(), loginNameTextFieldA.getText(), tagTextFieldA.getText(), leagueNameTextFieldA.getText(), valoRankChoiceBoxA.getValue(), soloRankChoiceBoxA.getValue(), flexRankChoiceBoxA.getValue(), passwordTextFieldA.getText());
+                }
+            } else {
+                if (leagueNameTextFieldA.getText().isEmpty()) {
+                    acc = new Account(loginNameTextFieldA.getText(), riotIDTextFieldA.getText(), tagTextFieldA.getText(), loginNameTextFieldA.getText(), valoRankChoiceBoxA.getValue(), soloRankChoiceBoxA.getValue(), flexRankChoiceBoxA.getValue(), passwordTextFieldA.getText());
+                } else {
+                    acc = new Account(loginNameTextFieldA.getText(), riotIDTextFieldA.getText(), tagTextFieldA.getText(), leagueNameTextFieldA.getText(), valoRankChoiceBoxA.getValue(), soloRankChoiceBoxA.getValue(), flexRankChoiceBoxA.getValue(), passwordTextFieldA.getText());
+                }
+            }
+
+            addNewAccountPane.setVisible(false);
+            openAccountPane.setVisible(true);
+            nameFilterField.setText("");
+            rankFilterChoiceBox.setValue("All Ranks");
+            gameFilterChoiceBox.setValue("All");
+            reloadTable();
+            mainTable.getSelectionModel().select(acc);
+
+            loginNameTextFieldA.setText("");
+            riotIDTextFieldA.setText("");
+            leagueNameTextFieldA.setText("");
+            passwordTextFieldA.setText("");
+            tagTextFieldA.setText("");
+            valoRankChoiceBoxA.setValue("none");
+            flexRankChoiceBoxA.setValue("none");
+            soloRankChoiceBoxA.setValue("none");
+        }
+    }
+
+    @FXML
+    void closeNewButtonPressed(ActionEvent event) {
+        loginNameTextFieldA.setText("");
+        riotIDTextFieldA.setText("");
+        tagTextFieldA.setText("");
+        leagueNameTextFieldA.setText("");
+        passwordTextFieldA.setText("");
+        addNewAccountPane.setVisible(false);
+        openAccountPane.setVisible(true);
+    }
+
     private void fillMainTable() {
         mainTable.setItems(AccountController.getAccountListObservable());
         accountColumn.setCellValueFactory(cellData -> cellData.getValue().getUserNameProperty());
@@ -288,10 +367,11 @@ public class NewMainViewController {
 
     }
 
-    public void fillWindow() {
-        if (!Updater.isAvailable()) {
-            updateLabel.setVisible(false);
-        }
+    public void loadWindow() {
+        Thread updateThread = new Thread(updater);
+        updateThread.start();
+
+
         gameFilterChoiceBox.getItems().addAll("All", "Valorant", "League Solo", "League Flex");
         gameFilterChoiceBox.setValue("All");
         changeValoRank.getItems().addAll(Ranks.getValorantRanks());
@@ -311,8 +391,29 @@ public class NewMainViewController {
             loginNameLabel.setText("");
         }
 
+        //Backgrounds
         valoBackgroundImage.setImage(STATICS.getValoBackground());
         leagueBackgroundImage.setImage(STATICS.getLeagueBackground());
+        addAccountBackground.setImage(STATICS.getAddAccountBackground());
+        editAccountBackground.setImage(STATICS.getEditAccountBackground());
+
+        //Fill edit window
+        valoRankChoiceBoxA.getItems().clear();
+        valoRankChoiceBoxA.getItems().addAll("none");
+        valoRankChoiceBoxA.getItems().addAll(Ranks.getValorantRanks());
+        valoRankChoiceBoxA.setValue("none");
+        flexRankChoiceBoxA.getItems().clear();
+        flexRankChoiceBoxA.getItems().addAll("none");
+        flexRankChoiceBoxA.getItems().addAll(Ranks.getLeagueRanks());
+        flexRankChoiceBoxA.setValue("none");
+        soloRankChoiceBoxA.getItems().clear();
+        soloRankChoiceBoxA.getItems().addAll("none");
+        soloRankChoiceBoxA.getItems().addAll(Ranks.getLeagueRanks());
+        soloRankChoiceBoxA.setValue("none");
+    }
+
+    public void fillEditAccountWindow(){
+        //TODO: fill all fields with the selected account information
     }
 
     private void openAccountWindow(Account account) {
@@ -320,7 +421,7 @@ public class NewMainViewController {
             riotIDLabel.setVisible(false);
         } else {
             riotIDLabel.setVisible(true);
-            riotIDLabel.setText(account.getRiotID());
+            riotIDLabel.setText(account.getRiotID()+" "+account.getTag());
         }
 
         if (account.getLeagueName().equals(account.getUserName())) {
@@ -329,16 +430,31 @@ public class NewMainViewController {
             leagueNameLabel.setVisible(true);
             leagueNameLabel.setText(account.getRiotID());
         }
-
         loginNameLabel.setText(account.getUserName());
         accountUsableCheckBox.setSelected(account.isAvailable());
 
+        if(account.getUserValorantRank().equals("none")) {
+            valoRankImg.setVisible(false);
+        }else{
+            valoRankImg.setVisible(true);
+            valoRankImg.setImage(Ranks.getRankImage(account.getUserValorantRank(), "Valorant"));
+        }
         changeValoRank.setValue(account.getUserValorantRank());
-        valoRankImg.setImage(Ranks.getRankImage(account.getUserValorantRank(), "Valorant"));
+        if(account.getLeagueRankSolo().equals("none")) {
+            leagueSoloImg.setVisible(false);
+        }else{
+            leagueSoloImg.setVisible(true);
+            leagueSoloImg.setImage(Ranks.getRankImage(account.getLeagueRankSolo(), "League"));
+        }
         changeSoloRank.setValue(account.getLeagueRankSolo());
-        leagueSoloImg.setImage(Ranks.getRankImage(account.getLeagueRankSolo(), "League"));
+        if(account.getLeagueRankFlex().equals("none")) {
+            leagueSoloImg.setVisible(false);
+        }else {
+            leagueFlexImg.setVisible(true);
+            leagueFlexImg.setImage(Ranks.getRankImage(account.getLeagueRankFlex(), "League"));
+        }
         changeFlexRank.setValue(account.getLeagueRankFlex());
-        leagueFlexImg.setImage(Ranks.getRankImage(account.getLeagueRankFlex(), "League"));
+
     }
 
     public void reloadTable() {
@@ -346,5 +462,12 @@ public class NewMainViewController {
         mainTable.getItems().addAll(AccountController.getAccountListObservable());
         mainTable.refresh();
     }
+
+    Runnable updater = () -> {
+        if (!Updater.isAvailable()) {
+            updateLabel.setVisible(false);
+        }
+    };
+
 }
 
