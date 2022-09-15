@@ -165,7 +165,7 @@
     -fx-border-color: transparent;
 }
 
-#errorLabel{
+#errorLabel, #errorlabelE{
     -fx-text-fill: red;
 }
 #accountSavedLabel{

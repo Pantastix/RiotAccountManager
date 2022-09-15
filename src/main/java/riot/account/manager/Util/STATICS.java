@@ -36,4 +36,24 @@ public class STATICS {
         }
         return new Image(inputStream);
     }
+
+    public static Image getAddAccountBackground() {
+        FileInputStream inputStream;
+        try {
+            inputStream = new FileInputStream("images/AddNewAccountBG.png");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return new Image(inputStream);
+    }
+
+    public static Image getEditAccountBackground() {
+        FileInputStream inputStream;
+        try {
+            inputStream = new FileInputStream("images/EditAccountBG.png");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return new Image(inputStream);
+    }
 }

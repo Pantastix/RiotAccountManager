@@ -15,6 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -99,122 +100,207 @@
                         </ButtonBar>
                      </children>
                   </VBox>
-                  <Pane fx:id="openAccountPane" prefHeight="408.0" prefWidth="820.0">
+                  <StackPane prefHeight="408.0" prefWidth="821.0">
                      <children>
-                        <HBox prefHeight="38.0" prefWidth="808.0">
+                        <Pane fx:id="addNewAccountPane" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Label prefHeight="37.0" prefWidth="118.0" text="Login Name:">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="loginNameLabel" prefHeight="32.0" prefWidth="220.0" text="[Name]" textAlignment="CENTER">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets top="2.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <ButtonBar buttonOrder="U+FBIX_NCYOA_R" prefHeight="39.0" prefWidth="253.0">
-                                 <buttons>
-                                    <Button fx:id="copyUserNameButton" mnemonicParsing="false" onAction="#copyUserNameButtonPressed" prefHeight="32.0" prefWidth="131.0" text="Copy Username" />
-                                    <Button fx:id="copyPasswordButton" mnemonicParsing="false" onAction="#copyPasswordButtonPressed" prefHeight="32.0" prefWidth="175.0" text="Copy Password" />
-                                 </buttons>
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                              </ButtonBar>
-                              <Label text="Account usable:">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <CheckBox fx:id="accountUsableCheckBox" mnemonicParsing="false">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="10.0" top="7.0" />
-                                 </HBox.margin>
-                              </CheckBox>
-                           </children>
-                        </HBox>
-                        <AnchorPane layoutY="38.0" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="808.0" prefHeight="369.0" prefWidth="808.0">
-                           <children>
-                              <ImageView fx:id="valoBackgroundImage" fitHeight="369.0" fitWidth="578.0" layoutX="-1.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="addAccountBackground" fitHeight="472.0" fitWidth="818.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../images/ValorantBackground.png" />
+                                    <Image url="@../../../images/AddNewAccountBG.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="leagueBackgroundImage" fitHeight="369.0" fitWidth="448.0" layoutX="373.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../images/LeagueBackground.png" />
-                                 </image></ImageView>
-                              <Label prefHeight="39.0" prefWidth="336.0" style="-fx-alignment: Center; -fx-font-weight: Bold;" text="Valorant" textOverrun="CENTER_ELLIPSIS" underline="true">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="16.0" layoutY="44.0" prefHeight="30.0" prefWidth="70.0" text="Riot ID:">
+                              <Label layoutX="33.0" layoutY="14.0" text="Login Name:">
                                  <font>
                                     <Font size="21.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="riotIDLabel" layoutX="106.0" layoutY="40.0" prefHeight="38.0" prefWidth="243.0" text="[Name]" textAlignment="CENTER">
+                              <Label layoutX="33.0" layoutY="54.0" text="Riot ID:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="488.0" layoutY="54.0" text="Tag:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="33.0" layoutY="91.0" text="League Name:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="33.0" layoutY="129.0" text="Password:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="loginNameTextField" layoutX="193.0" layoutY="15.0" prefHeight="30.0" prefWidth="275.0" promptText="Login name" />
+                              <TextField fx:id="riotIDTextField" layoutX="193.0" layoutY="55.0" prefHeight="30.0" prefWidth="275.0" promptText="Riot ID" />
+                              <TextField fx:id="leagueNameTextField" layoutX="193.0" layoutY="92.0" prefHeight="30.0" prefWidth="275.0" promptText="League name" />
+                              <TextField fx:id="passwordTextField" layoutX="193.0" layoutY="130.0" prefHeight="30.0" prefWidth="275.0" promptText="********" />
+                              <TextField fx:id="tagTextField" layoutX="540.0" layoutY="55.0" prefHeight="30.0" prefWidth="112.0" promptText="#euw" />
+                              <Label layoutX="33.0" layoutY="173.0" text="Valorant Rank:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="33.0" layoutY="210.0" text="League Rank Solo/Duo:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="33.0" layoutY="248.0" text="League Rank Flex:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="valoRankChoiceBox" layoutX="268.0" layoutY="174.0" prefHeight="30.0" prefWidth="200.0" />
+                              <ChoiceBox fx:id="soloRankChoiceBox" layoutX="268.0" layoutY="211.0" prefHeight="30.0" prefWidth="200.0" />
+                              <ChoiceBox fx:id="flexRankChoiceBox" layoutX="268.0" layoutY="249.0" prefHeight="30.0" prefWidth="200.0" />
+                              <Label layoutX="468.0" layoutY="8.0" text="*">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="16.0" layoutY="100.0" text="Rank:">
-                                 <font>
-                                    <Font size="21.0" />
-                                 </font>
-                              </Label>
-                              <ChoiceBox fx:id="changeValoRank" layoutX="118.0" layoutY="103.0" prefHeight="25.0" prefWidth="101.0" />
-                              <Label layoutX="371.0" prefHeight="39.0" prefWidth="448.0" style="-fx-alignment: Center; -fx-font-weight: Bold;" text="League of Legends" textOverrun="CENTER_ELLIPSIS" underline="true">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="382.0" layoutY="41.0" prefHeight="39.0" prefWidth="140.0" text="League Name:" AnchorPane.leftAnchor="382.0">
-                                 <font>
-                                    <Font size="21.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="leagueNameLabel" layoutX="527.0" layoutY="41.0" prefHeight="38.0" prefWidth="286.0" text="[Name]" textAlignment="CENTER">
+                              <Label layoutX="468.0" layoutY="122.0" text="*">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="382.0" layoutY="100.0" text="Rank:">
-                                 <font>
-                                    <Font size="21.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="100.0" layoutX="271.0" startX="100.0" startY="370.0" style="-fx-stroke: #6a6a6e;" />
-                              <ChoiceBox fx:id="changeSoloRank" layoutX="469.0" layoutY="121.0" prefHeight="25.0" prefWidth="101.0" />
-                              <ChoiceBox fx:id="changeFlexRank" layoutX="635.0" layoutY="124.0" prefHeight="25.0" prefWidth="101.0" />
-                              <Label layoutX="484.0" layoutY="102.0" prefHeight="21.0" prefWidth="72.0" text="Solo/Duo">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="673.0" layoutY="105.0" text="Flex">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fx:id="leagueFlexImg" fitHeight="137.0" fitWidth="137.0" layoutX="618.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="leagueSoloImg" fitHeight="137.0" fitWidth="137.0" layoutX="454.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="valoRankImg" fitHeight="137.0" fitWidth="137.0" layoutX="100.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label layoutX="488.0" layoutY="15.0" text="Only Fields with a * are Required" />
+                              <Button id="newButton" fx:id="saveButton" layoutX="268.0" layoutY="288.0" mnemonicParsing="false" onAction="#saveNewButtonPressed" prefHeight="32.0" prefWidth="119.0" stylesheets="@Style.css" text="Save Account" />
+                              <Button id="newButton" fx:id="closenewButton" layoutX="387.0" layoutY="288.0" mnemonicParsing="false" onAction="#closeNewButtonPressed" prefHeight="32.0" prefWidth="140.0" stylesheets="@Style.css" text="Abort" />
+                              <Label fx:id="errorLabelE" layoutX="268.0" layoutY="320.0" />
                            </children>
-                        </AnchorPane>
+                        </Pane>
+                        <Pane fx:id="openAccountPane" prefHeight="408.0" prefWidth="759.0" visible="false">
+                           <children>
+                              <HBox prefHeight="38.0" prefWidth="808.0">
+                                 <children>
+                                    <Label prefHeight="37.0" prefWidth="118.0" text="Login Name:">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="loginNameLabel" prefHeight="32.0" prefWidth="220.0" text="[Name]" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="2.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ButtonBar buttonOrder="U+FBIX_NCYOA_R" prefHeight="39.0" prefWidth="253.0">
+                                       <buttons>
+                                          <Button fx:id="copyUserNameButton" mnemonicParsing="false" onAction="#copyUserNameButtonPressed" prefHeight="32.0" prefWidth="131.0" text="Copy Username" />
+                                          <Button fx:id="copyPasswordButton" mnemonicParsing="false" onAction="#copyPasswordButtonPressed" prefHeight="32.0" prefWidth="175.0" text="Copy Password" />
+                                       </buttons>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </ButtonBar>
+                                    <Label text="Account usable:">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <CheckBox fx:id="accountUsableCheckBox" mnemonicParsing="false">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="7.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                              <AnchorPane layoutY="38.0" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="808.0" prefHeight="369.0" prefWidth="808.0">
+                                 <children>
+                                    <ImageView fx:id="valoBackgroundImage" fitHeight="369.0" fitWidth="578.0" layoutX="-1.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/ValorantBackground.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="leagueBackgroundImage" fitHeight="369.0" fitWidth="448.0" layoutX="373.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/LeagueBackground.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="39.0" prefWidth="336.0" style="-fx-alignment: Center; -fx-font-weight: Bold;" text="Valorant" textOverrun="CENTER_ELLIPSIS" underline="true">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="16.0" layoutY="44.0" prefHeight="30.0" prefWidth="70.0" text="Riot ID:">
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="riotIDLabel" layoutX="106.0" layoutY="40.0" prefHeight="38.0" prefWidth="243.0" text="[Name]" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="16.0" layoutY="100.0" text="Rank:">
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="changeValoRank" layoutX="118.0" layoutY="103.0" prefHeight="25.0" prefWidth="101.0" />
+                                    <Label layoutX="371.0" prefHeight="39.0" prefWidth="448.0" style="-fx-alignment: Center; -fx-font-weight: Bold;" text="League of Legends" textOverrun="CENTER_ELLIPSIS" underline="true">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="382.0" layoutY="41.0" prefHeight="39.0" prefWidth="140.0" text="League Name:" AnchorPane.leftAnchor="382.0">
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="leagueNameLabel" layoutX="527.0" layoutY="41.0" prefHeight="38.0" prefWidth="286.0" text="[Name]" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="382.0" layoutY="100.0" text="Rank:">
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endX="100.0" layoutX="271.0" startX="100.0" startY="370.0" style="-fx-stroke: #6a6a6e;" />
+                                    <ChoiceBox fx:id="changeSoloRank" layoutX="469.0" layoutY="121.0" prefHeight="25.0" prefWidth="101.0" />
+                                    <ChoiceBox fx:id="changeFlexRank" layoutX="635.0" layoutY="124.0" prefHeight="25.0" prefWidth="101.0" />
+                                    <Label layoutX="484.0" layoutY="102.0" prefHeight="21.0" prefWidth="72.0" text="Solo/Duo">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="673.0" layoutY="105.0" text="Flex">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="leagueFlexImg" fitHeight="137.0" fitWidth="137.0" layoutX="618.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="leagueSoloImg" fitHeight="137.0" fitWidth="137.0" layoutX="454.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="valoRankImg" fitHeight="137.0" fitWidth="137.0" layoutX="100.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="editAccountPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+                           <children>
+                              <ImageView fx:id="editAccountBackground" fitHeight="488.0" fitWidth="818.0" layoutX="1.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/EditAccountBG.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
                      </children>
-                  </Pane>
+                  </StackPane>
                </children>
             </HBox>
             <Line endX="1085.585693359375" endY="4.127621650695801E-4" startX="-100.0" stroke="#2f2f2f" style="-fx-stroke: #6a6a6e;" />
