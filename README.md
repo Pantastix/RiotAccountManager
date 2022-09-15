@@ -24,7 +24,7 @@ upcomming features:
 ## Installation
 
 Version 1.1.0
-[Downlaod](https://github.com/Pantastix/RiotAccountManager/releases/download/v1.1.0/RiotAccountManager-v1.1.0.rar)
+[Downlaod](https://github.com/Pantastix/RiotAccountManager/releases/download/v1.1.0/RiotAccountManager.rar)
 
 ## Updates
 
