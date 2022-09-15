@@ -99,7 +99,7 @@
                         </ButtonBar>
                      </children>
                   </VBox>
-                  <VBox fx:id="openAccountPane" maxWidth="851.0" minHeight="0.0" minWidth="0.0" prefHeight="408.0" prefWidth="819.0">
+                  <Pane fx:id="openAccountPane" prefHeight="408.0" prefWidth="820.0">
                      <children>
                         <HBox prefHeight="38.0" prefWidth="808.0">
                            <children>
@@ -143,7 +143,7 @@
                               </CheckBox>
                            </children>
                         </HBox>
-                        <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="808.0" prefHeight="369.0" prefWidth="808.0">
+                        <AnchorPane layoutY="38.0" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="808.0" prefHeight="369.0" prefWidth="808.0">
                            <children>
                               <ImageView fx:id="valoBackgroundImage" fitHeight="369.0" fitWidth="578.0" layoutX="-1.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -214,7 +214,7 @@
                            </children>
                         </AnchorPane>
                      </children>
-                  </VBox>
+                  </Pane>
                </children>
             </HBox>
             <Line endX="1085.585693359375" endY="4.127621650695801E-4" startX="-100.0" stroke="#2f2f2f" style="-fx-stroke: #6a6a6e;" />

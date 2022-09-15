@@ -41,7 +41,7 @@ public class ReadSavestate {
             String userLeagueRankFlex = AES.decrypt((String) grabber.get(6), SECRETS.getEncryptionKey());
             String userPasswort = AES.decrypt((String) grabber.get(7), SECRETS.getEncryptionKey());
             boolean userIsAvailable;
-            if(AES.decrypt((String) grabber.get(6), SECRETS.getEncryptionKey()).equals("true")){
+            if(AES.decrypt((String) grabber.get(8), SECRETS.getEncryptionKey()).equals("true")){
                 userIsAvailable = true;
             } else {
                 userIsAvailable = false;

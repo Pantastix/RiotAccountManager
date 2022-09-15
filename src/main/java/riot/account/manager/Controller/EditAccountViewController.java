@@ -63,13 +63,13 @@ public class EditAccountViewController {
                 MainViewController.getSelectedAccount().setPassword(newPasswordField.getText());
             }
             if(!newNameField.getText().equals("")){
-                MainViewController.getSelectedAccount().setPublicNameValorant(newNameField.getText());
+                MainViewController.getSelectedAccount().setRiotID(newNameField.getText());
             }
             if(!newTagField.getText().equals("")){
                 MainViewController.getSelectedAccount().setTag(newTagField.getText());
             }
             if(!newLeagueNameField.getText().equals("")){
-                MainViewController.getSelectedAccount().setPublicNameLeague(newLeagueNameField.getText());
+                MainViewController.getSelectedAccount().setLeagueName(newLeagueNameField.getText());
             }
             Stage stage = (Stage) saveButton.getScene().getWindow();
             stage.close();

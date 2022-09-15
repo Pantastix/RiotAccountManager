@@ -198,7 +198,7 @@ public class MainViewController {
                     leagueLabel.setVisible(false);
                     leagueLabel.setVisible(false);
                     rankColumn.setCellValueFactory(cellData -> cellData.getValue().getUserValorantRankProperty());
-                    rankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
+                    rankChoiceBox.getItems().addAll(Ranks.getValorantRanks());
                     leagueRankImgFlex.setVisible(false);
                     leagueRankImgSolo.setVisible(false);
                     changeLeagueFlexCB.setVisible(false);
@@ -210,7 +210,7 @@ public class MainViewController {
                     leagueLabel2.setVisible(true);
                     rankColumn.setCellValueFactory(cellData -> cellData.getValue().getUserSoloRankProperty());
                     rankChoiceBox.getItems().clear();
-                    rankChoiceBox.getItems().addAll(Ranks.getLeagueRankArray());
+                    rankChoiceBox.getItems().addAll(Ranks.getLeagueRanks());
                     leagueRankImgFlex.setVisible(true);
                     leagueRankImgSolo.setVisible(true);
                     changeLeagueFlexCB.setVisible(true);
@@ -353,13 +353,13 @@ public class MainViewController {
      * @param account
      */
     private void openAccountWindow(Account account) {
-        if (account.getPublicNameValorant().equals(account.getUserName())) {
+        if (account.getRiotID().equals(account.getUserName())) {
             loginNameLabel.setVisible(false);
             accountNameLabel.setText(account.getUserName());
         } else {
             loginNameLabel.setVisible(true);
             loginNameLabel.setText(account.getUserName());
-            accountNameLabel.setText(account.getPublicNameValorant() + " " + account.getTag());
+            accountNameLabel.setText(account.getRiotID() + " " + account.getTag());
         }
         accountUsableCheckBox.setSelected(account.isAvailable());
         if (gameChoiceBox.getSelectionModel().getSelectedItem().equals("Valorant")) {
@@ -406,14 +406,14 @@ public class MainViewController {
         changeLeagueFlexCB.setVisible(false);
         changeLeagueSoloCB.setVisible(false);
         gameChoiceBox.getItems().addAll("Valorant", "League");
-        rankChoiceBox.getItems().addAll(Ranks.getValorantRankArray());
+        rankChoiceBox.getItems().addAll(Ranks.getValorantRanks());
         rankChoiceBox.getItems().add("all Ranks");
         changeRankChoiceBoxV.getItems().addAll("none");
-        changeRankChoiceBoxV.getItems().addAll(Ranks.getValorantRankArray());
+        changeRankChoiceBoxV.getItems().addAll(Ranks.getValorantRanks());
         changeLeagueSoloCB.getItems().addAll("none");
-        changeLeagueSoloCB.getItems().addAll(Ranks.getLeagueRankArray());
+        changeLeagueSoloCB.getItems().addAll(Ranks.getLeagueRanks());
         changeLeagueFlexCB.getItems().addAll("none");
-        changeLeagueFlexCB.getItems().addAll(Ranks.getLeagueRankArray());
+        changeLeagueFlexCB.getItems().addAll(Ranks.getLeagueRanks());
         rankChoiceBox.setValue("all Ranks");
         gameChoiceBox.setValue("Valorant");
         versionLabel.setText("v. " + STATICS.VERSION);

@@ -44,7 +44,6 @@ public class CreateSavestate {
             }
             json.put(AES.encrypt(account.getUserName(), SECRETS.getEncryptionKey()), accountArray);
         }
-
         try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.JSONPATH))) {
             out.write(json.toString());
         } catch (Exception e) {

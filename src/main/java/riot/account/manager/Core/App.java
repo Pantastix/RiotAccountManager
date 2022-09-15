@@ -27,7 +27,6 @@ public class App extends Application {
     //TODO: funktionalität und ui herstellen (evtl background img)
     //TODO: add new account window erstellen
     //TODO: funktionalität und ui herstellen (evtl background img)
-    //TODO: new screenshot for readme
     //TODO: rework readme
 
     //TODO: AutoLogin?

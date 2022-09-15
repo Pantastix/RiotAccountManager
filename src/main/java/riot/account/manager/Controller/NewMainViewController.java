@@ -14,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import riot.account.manager.Core.Account;
 import riot.account.manager.Core.Updater;
@@ -104,12 +105,15 @@ public class NewMainViewController {
     private Label versionLabel;
 
     @FXML
-    private VBox openAccountPane;
+    private Pane openAccountPane;
 
     @FXML
     public void initialize() {
         fillMainTable();
         fillWindow();
+
+//        Account acc = new Account("Test", "Test", "Test", "Test", "Bronze 1", "Silver 2", "Gold 3", "Test", false);
+
         mainTable.getFocusModel().focusedCellProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
@@ -223,12 +227,25 @@ public class NewMainViewController {
             }
         });
 
+        accountUsableCheckBox.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                Account selectedAccount = mainTable.getSelectionModel().getSelectedItem();
+                if (accountUsableCheckBox.isSelected()) {
+                    selectedAccount.setAvailable(true);
+                } else {
+                    selectedAccount.setAvailable(false);
+                }
+            }
+        });
+
     }
 
 
     @FXML
     void addNewButtonPressed(ActionEvent event) {
-
+//        openAccountPane.setVisible(false);
+//        addNewPane.setVisible(true);
     }
 
     @FXML
