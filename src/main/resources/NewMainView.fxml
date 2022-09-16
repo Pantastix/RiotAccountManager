@@ -78,10 +78,10 @@
                                  <children>
                                     <TableView fx:id="mainTable" layoutX="-6.0" layoutY="-1.0" prefHeight="367.0" prefWidth="392.0" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-26.0" AnchorPane.topAnchor="-1.0">
                                        <columns>
-                                          <TableColumn fx:id="accountColumn" maxWidth="265.0" minWidth="102.0" prefWidth="138.0" resizable="false" text="  Account" />
-                                          <TableColumn fx:id="flexColumn" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" resizable="false" text="Flex" />
-                                          <TableColumn fx:id="soloColumn" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" resizable="false" text="Solo/Duo" />
-                                          <TableColumn fx:id="valorantColumn" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" resizable="false" text="Valorant" />
+                                          <TableColumn fx:id="accountColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" resizable="false" text="  Account" />
+                                          <TableColumn fx:id="flexColumn" maxWidth="80.0" minWidth="80.0" resizable="false" text="Flex" />
+                                          <TableColumn fx:id="soloColumn" maxWidth="80.0" minWidth="80.0" resizable="false" text="Solo/Duo" />
+                                          <TableColumn fx:id="valorantColumn" maxWidth="80.0" minWidth="80.0" resizable="false" text="Valorant" />
                                        </columns>
                                     </TableView>
                                  </children>
@@ -271,20 +271,20 @@
                                        </font>
                                     </Label>
                                     <Line endX="100.0" layoutX="271.0" startX="100.0" startY="370.0" style="-fx-stroke: #6a6a6e;" />
-                                    <ChoiceBox fx:id="changeSoloRank" layoutX="469.0" layoutY="121.0" prefHeight="25.0" prefWidth="101.0" />
-                                    <ChoiceBox fx:id="changeFlexRank" layoutX="635.0" layoutY="124.0" prefHeight="25.0" prefWidth="101.0" />
-                                    <Label layoutX="484.0" layoutY="102.0" prefHeight="21.0" prefWidth="72.0" text="Solo/Duo">
+                                    <ChoiceBox fx:id="changeSoloRank" layoutX="469.0" layoutY="121.0" prefHeight="25.0" prefWidth="112.0" />
+                                    <ChoiceBox fx:id="changeFlexRank" layoutX="635.0" layoutY="124.0" prefHeight="25.0" prefWidth="112.0" />
+                                    <Label layoutX="491.0" layoutY="102.0" prefHeight="21.0" prefWidth="72.0" text="Solo/Duo">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="673.0" layoutY="105.0" text="Flex">
+                                    <Label layoutX="678.0" layoutY="105.0" text="Flex">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
                                     <ImageView fx:id="leagueFlexImg" fitHeight="137.0" fitWidth="137.0" layoutX="618.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
-                                    <ImageView fx:id="leagueSoloImg" fitHeight="137.0" fitWidth="137.0" layoutX="454.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="leagueSoloImg" fitHeight="137.0" fitWidth="137.0" layoutX="456.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" />
                                     <ImageView fx:id="valoRankImg" fitHeight="137.0" fitWidth="137.0" layoutX="100.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>
                               </AnchorPane>
