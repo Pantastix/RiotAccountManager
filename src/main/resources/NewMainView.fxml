@@ -297,6 +297,39 @@
                                     <Image url="@../../../images/EditAccountBG.png" />
                                  </image>
                               </ImageView>
+                              <Label layoutX="38.0" layoutY="81.0" text="Riot ID:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="38.0" layoutY="112.0" text="Tag:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="38.0" layoutY="143.0" text="League Name:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="38.0" layoutY="174.0" text="Password:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="riotIDTextFieldE" layoutX="181.0" layoutY="82.0" prefHeight="30.0" prefWidth="250.0" promptText="Empty" />
+                              <TextField fx:id="tagTextFieldE" layoutX="181.0" layoutY="113.0" prefHeight="30.0" prefWidth="250.0" promptText="Empty" />
+                              <TextField fx:id="leagueNameTextFieldE" layoutX="181.0" layoutY="144.0" prefHeight="30.0" prefWidth="250.0" promptText="Empty" />
+                              <TextField fx:id="passwordTextFieldE" layoutX="181.0" layoutY="175.0" prefHeight="30.0" prefWidth="250.0" promptText="******************" />
+                              <Label layoutX="38.0" layoutY="205.0" text="only filled fields will be changed" />
+                              <Button id="newButton" fx:id="cancelButtonE" layoutX="312.0" layoutY="255.0" mnemonicParsing="false" onAction="#closeEditButtonPressed" prefHeight="32.0" prefWidth="119.0" stylesheets="@Style.css" text="Cancel" />
+                              <Button id="newButton" fx:id="saveButtonE" layoutX="181.0" layoutY="255.0" mnemonicParsing="false" onAction="#saveEditButtonPressed" prefHeight="32.0" prefWidth="119.0" stylesheets="@Style.css" text="Save Account" />
+                              <Label fx:id="errorLabelE" layoutX="185.0" layoutY="231.0" prefHeight="17.0" prefWidth="371.0" textFill="RED" />
+                              <Label fx:id="editHeader" layoutX="14.0" layoutY="7.0" prefHeight="54.0" prefWidth="484.0" text="Edit [Name]">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
                      </children>

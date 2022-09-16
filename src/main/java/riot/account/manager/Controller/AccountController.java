@@ -83,7 +83,7 @@ public class AccountController {
 
         ArrayList<Account> filteredAccountList = new ArrayList<>();
         for (String key : accountList.keySet()) {
-            if (accountList.get(key).getUserName().toLowerCase().contains(newValue.toLowerCase())) {
+            if (accountList.get(key).getLoginName().toLowerCase().contains(newValue.toLowerCase())) {
                 filteredAccountList.add(accountList.get(key));
             }
         }
@@ -96,7 +96,7 @@ public class AccountController {
      * @param account that will be deleted
      */
     public static void deleteAccount(Account account) {
-        accountList.remove(account.getUserName());
+        accountList.remove(account.getLoginName());
         accountListObservable.remove(account);
     }
 

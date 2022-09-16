@@ -159,11 +159,11 @@
     -fx-border-color: transparent;
 }
 
-#errorLabel, #errorLabelA{
+#errorLabelE, #errorLabelA{
     -fx-text-fill: red;
 }
 
-#headder{
+#headder,#editHeader{
     -fx-alignment: center;
     -fx-font-weight: bold;
 }

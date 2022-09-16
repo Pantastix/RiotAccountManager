@@ -14,7 +14,7 @@ public class Account {
 
     private String leagueRankFlex;
     private String leagueName;
-    private String userName;
+    private String loginName;
     private String riotID;
     private String valorantRank;
     private String leagueRankSolo;
@@ -22,8 +22,8 @@ public class Account {
     private String password;
     private String tag;
 
-    public Account(String userName, String riotID, String tag, String leagueName, String valorantRank, String leagueRankSolo, String leagueRankFlex, String password) {
-        this.userName = userName;
+    public Account(String loginName, String riotID, String tag, String leagueName, String valorantRank, String leagueRankSolo, String leagueRankFlex, String password) {
+        this.loginName = loginName;
         this.riotID = riotID;
         this.leagueName = leagueName;
         this.tag = tag;
@@ -32,10 +32,10 @@ public class Account {
         this.leagueRankFlex = leagueRankFlex;
         this.password = password;
         this.available = true;
-        AccountController.addAccount(userName, this);
+        AccountController.addAccount(loginName, this);
     }
-    public Account(String userName, String riotID, String tag, String leagueName, String valorantRank, String leagueRankSolo, String leagueRankFlex, String password, Boolean isAvailable) {
-        this.userName = userName;
+    public Account(String loginName, String riotID, String tag, String leagueName, String valorantRank, String leagueRankSolo, String leagueRankFlex, String password, Boolean isAvailable) {
+        this.loginName = loginName;
         this.riotID = riotID;
         this.leagueName = leagueName;
         this.tag = tag;
@@ -44,11 +44,11 @@ public class Account {
         this.leagueRankFlex = leagueRankFlex;
         this.password = password;
         this.available = isAvailable;
-        AccountController.addAccount(userName, this);
+        AccountController.addAccount(loginName, this);
     }
 
-    public String getUserName() {
-        return userName;
+    public String getLoginName() {
+        return loginName;
     }
 
     public String getUserValorantRank() {
@@ -97,7 +97,7 @@ public class Account {
 
     public StringProperty getUserNameProperty() {
         String out;
-        out = this.riotID +" "+this.tag;
+        out = "  "+this.riotID +" "+this.tag;
         return new SimpleStringProperty(out);
     }
 

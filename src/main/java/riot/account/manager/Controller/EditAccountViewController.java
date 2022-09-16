@@ -40,7 +40,7 @@ public class EditAccountViewController {
 
     @FXML
     public void initialize() {
-        headder.setText("Edit "+MainViewController.getSelectedAccount().getUserName());
+        headder.setText("Edit "+MainViewController.getSelectedAccount().getLoginName());
     }
 
 

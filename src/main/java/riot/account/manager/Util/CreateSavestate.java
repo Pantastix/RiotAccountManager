@@ -23,14 +23,14 @@ public class CreateSavestate {
         ArrayList<Account> accountList = AccountController.getAccountList();
         JSONArray accountNames = new JSONArray();
         for (Account account : accountList) {
-            accountNames.put(AES.encrypt(account.getUserName(), SECRETS.getEncryptionKey()));
+            accountNames.put(AES.encrypt(account.getLoginName(), SECRETS.getEncryptionKey()));
         }
         json.put(AES.encrypt("accountnames", SECRETS.getEncryptionKey()), accountNames);
 
         for (Account account : accountList) {
             JSONArray accountArray = new JSONArray();
             try {
-                accountArray.put(AES.encrypt(account.getUserName(), SECRETS.getEncryptionKey()));
+                accountArray.put(AES.encrypt(account.getLoginName(), SECRETS.getEncryptionKey()));
                 accountArray.put(AES.encrypt(account.getRiotID(), SECRETS.getEncryptionKey()));
                 accountArray.put(AES.encrypt(account.getTag(), SECRETS.getEncryptionKey()));
                 accountArray.put(AES.encrypt(account.getLeagueName(), SECRETS.getEncryptionKey()));
@@ -42,7 +42,7 @@ public class CreateSavestate {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            json.put(AES.encrypt(account.getUserName(), SECRETS.getEncryptionKey()), accountArray);
+            json.put(AES.encrypt(account.getLoginName(), SECRETS.getEncryptionKey()), accountArray);
         }
         try (PrintWriter out = new PrintWriter(new FileWriter(STATICS.JSONPATH))) {
             out.write(json.toString());

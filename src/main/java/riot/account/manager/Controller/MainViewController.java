@@ -330,7 +330,7 @@ public class MainViewController {
     void copyUserNameButtonPressed(ActionEvent event) {
         final Clipboard clipboard = Clipboard.getSystemClipboard();
         final ClipboardContent content = new ClipboardContent();
-        content.putString(selectedAccount.getUserName());
+        content.putString(selectedAccount.getLoginName());
         clipboard.setContent(content);
     }
 
@@ -353,12 +353,12 @@ public class MainViewController {
      * @param account
      */
     private void openAccountWindow(Account account) {
-        if (account.getRiotID().equals(account.getUserName())) {
+        if (account.getRiotID().equals(account.getLoginName())) {
             loginNameLabel.setVisible(false);
-            accountNameLabel.setText(account.getUserName());
+            accountNameLabel.setText(account.getLoginName());
         } else {
             loginNameLabel.setVisible(true);
-            loginNameLabel.setText(account.getUserName());
+            loginNameLabel.setText(account.getLoginName());
             accountNameLabel.setText(account.getRiotID() + " " + account.getTag());
         }
         accountUsableCheckBox.setSelected(account.isAvailable());
