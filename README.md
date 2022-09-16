@@ -1,6 +1,6 @@
 # RiotAccountManager
 
-<img src="images/icon.jpg" width="100" >
+<img src="images/icon.jpg" width="110" >
 
 ## Description:
 
