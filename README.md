@@ -5,7 +5,6 @@
 ## Description:
 
 A managing tool to keep track of all your League and Valorant Accounts and their Ranks.<br>
-You can easily switch between League of Legends and Valorant and store multiple Accounts.<br>
 It should help you to find the account you need so you dont have to remember all passwords or store them into a unsecure .txt file. ;D
 Just be sure you have the "RiotAccountManager.jar" in the same fodler as the "League_rank_pictures" and the "Valorant_rank_pictures", to not cause any issues
 
