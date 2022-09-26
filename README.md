@@ -21,7 +21,7 @@ Features:
 ## Installation
 
 Version 2.0.0
-[Downlaod](https://github.com/Pantastix/RiotAccountManager/releases/download/v2.0.0/RiotAccountManager.rar)
+[Download](https://github.com/Pantastix/RiotAccountManager/releases/download/v2.0.0/RiotAccountManager.rar)
 
 ## Updates
 
