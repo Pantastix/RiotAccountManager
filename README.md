@@ -35,7 +35,7 @@ The save files are encrypted with AES-256, to keep you data save.
 ## Troubleshooting
 
 If you find any Problems or Bugs, please let me know.
-you fins my contact information in my GitHub Profile.
+You can create a Issue or contact me.
 
 ## Disclaimer
 
