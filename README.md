@@ -20,8 +20,8 @@ Features:
 
 ## Installation
 
-Version 2.0.0
-[Download](https://github.com/Pantastix/RiotAccountManager/releases/download/v2.0.0/RiotAccountManager.rar)
+Version 2.0.0 <br>
+<a href="https://github.com/Pantastix/RiotAccountManager/releases/download/v2.0.0/RiotAccountManager.rar"><img src="https://img.shields.io/github/downloads/Pantastix/RiotAccountManager/total?label=Download" /></a>
 
 ## Updates
 
